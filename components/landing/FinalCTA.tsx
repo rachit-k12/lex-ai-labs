@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function FinalCTA() {
   return (
-    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-20 mix-blend-soft-light">
         <svg className="w-full h-full">
           <filter id="noiseFilter">
@@ -16,11 +16,11 @@ export default function FinalCTA() {
           <rect width="100%" height="100%" filter="url(#noiseFilter)" />
         </svg>
       </div>
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 tracking-tight">
           Ready to build production AI systems?
         </h2>
-        <p className="text-xl text-slate-400 mb-10">
+        <p className="text-base sm:text-lg md:text-xl text-slate-400 mb-8 md:mb-10">
           Join working professionals learning to deploy ML models, fine-tune LLMs, 
           and build AI agents. Weekend format. Live sessions. 1:1 mentorship.
         </p>

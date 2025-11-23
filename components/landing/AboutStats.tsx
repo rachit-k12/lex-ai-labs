@@ -2,33 +2,33 @@ import Image from 'next/image';
 
 export default function AboutStats() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-              Practitioner-led AI training <br />
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 md:mb-6">
+              Practitioner-led AI training <br className="hidden sm:block" />
               for working professionals
             </h2>
-            <p className="text-lg text-slate-500 leading-relaxed mb-6">
+            <p className="text-base md:text-lg text-slate-500 leading-relaxed mb-4 md:mb-6">
               Lex AI Technologies runs the{' '}
               <strong className="text-slate-900">AI Fellowship program</strong> - weekend training
               where you build production ML systems, fine-tune language models, and deploy AI
               agents. No academic theory. Just hands-on implementation.
             </p>
-            <p className="text-lg text-slate-500 leading-relaxed mb-8">
+            <p className="text-base md:text-lg text-slate-500 leading-relaxed mb-6 md:mb-8">
               We offer specialized tracks for engineers who want to build AI systems and leaders who
               need to make AI decisions. Both taught by industry practitioners.
             </p>
 
-            <div className="grid grid-cols-2 gap-6">
-              <div className="p-6 rounded-2xl bg-surface-50 border border-slate-100">
-                <div className="text-3xl font-bold text-slate-900 mb-1">Weekend</div>
-                <div className="text-sm text-slate-500">Format - Keep Your Job</div>
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              <div className="p-4 sm:p-6 rounded-2xl bg-surface-50 border border-slate-100">
+                <div className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">Weekend</div>
+                <div className="text-xs sm:text-sm text-slate-500">Format - Keep Your Job</div>
               </div>
-              <div className="p-6 rounded-2xl bg-surface-50 border border-slate-100">
-                <div className="text-3xl font-bold text-slate-900 mb-1">70/30</div>
-                <div className="text-sm text-slate-500">Practical vs Theory</div>
+              <div className="p-4 sm:p-6 rounded-2xl bg-surface-50 border border-slate-100">
+                <div className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">70/30</div>
+                <div className="text-xs sm:text-sm text-slate-500">Practical vs Theory</div>
               </div>
             </div>
           </div>

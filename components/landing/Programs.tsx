@@ -3,19 +3,19 @@ import Link from 'next/link';
 
 export default function Programs() {
   return (
-    <section id="programs" className="py-24 bg-surface-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
+    <section id="programs" className="py-16 md:py-24 bg-surface-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
             Two Programs. One Goal.
           </h2>
-          <p className="text-lg text-slate-500">
+          <p className="text-base md:text-lg text-slate-500">
             Learn to build and deploy production AI systems. Weekend format for working
             professionals. Live sessions, code reviews, 1:1 mentorship.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start">
           {/* Card 1: Engineers */}
           <div className="bg-white rounded-[2rem] p-2 shadow-card hover:shadow-xl transition-shadow duration-300 border border-slate-100">
             <div className="p-8 pb-6">
@@ -60,7 +60,7 @@ export default function Programs() {
           </div>
 
           {/* Card 2: Leaders (Featured) */}
-          <div className="bg-slate-900 rounded-[2rem] p-2 shadow-2xl shadow-brand-900/20 transform lg:-translate-y-6 relative">
+          <div className="bg-slate-900 rounded-[2rem] p-2 shadow-2xl shadow-brand-900/20 transform md:col-span-2 lg:col-span-1 lg:-translate-y-6 relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-glow">
               Most Popular
             </div>

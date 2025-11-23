@@ -4,9 +4,9 @@ import Link from 'next/link';
 
 export default function InstructorSpotlight() {
   return (
-    <section className="py-24 bg-white border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="bg-slate-50 rounded-[3rem] p-8 md:p-12 lg:p-20 relative overflow-hidden border border-slate-100">
+    <section className="py-16 md:py-24 bg-white border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-slate-50 rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-20 relative overflow-hidden border border-slate-100">
           {/* Background Decorative */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-white via-brand-50 to-transparent rounded-full translate-x-1/3 -translate-y-1/3 opacity-50"></div>
 
@@ -35,14 +35,16 @@ export default function InstructorSpotlight() {
                   Meet The Founder
                 </span>
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Puru Kathuria</h2>
-              <p className="text-xl text-slate-500 mb-8 leading-relaxed">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
+                Puru Kathuria
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl text-slate-500 mb-6 md:mb-8 leading-relaxed">
                 Software Engineer at Google working on Cloud Security. Previously at MathWorks
                 building ML systems for self-driving cars and speech recognition. I teach engineers
                 how to build production AI systems - the same techniques I use at work every day.
               </p>
 
-              <div className="grid sm:grid-cols-2 gap-6 mb-10">
+              <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
                 <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-600 border border-slate-100 shrink-0">
                     <Code className="w-5 h-5" />

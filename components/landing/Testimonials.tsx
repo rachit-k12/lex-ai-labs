@@ -42,14 +42,16 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4 md:gap-6">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 md:mb-3">
               What Engineers Say
             </h2>
-            <p className="text-slate-500">Feedback from engineers who have learned with Puru.</p>
+            <p className="text-sm md:text-base text-slate-500">
+              Feedback from engineers who have learned with Puru.
+            </p>
           </div>
           <div className="flex gap-2">
             <button
@@ -80,7 +82,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="min-w-[350px] md:min-w-[450px] p-8 rounded-[2rem] bg-surface-50 border border-slate-100 snap-center flex flex-col justify-between"
+              className="min-w-[280px] sm:min-w-[350px] md:min-w-[450px] p-6 sm:p-8 rounded-[2rem] bg-surface-50 border border-slate-100 snap-center flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center gap-1 text-amber-400 text-sm mb-4">

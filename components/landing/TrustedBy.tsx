@@ -1,14 +1,14 @@
 export default function TrustedBy() {
   return (
     <section className="py-12 border-y border-slate-100 bg-surface-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-xs sm:text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6 sm:mb-8">
           Alumni & Mentors From
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          <div className="flex items-center gap-2 text-xl font-bold text-slate-700">
+        <div className="flex flex-wrap justify-center items-center gap-x-8 sm:gap-x-12 gap-y-6 sm:gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="flex items-center gap-2 text-lg sm:text-xl font-bold text-slate-700">
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -16,9 +16,9 @@ export default function TrustedBy() {
             </svg>
             Google
           </div>
-          <div className="flex items-center gap-2 text-xl font-bold text-slate-700">
+          <div className="flex items-center gap-2 text-lg sm:text-xl font-bold text-slate-700">
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -26,9 +26,9 @@ export default function TrustedBy() {
             </svg>
             Meta
           </div>
-          <div className="flex items-center gap-2 text-xl font-bold text-slate-700">
+          <div className="flex items-center gap-2 text-lg sm:text-xl font-bold text-slate-700">
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -36,9 +36,9 @@ export default function TrustedBy() {
             </svg>
             Microsoft
           </div>
-          <div className="flex items-center gap-2 text-xl font-bold text-slate-700">
+          <div className="flex items-center gap-2 text-lg sm:text-xl font-bold text-slate-700">
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               viewBox="0 0 24 24"
               fill="currentColor"
             >

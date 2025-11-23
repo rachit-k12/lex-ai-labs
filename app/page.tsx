@@ -10,9 +10,9 @@ import TrustedBy from '@/components/landing/TrustedBy';
 
 export default function Home() {
   return (
-    <div className="bg-surface-50 text-slate-900 antialiased">
+    <div className="bg-surface-50 text-slate-900 antialiased overflow-x-hidden">
       <Navigation />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <TrustedBy />
         <AboutStats />
