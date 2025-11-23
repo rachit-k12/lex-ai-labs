@@ -1,0 +1,354 @@
+LEX AI LABS - CURRENT WEBSITE COPY
+After November 2025 Improvements
+=====================================
+
+═══════════════════════════════════════════════════════════════════════
+SECTION 1: HERO
+═══════════════════════════════════════════════════════════════════════
+
+BADGE:
+New Cohorts Starting Monthly
+
+MAIN HEADLINE:
+Learn to build production AI systems in 12 weeks
+
+SUBHEADLINE:
+Weekend AI training for working professionals. Build real ML models, fine-tune LLMs, and deploy AI agents. Taught by a Google engineer.
+
+PRIMARY CTA:
+Explore Programs
+
+SECONDARY CTA:
+Book Consultation
+
+FEATURE TAGS:
+• Live Weekend Sessions
+• 1:1 Mentorship
+• Career Support
+• Build Your Own GPT
+
+
+═══════════════════════════════════════════════════════════════════════
+SECTION 2: TRUSTED BY
+═══════════════════════════════════════════════════════════════════════
+
+SECTION LABEL:
+Alumni & Mentors From
+
+COMPANY LOGOS:
+• Google
+• Meta
+• Microsoft
+• Amazon
+
+
+═══════════════════════════════════════════════════════════════════════
+SECTION 3: ABOUT & STATS
+═══════════════════════════════════════════════════════════════════════
+
+HEADLINE:
+Practitioner-led AI training
+for working professionals
+
+BODY PARAGRAPH 1:
+Lex AI Technologies runs the AI Fellowship program - weekend training where you build production ML systems, fine-tune language models, and deploy AI agents. No academic theory. Just hands-on implementation.
+
+BODY PARAGRAPH 2:
+We offer specialized tracks for engineers who want to build AI systems and leaders who need to make AI decisions. Both taught by industry practitioners.
+
+STAT CARD 1:
+Weekend
+Format - Keep Your Job
+
+STAT CARD 2:
+70/30
+Practical vs Theory
+
+IMAGE CAPTION:
+Build Real AI Systems
+Deploy models, fine-tune LLMs, build multi-agent systems.
+
+
+═══════════════════════════════════════════════════════════════════════
+SECTION 4: PROGRAMS
+═══════════════════════════════════════════════════════════════════════
+
+SECTION HEADLINE:
+Two Programs. One Goal.
+
+SECTION SUBHEADLINE:
+Learn to build and deploy production AI systems. Weekend format for working professionals. Live sessions, code reviews, 1:1 mentorship.
+
+---
+
+PROGRAM CARD 1: AI FELLOWSHIP
+-----------------------------
+
+Program Title: AI Fellowship
+Target Audience: For Engineers Building AI Systems
+
+Pricing: ₹25,500 + 18% GST
+
+Features:
+• Build & Deploy ML Models
+• Fine-tune LLMs (GPT, Llama)
+• Create Multi-Agent Systems
+• Weekly Code Reviews + Mentorship
+
+CTA: Enroll Now
+
+---
+
+PROGRAM CARD 2: AI FOR LEADERS (FEATURED)
+-----------------------------------------
+
+Badge: Most Popular
+
+Program Title: AI for Leaders
+Target Audience: For Executives Making AI Decisions
+
+Pricing: ₹25,500 + 18% GST
+
+Features:
+• Evaluate AI Vendors & Tools
+• Build AI Adoption Roadmaps
+• Understand Technical Trade-offs
+• Lead AI Transformation Teams
+
+CTA: Enroll Now
+
+---
+
+PROGRAM CARD 3: FREE CONSULTATION
+---------------------------------
+
+Program Title: Free Consultation
+Target Audience: 30-Minute Strategy Session
+
+Pricing: FREE / 30 Mins
+
+Features:
+• Assess Your Current AI Skills
+• Get Custom Learning Path
+• See if Program Fits You
+• Zero Pressure, Just Advice
+
+CTA: Book Consultation
+
+
+═══════════════════════════════════════════════════════════════════════
+SECTION 5: INSTRUCTOR SPOTLIGHT
+═══════════════════════════════════════════════════════════════════════
+
+SECTION LABEL:
+Meet The Founder
+
+NAME:
+Puru Kathuria
+
+BADGE:
+Ex-Google
+Software Engineer
+
+BIO:
+Software Engineer at Google working on Cloud Security. Previously at MathWorks building ML systems for self-driving cars and speech recognition. I teach engineers how to build production AI systems - the same techniques I use at work every day.
+
+CREDENTIAL CARD 1:
+Production Experience
+Built distributed ML systems at Google & MathWorks.
+
+CREDENTIAL CARD 2:
+Teaching Track Record
+Taught ML to Google engineers and IIIT Delhi students.
+
+CTA 1: Follow on LinkedIn
+CTA 2: Personal Site
+
+
+═══════════════════════════════════════════════════════════════════════
+SECTION 6: TESTIMONIALS
+═══════════════════════════════════════════════════════════════════════
+
+SECTION HEADLINE:
+What Engineers Say
+
+SECTION SUBHEADLINE:
+Feedback from engineers who have learned with Puru.
+
+---
+
+TESTIMONIAL 1:
+"My peers and I always appreciated the depth with which Puru approached engineering problems... I believe in Puru's ability to make complex ideas simple and their execution simpler."
+
+— Nipun Katyal
+AI Vector Search @ Oracle
+
+---
+
+TESTIMONIAL 2:
+"I've rarely met someone who combines such deep technical mastery with an effortless knack for teaching. Collaborating with him reshaped how I think about technology."
+
+— Nishchay Anand
+Senior Software Engineer
+
+---
+
+TESTIMONIAL 3:
+"Puru has a way of making machine learning feel less like rocket science and more like a conversation. You leave each session feeling a little smarter and a lot more confident."
+
+— Abhinav Srivastava
+Consultant @ Deloitte
+
+
+═══════════════════════════════════════════════════════════════════════
+SECTION 7: FINAL CTA
+═══════════════════════════════════════════════════════════════════════
+
+HEADLINE:
+Ready to build production AI systems?
+
+SUBHEADLINE:
+Join working professionals learning to deploy ML models, fine-tune LLMs, and build AI agents. Weekend format. Live sessions. 1:1 mentorship.
+
+PRIMARY CTA: Apply for Fellowship
+SECONDARY CTA: Contact Support
+
+
+═══════════════════════════════════════════════════════════════════════
+KEY MESSAGING THEMES
+═══════════════════════════════════════════════════════════════════════
+
+1. SPECIFICITY
+   - "Build production AI systems in 12 weeks" (not "Break into AI")
+   - "Fine-tune LLMs (GPT, Llama)" (not "Production-Ready Projects")
+   - "70/30 Practical vs Theory" (not "Top 1% Quality")
+
+2. TARGET AUDIENCE
+   - Working professionals
+   - Engineers building AI systems
+   - Executives making AI decisions
+
+3. FORMAT & CONVENIENCE
+   - Weekend format
+   - Keep your job
+   - Live sessions
+   - 1:1 mentorship
+   - Code reviews
+
+4. CONCRETE OUTCOMES
+   - Build & deploy ML models
+   - Fine-tune large language models
+   - Create multi-agent systems
+   - Evaluate AI vendors
+   - Build AI adoption roadmaps
+
+5. CREDIBILITY
+   - Taught by Google engineer
+   - Built ML systems at Google & MathWorks
+   - Taught ML to Google engineers
+   - No academic theory, hands-on implementation
+
+6. LOW FRICTION
+   - Free 30-minute consultation
+   - Zero pressure, just advice
+   - Assess your current skills first
+   - See if program fits you
+
+7. SOCIAL PROOF
+   - Alumni from Google, Meta, Microsoft, Amazon
+   - Testimonials from Oracle, Deloitte engineers
+   - Specific praise for technical depth and teaching ability
+
+
+═══════════════════════════════════════════════════════════════════════
+ELIMINATED VAGUE LANGUAGE
+═══════════════════════════════════════════════════════════════════════
+
+✗ Removed:
+- "Break into AI"
+- "Premier community"
+- "Top 1%"
+- "Thousands of professionals"
+- "Cutting-edge skills"
+- "Democratizing AI education"
+- "Age of AI"
+- "Turning complexity into clarity"
+- "Strategic frameworks"
+- "Deep, technical, transformative"
+- "Wall of Love"
+
+✓ Replaced with:
+- Specific timelines (12 weeks, 30 minutes)
+- Concrete skills (fine-tune LLMs, build multi-agent systems)
+- Verifiable facts (70/30 split, weekend format)
+- Customer language (zero pressure, assess your skills)
+- Action-oriented outcomes (deploy models, evaluate vendors)
+
+
+═══════════════════════════════════════════════════════════════════════
+WORD COUNT BY SECTION
+═══════════════════════════════════════════════════════════════════════
+
+Hero Section: 43 words
+About & Stats: 87 words
+Programs Section: 126 words (all 3 cards)
+Instructor Spotlight: 77 words
+Testimonials: 112 words (all 3 testimonials)
+Final CTA: 40 words
+
+Total Website Copy: ~485 words
+
+Average reading time: ~2 minutes
+
+
+═══════════════════════════════════════════════════════════════════════
+CALLS TO ACTION (CTAs)
+═══════════════════════════════════════════════════════════════════════
+
+Primary CTAs (repeated 3x):
+1. "Explore Programs" (Hero)
+2. "Enroll Now" (Programs - AI Fellowship)
+3. "Enroll Now" (Programs - AI for Leaders)
+4. "Apply for Fellowship" (Final CTA)
+
+Secondary CTAs:
+1. "Book Consultation" (Hero)
+2. "Book Consultation" (Programs - Free Consultation)
+3. "Contact Support" (Final CTA)
+
+Social CTAs:
+1. "Follow on LinkedIn"
+2. "Personal Site"
+
+
+═══════════════════════════════════════════════════════════════════════
+USER QUESTIONS ANSWERED IN 5 SECONDS
+═══════════════════════════════════════════════════════════════════════
+
+1. WHAT IS THIS?
+   → Weekend AI training to build production systems
+
+2. WHO IS THIS FOR?
+   → Working professionals (engineers and executives)
+
+3. WHAT WILL I GET?
+   → Ability to deploy ML models, fine-tune LLMs, build AI agents
+
+4. HOW LONG?
+   → 12 weeks, weekend format
+
+5. WHO TEACHES?
+   → Google engineer with production experience
+
+6. HOW MUCH?
+   → ₹25,500 + GST (with free consultation option)
+
+
+═══════════════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════════════
+
+Last Updated: November 2025
+Principles Used: Comprehensive Design Framework (YC Design Review)
+Focus: Clarity, Specificity, Authenticity, Customer Language
+
