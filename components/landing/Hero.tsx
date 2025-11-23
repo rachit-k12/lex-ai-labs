@@ -18,7 +18,7 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-slate-900 mb-6 md:mb-8 leading-[1.1] px-2">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-6 md:mb-8 leading-[1.1] px-2">
             Learn to build{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-600 to-brand-400">
               production AI systems
