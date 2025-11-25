@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lex AI Labs | Break into AI</title>
+    <meta
+      name="description"
+      content="Empowering India to learn, build, and lead with AI. Real AI education, mentorship, and enterprise enablement."
+    />
+
+    <!-- Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#f5f3ff',
+                100: '#ede9fe',
+                200: '#ddd6fe',
+                500: '#8b5cf6',
+                600: '#7c3aed',
+                700: '#6d28d9',
+                900: '#4c1d95',
+              },
+              slate: {
+                850: '#151e2e', // Custom dark slate
+                900: '#0f172a',
+              },
+            },
+            boxShadow: {
+              soft: '0 20px 40px -10px rgba(124, 58, 237, 0.08)',
+              glow: '0 0 40px rgba(124, 58, 237, 0.15)',
+              card: '0 0 0 1px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.04)',
+              'card-hover': '0 0 0 1px rgba(124,58,237,0.2), 0 8px 24px rgba(124,58,237,0.1)',
+            },
+            backgroundImage: {
+              'grid-pattern':
+                'linear-gradient(to right, #f1f5f9 1px, transparent 1px), linear-gradient(to bottom, #f1f5f9 1px, transparent 1px)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .hide-scroll::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scroll {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .text-gradient {
+        background: linear-gradient(135deg, #1e293b 0%, #7c3aed 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Subtle noise texture overlay */
+      .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white text-slate-900 antialiased selection:bg-brand-100 selection:text-brand-900 relative"
+    x-data="{ mobileMenuOpen: false, scrolled: false }"
+    @scroll.window="scrolled = (window.pageYOffset > 20)"
+  >
+    <!-- Background Grid -->
+    <div
+      class="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] h-[600px] pointer-events-none -z-10 mask-image-gradient"
+    ></div>
+
+    <!-- Navigation -->
+    <header
+      :class="scrolled ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/60 shadow-sm' : 'bg-transparent'"
+      class="fixed w-full top-0 z-50 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a
+            href="https://www.lexailabs.com/"
+            class="flex-shrink-0 flex items-center gap-2.5 cursor-pointer group"
+          >
+            <div
+              class="w-9 h-9 bg-slate-900 rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform"
+            >
+              <i class="ph-fill ph-brain text-xl"></i>
+            </div>
+            <span class="text-lg font-bold tracking-tight text-slate-900">Lex AI Labs</span>
+          </a>
+
+          <!-- Desktop Nav (Updated Links from JSON) -->
+          <nav class="hidden md:flex items-center gap-1">
+            <a
+              href="https://www.lexailabs.com/"
+              class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full transition-all"
+              >Home</a
+            >
+            <a
+              href="https://www.lexailabs.com/about"
+              class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full transition-all"
+              >About Lex AI</a
+            >
+            <a
+              href="https://aiseekhegaindia.com/fellowship/"
+              class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full transition-all"
+              >Programs</a
+            >
+            <a
+              href="https://www.lexailabs.com/companies"
+              class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full transition-all"
+              >Companies</a
+            >
+          </nav>
+
+          <!-- CTA & Mobile Toggle -->
+          <div class="flex items-center gap-4">
+            <a
+              href="https://www.lexailabs.com/contact"
+              class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5"
+            >
+              Let's Talk
+            </a>
+            <button
+              @click="mobileMenuOpen = !mobileMenuOpen"
+              class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
+            >
+              <i class="ph" :class="mobileMenuOpen ? 'ph-x text-2xl' : 'ph-list text-2xl'"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        x-show="mobileMenuOpen"
+        x-transition:enter="transition ease-out duration-200"
+        class="md:hidden absolute w-full bg-white border-b border-slate-100 shadow-xl"
+      >
+        <div class="px-6 py-6 space-y-4">
+          <a href="https://www.lexailabs.com/" class="block text-base font-medium text-slate-600"
+            >Home</a
+          >
+          <a
+            href="https://www.lexailabs.com/about"
+            class="block text-base font-medium text-slate-600"
+            >About</a
+          >
+          <a
+            href="https://aiseekhegaindia.com/fellowship/"
+            class="block text-base font-medium text-slate-600"
+            >Programs</a
+          >
+          <a
+            href="https://www.lexailabs.com/companies"
+            class="block text-base font-medium text-slate-600"
+            >Companies</a
+          >
+          <div class="pt-4 border-t border-slate-100">
+            <a
+              href="https://www.lexailabs.com/contact"
+              class="block w-full text-center px-5 py-3 text-base font-semibold text-white bg-slate-900 rounded-xl"
+              >Let's Talk</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <!-- Floating Blur Elements -->
+      <div
+        class="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"
+      ></div>
+      <div
+        class="absolute top-40 left-0 w-[400px] h-[400px] bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div class="text-center lg:text-left space-y-8">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-bold uppercase tracking-wider shadow-sm"
+            >
+              <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+              New Cohorts Starting Monthly
+            </div>
+            <h1
+              class="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]"
+            >
+              Break into
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400"
+                >AI.</span
+              >
+            </h1>
+            <p class="text-lg lg:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Turning AI complexity into clarity. We empower India to learn, build, and lead through
+              real-world mentorship and enterprise enablement.
+            </p>
+
+            <!-- Tags -->
+            <div
+              class="flex flex-wrap justify-center lg:justify-start gap-2 text-sm font-medium text-slate-500 pb-2"
+            >
+              <span class="px-3 py-1 bg-slate-100 rounded-md">Machine Learning</span>
+              <span class="px-3 py-1 bg-slate-100 rounded-md">Data Science</span>
+              <span class="px-3 py-1 bg-slate-100 rounded-md">GenAI</span>
+            </div>
+
+            <div
+              class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
+            >
+              <a
+                href="https://aiseekhegaindia.com/fellowship/"
+                class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:scale-105 shadow-lg shadow-brand-900/10"
+              >
+                Explore Programs
+              </a>
+              <a
+                href="https://www.lexailabs.com/companies"
+                class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-slate-600 transition-all duration-200 bg-white border border-slate-200 rounded-full hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300"
+              >
+                For Enterprises
+              </a>
+            </div>
+
+            <div
+              class="pt-4 flex items-center justify-center lg:justify-start gap-4 text-sm text-slate-500 font-medium"
+            >
+              <div class="flex -space-x-3">
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 bg-[url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64')] bg-cover"
+                ></div>
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 bg-[url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64')] bg-cover"
+                ></div>
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 bg-[url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64')] bg-cover"
+                ></div>
+              </div>
+              <p>Trusted by engineers from Top Tech</p>
+            </div>
+          </div>
+
+          <!-- Hero Visual -->
+          <div class="relative lg:h-[600px] w-full flex items-center justify-center">
+            <!-- Abstract Shape -->
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-brand-100/50 to-blue-50/50 rounded-[3rem] transform rotate-6 scale-90 border border-brand-100/50"
+            ></div>
+
+            <div
+              class="relative w-full aspect-[4/5] md:aspect-square lg:h-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200 border border-white/50"
+            >
+              <img
+                src="https://i.postimg.cc/wvcYFbT3/homepage-image-1.jpg"
+                alt="AI Collaboration"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+
+              <!-- Floating UI Card -->
+              <div
+                class="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-white/50"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl shrink-0"
+                  >
+                    <i class="ph-fill ph-check-circle"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 leading-tight">System Optimized</h3>
+                    <p class="text-sm text-slate-500 mt-1">
+                      Latency reduced by 40%. Ready to scale.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo Cloud -->
+    <section class="py-12 border-y border-slate-100 bg-slate-50/50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <p class="text-center text-xs font-bold tracking-widest text-slate-400 uppercase mb-8">
+          Alumni & Mentors From
+        </p>
+        <div
+          class="flex flex-wrap justify-center items-center gap-12 lg:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-500"
+        >
+          <div class="flex items-center gap-2 text-xl font-bold text-slate-800">
+            <i class="ph-fill ph-google-logo text-2xl"></i> Google
+          </div>
+          <div class="flex items-center gap-2 text-xl font-bold text-slate-800">
+            <i class="ph-fill ph-meta-logo text-2xl"></i> Meta
+          </div>
+          <div class="flex items-center gap-2 text-xl font-bold text-slate-800">
+            <i class="ph-fill ph-microsoft-logo text-2xl"></i> Microsoft
+          </div>
+          <div class="flex items-center gap-2 text-xl font-bold text-slate-800">
+            <i class="ph-fill ph-amazon-logo text-2xl"></i> Amazon
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid (Redesigned as Bento) -->
+    <section id="why" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+            Not just courses. <br />Career transformations.
+          </h2>
+          <p class="text-lg text-slate-500">
+            We bridge the gap between theoretical research and production engineering.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Feature 1 -->
+          <div
+            class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-card-hover transition-all duration-300 group"
+          >
+            <div
+              class="w-12 h-12 bg-white border border-slate-100 rounded-xl flex items-center justify-center mb-6 text-2xl text-brand-600 shadow-sm group-hover:scale-110 transition-transform"
+            >
+              <i class="ph-fill ph-student"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Personalized Learning</h3>
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Curated curriculum that adapts to your pace. Focus on Machine Learning, Data Science,
+              and Advanced AI architectures.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-card-hover transition-all duration-300 group"
+          >
+            <div
+              class="w-12 h-12 bg-white border border-slate-100 rounded-xl flex items-center justify-center mb-6 text-2xl text-blue-600 shadow-sm group-hover:scale-110 transition-transform"
+            >
+              <i class="ph-fill ph-chalkboard-teacher"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Industry Mentorship</h3>
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Learn directly from engineers who have built systems at Google, Meta, and MathWorks.
+              No academic fluff.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-card-hover transition-all duration-300 group"
+          >
+            <div
+              class="w-12 h-12 bg-white border border-slate-100 rounded-xl flex items-center justify-center mb-6 text-2xl text-violet-600 shadow-sm group-hover:scale-110 transition-transform"
+            >
+              <i class="ph-fill ph-buildings"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Enterprise Solutions</h3>
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Upskill your workforce. We provide tailored AI training modules for leadership and
+              engineering teams.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs (Redesigned with Light Theme) -->
+    <section id="programs" class="py-24 bg-slate-50 relative overflow-hidden">
+      <!-- Subtle Background Elements -->
+      <div
+        class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-brand-100/30 to-blue-100/30 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-violet-100/40 to-pink-100/40 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-brand-600 text-sm font-bold uppercase tracking-wider shadow-sm mb-6"
+          >
+            <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+            Cohorts Open
+          </div>
+          <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+            Choose your path
+          </h2>
+          <p class="text-lg text-slate-500">
+            Join our upcoming cohorts. Whether you are an engineer or a leader, we have a
+            specialized track for you.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 items-start">
+          <!-- Fellowship Card -->
+          <div
+            class="bg-white rounded-[2rem] p-2 shadow-card hover:shadow-xl transition-shadow duration-300 border border-slate-100"
+          >
+            <div class="p-8 pb-6">
+              <div
+                class="w-12 h-12 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6"
+              >
+                <i class="ph-fill ph-code"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">AI Fellowship</h3>
+              <p class="text-slate-500 mt-2 font-medium">For Engineers Building AI Systems</p>
+
+              <div class="my-8 pt-8 border-t border-slate-100">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-bold text-slate-900"> ₹25,500 </span>
+                  <span class="text-sm text-slate-400 font-medium"> + 18% GST </span>
+                </div>
+              </div>
+
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-brand-600 text-lg shrink-0 mt-0.5"></i>
+                  Build & Deploy ML Models
+                </li>
+                <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-brand-600 text-lg shrink-0 mt-0.5"></i>
+                  Fine-tune LLMs (GPT, Llama)
+                </li>
+                <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-brand-600 text-lg shrink-0 mt-0.5"></i>
+                  Create Multi-Agent Systems
+                </li>
+                <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-brand-600 text-lg shrink-0 mt-0.5"></i>
+                  Weekly Code Reviews + Mentorship
+                </li>
+              </ul>
+            </div>
+            <a
+              href="https://aiseekhegaindia.com/fellowship/"
+              class="block w-full py-4 rounded-[1.5rem] bg-slate-50 text-slate-900 font-bold text-center hover:bg-slate-900 hover:text-white transition-colors duration-300"
+            >
+              Enroll Now
+            </a>
+          </div>
+
+          <!-- Leaders Card (Featured) -->
+          <div
+            class="bg-slate-900 rounded-[2rem] p-2 shadow-2xl shadow-brand-900/20 transform lg:-translate-y-6 relative"
+          >
+            <div
+              class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-glow"
+            >
+              Most Popular
+            </div>
+
+            <div class="p-8 pb-6">
+              <div
+                class="w-12 h-12 bg-slate-800 text-brand-400 rounded-xl flex items-center justify-center text-2xl mb-6"
+              >
+                <i class="ph-fill ph-trending-up"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white">AI for Leaders</h3>
+              <p class="text-slate-400 mt-2 font-medium">For Executives Making AI Decisions</p>
+
+              <div class="my-8 pt-8 border-t border-slate-800">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-bold text-white">₹25,500</span>
+                  <span class="text-sm text-slate-500 font-medium"> + 18% GST </span>
+                </div>
+              </div>
+
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3 text-slate-300 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-brand-500 text-lg shrink-0 mt-0.5"></i>
+                  Evaluate AI Vendors & Tools
+                </li>
+                <li class="flex items-start gap-3 text-slate-300 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-brand-500 text-lg shrink-0 mt-0.5"></i>
+                  Build AI Adoption Roadmaps
+                </li>
+                <li class="flex items-start gap-3 text-slate-300 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-brand-500 text-lg shrink-0 mt-0.5"></i>
+                  Understand Technical Trade-offs
+                </li>
+                <li class="flex items-start gap-3 text-slate-300 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-brand-500 text-lg shrink-0 mt-0.5"></i>
+                  Lead AI Transformation Teams
+                </li>
+              </ul>
+            </div>
+            <a
+              href="https://aiseekhegaindia.com/fellowship/"
+              class="block w-full py-4 rounded-[1.5rem] bg-brand-600 text-white font-bold text-center hover:bg-brand-500 transition-colors duration-300 shadow-lg shadow-brand-600/25"
+            >
+              Enroll Now
+            </a>
+          </div>
+
+          <!-- Consultation Card -->
+          <div
+            class="bg-white rounded-[2rem] p-2 shadow-card hover:shadow-xl transition-shadow duration-300 border border-slate-100"
+          >
+            <div class="p-8 pb-6">
+              <div
+                class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6"
+              >
+                <i class="ph-fill ph-chat-circle"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">Free Consultation</h3>
+              <p class="text-slate-500 mt-2 font-medium">30-Minute Strategy Session</p>
+
+              <div class="my-8 pt-8 border-t border-slate-100">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-bold text-slate-900">FREE</span>
+                  <span class="text-sm text-slate-400 font-medium"> / 30 Mins </span>
+                </div>
+              </div>
+
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-emerald-500 text-lg shrink-0 mt-0.5"></i>
+                  Assess Your Current AI Skills
+                </li>
+                <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-emerald-500 text-lg shrink-0 mt-0.5"></i>
+                  Get Custom Learning Path
+                </li>
+                <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-emerald-500 text-lg shrink-0 mt-0.5"></i>
+                  See if Program Fits You
+                </li>
+                <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+                  <i class="ph-fill ph-check-circle text-emerald-500 text-lg shrink-0 mt-0.5"></i>
+                  Zero Pressure, Just Advice
+                </li>
+              </ul>
+            </div>
+            <a
+              href="https://www.lexailabs.com/contact"
+              class="block w-full py-4 rounded-[1.5rem] bg-slate-50 text-slate-900 font-bold text-center hover:bg-slate-900 hover:text-white transition-colors duration-300"
+            >
+              Book Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instructor Section (Updated Bio) -->
+    <section class="py-24 bg-white border-b border-slate-100">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div
+          class="bg-slate-50 rounded-[3rem] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-12 border border-slate-100"
+        >
+          <div class="lg:w-1/3 relative">
+            <div
+              class="aspect-square rounded-[2rem] overflow-hidden bg-slate-200 shadow-xl rotate-[-3deg] border-4 border-white"
+            >
+              <img
+                src="https://media.licdn.com/dms/image/v2/D4D03AQGQtno9QlQ5ug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715758859402?e=1765411200&v=beta&t=np7r7hUMfJbVL_DZWOulEPN2I7sCnSlxFurZSPg3LWs"
+                alt="Puru Kathuria"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="lg:w-2/3 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 mb-6">
+              <span class="w-8 h-[1px] bg-slate-900"></span>
+              <span class="text-sm font-bold uppercase tracking-widest text-slate-900"
+                >The Founder</span
+              >
+            </div>
+            <h2 class="text-4xl font-bold text-slate-900 mb-6">Puru Kathuria</h2>
+            <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+              Ex-Google Software Engineer and MathWorks alumni. Puru specializes in backend
+              engineering, large-scale systems, and AI. With a research background from IIIT Delhi,
+              he is passionate about bridging the gap between theoretical software engineering and
+              practical AI implementation.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <a
+                href="https://www.linkedin.com/in/purukathuria/"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-[#0077b5] text-white rounded-full font-semibold hover:opacity-90 transition-opacity"
+              >
+                <i class="ph-fill ph-linkedin-logo text-xl"></i> Connect on LinkedIn
+              </a>
+              <a
+                href="https://purukathuria.com/"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-full font-semibold hover:bg-slate-50 transition-colors"
+              >
+                <i class="ph-bold ph-globe text-xl"></i> Personal Site
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Slider -->
+    <section class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-12 flex justify-between items-end">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Trusted by professionals</h2>
+          <p class="text-slate-500 mt-2">Real stories from our alumni network.</p>
+        </div>
+        <div class="flex gap-3">
+          <button
+            onclick="document.getElementById('testimonial-container').scrollBy({left: -350, behavior: 'smooth'})"
+            class="p-4 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-brand-500 transition-colors shadow-sm"
+          >
+            <i class="ph-bold ph-arrow-left text-xl"></i>
+          </button>
+          <button
+            onclick="document.getElementById('testimonial-container').scrollBy({left: 350, behavior: 'smooth'})"
+            class="p-4 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-brand-500 transition-colors shadow-sm"
+          >
+            <i class="ph-bold ph-arrow-right text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Slider Container -->
+      <div
+        id="testimonial-container"
+        class="flex overflow-x-auto gap-6 pb-8 px-6 lg:px-8 hide-scroll snap-x snap-mandatory"
+      >
+        <!-- Testimonial 1 -->
+        <div
+          class="min-w-[350px] md:min-w-[450px] bg-slate-50 p-8 rounded-[2rem] border border-slate-100 snap-center"
+        >
+          <div class="flex items-center gap-4 mb-6">
+            <div
+              class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-bold text-lg"
+            >
+              NK
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900">Nipun Katyal</h4>
+              <p class="text-xs text-slate-500 uppercase font-semibold">
+                AI Vector Search @ Oracle
+              </p>
+            </div>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            "My peers and I always appreciated the depth with which Puru approached engineering
+            problems... I believe in Puru's ability to make complex ideas simple and their execution
+            simpler."
+          </p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div
+          class="min-w-[350px] md:min-w-[450px] bg-slate-50 p-8 rounded-[2rem] border border-slate-100 snap-center"
+        >
+          <div class="flex items-center gap-4 mb-6">
+            <div
+              class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg"
+            >
+              NA
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900">Nishchay Anand</h4>
+              <p class="text-xs text-slate-500 uppercase font-semibold">Senior SWE</p>
+            </div>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            "Rarely met someone who combines such deep technical mastery with an effortless knack
+            for teaching. Collaborating with him reshaped how I think about technology."
+          </p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div
+          class="min-w-[350px] md:min-w-[450px] bg-slate-50 p-8 rounded-[2rem] border border-slate-100 snap-center"
+        >
+          <div class="flex items-center gap-4 mb-6">
+            <div
+              class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-lg"
+            >
+              AS
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900">Abhinav Srivastava</h4>
+              <p class="text-xs text-slate-500 uppercase font-semibold">Consultant @ Deloitte</p>
+            </div>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            "Puru has a way of making machine learning feel less like rocket science and more like a
+            conversation. You leave each session feeling a little smarter and a lot more confident."
+          </p>
+        </div>
+
+        <div class="min-w-[1px]"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-white border-t border-slate-100 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-12">
+          <div class="col-span-2 md:col-span-1">
+            <div class="flex items-center gap-2 mb-4">
+              <div
+                class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white"
+              >
+                <i class="ph-fill ph-brain"></i>
+              </div>
+              <span class="font-bold text-slate-900">Lex AI Labs</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-6">AI + Education. <br />Gurgaon, India.</p>
+            <div class="flex gap-4">
+              <a
+                href="https://www.linkedin.com/company/lex-ai-labs"
+                class="text-slate-400 hover:text-brand-600 transition-colors"
+                ><i class="ph-fill ph-linkedin-logo text-2xl"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/lexailabs/"
+                class="text-slate-400 hover:text-brand-600 transition-colors"
+                ><i class="ph-fill ph-instagram-logo text-2xl"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-slate-900 mb-4 text-sm">Programs</h4>
+            <ul class="space-y-2 text-sm text-slate-500">
+              <li>
+                <a
+                  href="https://aiseekhegaindia.com/fellowship/"
+                  class="hover:text-brand-600 transition-colors"
+                  >AI Fellowship</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://aiseekhegaindia.com/fellowship/"
+                  class="hover:text-brand-600 transition-colors"
+                  >AI for Leaders</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.lexailabs.com/companies"
+                  class="hover:text-brand-600 transition-colors"
+                  >Enterprise</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-slate-900 mb-4 text-sm">Support</h4>
+            <ul class="space-y-2 text-sm text-slate-500">
+              <li>
+                <a
+                  href="https://www.lexailabs.com/support"
+                  class="hover:text-brand-600 transition-colors"
+                  >Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.lexailabs.com/terms"
+                  class="hover:text-brand-600 transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.lexailabs.com/privacy"
+                  class="hover:text-brand-600 transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.lexailabs.com/refunds"
+                  class="hover:text-brand-600 transition-colors"
+                  >Refund Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-slate-900 mb-4 text-sm">Contact</h4>
+            <ul class="space-y-2 text-sm text-slate-500">
+              <li class="flex items-center gap-2">
+                <i class="ph ph-envelope-simple"></i> contact@lexailabs.com
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph ph-whatsapp-logo"></i> +91 999 669 2323
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-xs text-slate-400">
+            © 2025 LexAI Technologies Pvt Ltd. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
