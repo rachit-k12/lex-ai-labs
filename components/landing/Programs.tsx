@@ -1,154 +1,193 @@
-import { CheckCircle, Code, MessageCircle, TrendingUp } from 'lucide-react';
+'use client';
+
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { CheckCircle, Code, TrendingUp, ArrowRight, Users } from 'lucide-react';
 import Link from 'next/link';
 
+const programs = [
+  {
+    id: 'fellowship',
+    icon: Code,
+    title: 'AI Fellowship',
+    subtitle: 'For Engineers Building AI Systems',
+    description: 'Master production AI systems with hands-on projects. Build ML models, fine-tune LLMs, and create multi-agent systems.',
+    price: '25,500',
+    duration: '12 weeks',
+    features: [
+      'Build & Deploy ML Models',
+      'Fine-tune LLMs (GPT, Llama)',
+      'Create Multi-Agent Systems',
+      'Weekly Code Reviews',
+      '1-on-1 Mentorship Sessions',
+      'Lifetime Community Access',
+    ],
+    cta: 'Apply Now',
+    href: 'https://aiseekhegaindia.com/fellowship/',
+    featured: false,
+    iconBg: 'bg-blue-100 text-blue-600',
+  },
+  {
+    id: 'leaders',
+    icon: TrendingUp,
+    title: 'AI for Leaders',
+    subtitle: 'For Executives Making AI Decisions',
+    description: 'Understand AI deeply enough to lead transformation. Evaluate vendors, build roadmaps, and drive AI adoption.',
+    price: '25,500',
+    duration: '8 weeks',
+    features: [
+      'Evaluate AI Vendors & Tools',
+      'Build AI Adoption Roadmaps',
+      'Understand Technical Trade-offs',
+      'Lead AI Transformation Teams',
+      'Lifetime Community Access',
+    ],
+    cta: 'Apply Now',
+    href: 'https://aiseekhegaindia.com/fellowship/',
+    featured: true,
+    iconBg: 'bg-slate-800 text-brand-400',
+  },
+];
+
 export default function Programs() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section id="programs" className="py-16 md:py-24 bg-surface-50">
+    <section id="programs" ref={ref} className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
-            Two Programs. One Goal.
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <span className="inline-block px-4 py-1.5 bg-slate-100 text-slate-600 text-sm font-medium rounded-full mb-4">
+            Community Programs
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Learn with the community
           </h2>
-          <p className="text-base md:text-lg text-slate-500">
-            Learn to build and deploy production AI systems. Weekend format for working
-            professionals. Live sessions, code reviews, 1:1 mentorship.
+          <p className="text-lg text-slate-500">
+            Structured cohort programs that come with lifetime community access. Learn alongside peers, get mentorship, and build your network.
           </p>
+        </motion.div>
+
+        {/* Community Benefit Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex items-center justify-center gap-3 mb-12 px-6 py-4 bg-brand-50 rounded-2xl border border-brand-100 max-w-2xl mx-auto"
+        >
+          <Users className="w-5 h-5 text-brand-600" />
+          <p className="text-brand-700 font-medium text-sm md:text-base">
+            Every program includes lifetime access to the AI Professional Community
+          </p>
+        </motion.div>
+
+        {/* Programs Grid */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {programs.map((program, index) => (
+            <motion.div
+              key={program.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+              className={`relative rounded-3xl overflow-hidden ${
+                program.featured
+                  ? 'bg-slate-900 text-white'
+                  : 'bg-white border border-slate-200'
+              }`}
+            >
+              {program.featured && (
+                <div className="absolute top-4 right-4 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  Most Popular
+                </div>
+              )}
+
+              <div className="p-8">
+                {/* Icon */}
+                <div className={`w-12 h-12 rounded-xl ${program.iconBg} flex items-center justify-center mb-6`}>
+                  <program.icon className="w-6 h-6" />
+                </div>
+
+                {/* Title */}
+                <h3 className={`text-2xl font-bold mb-2 ${program.featured ? 'text-white' : 'text-slate-900'}`}>
+                  {program.title}
+                </h3>
+                <p className={`text-sm font-medium mb-4 ${program.featured ? 'text-slate-400' : 'text-slate-500'}`}>
+                  {program.subtitle}
+                </p>
+
+                {/* Description */}
+                <p className={`text-sm mb-6 leading-relaxed ${program.featured ? 'text-slate-300' : 'text-slate-600'}`}>
+                  {program.description}
+                </p>
+
+                {/* Pricing */}
+                <div className={`pb-6 mb-6 border-b ${program.featured ? 'border-slate-700' : 'border-slate-100'}`}>
+                  <div className="flex items-baseline gap-1">
+                    <span className={`text-3xl font-bold ${program.featured ? 'text-white' : 'text-slate-900'}`}>
+                      ₹{program.price}
+                    </span>
+                    <span className={`text-sm ${program.featured ? 'text-slate-400' : 'text-slate-500'}`}>
+                      + 18% GST
+                    </span>
+                  </div>
+                  <p className={`text-sm mt-1 ${program.featured ? 'text-slate-400' : 'text-slate-500'}`}>
+                    {program.duration} program
+                  </p>
+                </div>
+
+                {/* Features */}
+                <ul className="space-y-3 mb-8">
+                  {program.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle className={`w-5 h-5 shrink-0 ${program.featured ? 'text-brand-400' : 'text-brand-600'}`} />
+                      <span className={`text-sm ${program.featured ? 'text-slate-300' : 'text-slate-600'}`}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA */}
+                <Link
+                  href={program.href}
+                  className={`flex items-center justify-center gap-2 w-full py-4 rounded-xl font-semibold transition-all duration-300 group ${
+                    program.featured
+                      ? 'bg-brand-500 text-white hover:bg-brand-400'
+                      : 'bg-slate-900 text-white hover:bg-slate-800'
+                  }`}
+                >
+                  {program.cta}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start">
-          {/* Card 1: Engineers */}
-          <div className="bg-white rounded-[2rem] p-2 shadow-card hover:shadow-xl transition-shadow duration-300 border border-slate-100">
-            <div className="p-8 pb-6">
-              <div className="w-12 h-12 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6">
-                <Code className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900">AI Fellowship</h3>
-              <p className="text-slate-500 mt-2 font-medium">For Engineers Building AI Systems</p>
-
-              <div className="my-8 pt-8 border-t border-slate-100">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-slate-900">₹25,500</span>
-                  <span className="text-sm text-slate-400 font-medium">+ 18% GST</span>
-                </div>
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3 text-slate-600 text-sm font-medium">
-                  <CheckCircle className="text-brand-600 w-5 h-5 shrink-0 mt-0.5" />
-                  Build & Deploy ML Models
-                </li>
-                <li className="flex items-start gap-3 text-slate-600 text-sm font-medium">
-                  <CheckCircle className="text-brand-600 w-5 h-5 shrink-0 mt-0.5" />
-                  Fine-tune LLMs (GPT, Llama)
-                </li>
-                <li className="flex items-start gap-3 text-slate-600 text-sm font-medium">
-                  <CheckCircle className="text-brand-600 w-5 h-5 shrink-0 mt-0.5" />
-                  Create Multi-Agent Systems
-                </li>
-                <li className="flex items-start gap-3 text-slate-600 text-sm font-medium">
-                  <CheckCircle className="text-brand-600 w-5 h-5 shrink-0 mt-0.5" />
-                  Weekly Code Reviews + Mentorship
-                </li>
-              </ul>
-            </div>
-            <Link
-              href="https://aiseekhegaindia.com/fellowship/"
-              className="block w-full py-4 rounded-[1.5rem] bg-slate-50 text-slate-900 font-bold text-center hover:bg-slate-900 hover:text-white transition-colors duration-300"
-            >
-              Enroll Now
-            </Link>
-          </div>
-
-          {/* Card 2: Leaders (Featured) */}
-          <div className="bg-slate-900 rounded-[2rem] p-2 shadow-2xl shadow-brand-900/20 transform md:col-span-2 lg:col-span-1 lg:-translate-y-6 relative">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-glow">
-              Most Popular
-            </div>
-
-            <div className="p-8 pb-6">
-              <div className="w-12 h-12 bg-slate-800 text-brand-400 rounded-xl flex items-center justify-center text-2xl mb-6">
-                <TrendingUp className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">AI for Leaders</h3>
-              <p className="text-slate-400 mt-2 font-medium">For Executives Making AI Decisions</p>
-
-              <div className="my-8 pt-8 border-t border-slate-800">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-white">₹25,500</span>
-                  <span className="text-sm text-slate-500 font-medium">+ 18% GST</span>
-                </div>
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3 text-slate-300 text-sm font-medium">
-                  <CheckCircle className="text-brand-500 w-5 h-5 shrink-0 mt-0.5" />
-                  Evaluate AI Vendors & Tools
-                </li>
-                <li className="flex items-start gap-3 text-slate-300 text-sm font-medium">
-                  <CheckCircle className="text-brand-500 w-5 h-5 shrink-0 mt-0.5" />
-                  Build AI Adoption Roadmaps
-                </li>
-                <li className="flex items-start gap-3 text-slate-300 text-sm font-medium">
-                  <CheckCircle className="text-brand-500 w-5 h-5 shrink-0 mt-0.5" />
-                  Understand Technical Trade-offs
-                </li>
-                <li className="flex items-start gap-3 text-slate-300 text-sm font-medium">
-                  <CheckCircle className="text-brand-500 w-5 h-5 shrink-0 mt-0.5" />
-                  Lead AI Transformation Teams
-                </li>
-              </ul>
-            </div>
-            <Link
-              href="https://aiseekhegaindia.com/fellowship/"
-              className="block w-full py-4 rounded-[1.5rem] bg-brand-600 text-white font-bold text-center hover:bg-brand-500 transition-colors duration-300 shadow-lg shadow-brand-600/25"
-            >
-              Enroll Now
-            </Link>
-          </div>
-
-          {/* Card 3: Consultation */}
-          <div className="bg-white rounded-[2rem] p-2 shadow-card hover:shadow-xl transition-shadow duration-300 border border-slate-100">
-            <div className="p-8 pb-6">
-              <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6">
-                <MessageCircle className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900">Free Consultation</h3>
-              <p className="text-slate-500 mt-2 font-medium">30-Minute Strategy Session</p>
-
-              <div className="my-8 pt-8 border-t border-slate-100">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-slate-900">FREE</span>
-                  <span className="text-sm text-slate-400 font-medium">/ 30 Mins</span>
-                </div>
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3 text-slate-600 text-sm font-medium">
-                  <CheckCircle className="text-emerald-500 w-5 h-5 shrink-0 mt-0.5" />
-                  Assess Your Current AI Skills
-                </li>
-                <li className="flex items-start gap-3 text-slate-600 text-sm font-medium">
-                  <CheckCircle className="text-emerald-500 w-5 h-5 shrink-0 mt-0.5" />
-                  Get Custom Learning Path
-                </li>
-                <li className="flex items-start gap-3 text-slate-600 text-sm font-medium">
-                  <CheckCircle className="text-emerald-500 w-5 h-5 shrink-0 mt-0.5" />
-                  See if Program Fits You
-                </li>
-                <li className="flex items-start gap-3 text-slate-600 text-sm font-medium">
-                  <CheckCircle className="text-emerald-500 w-5 h-5 shrink-0 mt-0.5" />
-                  Zero Pressure, Just Advice
-                </li>
-              </ul>
-            </div>
-            <Link
-              href="https://www.lexailabs.com/contact"
-              className="block w-full py-4 rounded-[1.5rem] bg-slate-50 text-slate-900 font-bold text-center hover:bg-slate-900 hover:text-white transition-colors duration-300"
-            >
-              Book Consultation
-            </Link>
-          </div>
-        </div>
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <p className="text-slate-500 mb-4">Not sure which program is right for you?</p>
+          <Link
+            href="https://www.lexailabs.com/contact"
+            className="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700 transition-colors"
+          >
+            Book a free consultation
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

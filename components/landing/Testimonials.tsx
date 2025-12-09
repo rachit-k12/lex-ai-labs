@@ -1,116 +1,141 @@
 'use client';
 
-import { ChevronLeft, ChevronRight, Linkedin, Star } from 'lucide-react';
-import Link from 'next/link';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
+import { Linkedin, MessageSquare } from 'lucide-react';
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'Srrimann Narayan',
+    role: 'ML Engineer',
+    company: 'Google',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
+    content: 'A huge thank you to Lex AI & the team for creating such an impactful learning experience and to my fellow cohort members for the engaging discussions and knowledge sharing.',
+    platform: 'linkedin',
+  },
+  {
+    id: 2,
+    name: 'Pratik R.',
+    role: 'Tech & Sales',
+    company: 'Ex-Flipkart, Philips',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
+    content: 'Thank you Lex AI for the opportunity! Fantastic peers, engaging discussions and a plethora of experiences! Couldn\'t have asked for more.',
+    platform: 'linkedin',
+  },
+  {
+    id: 3,
+    name: 'Rohit Kesar',
+    role: 'AI Engineer',
+    company: 'Tech Startup',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
+    content: 'The program offers a practical approach to breaking into the AI industry. The coursework provides a solid foundation, and the guest sessions effectively focus on real-world applications. I recommend this program to a friend who wants to accelerate their learning journey.',
+    platform: 'linkedin',
+  },
+  {
+    id: 4,
+    name: 'Rounak',
+    role: 'Founder\'s Office',
+    company: 'Docquity',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face',
+    content: 'Thank you for the best advice and helping me to learn more about the AI world. I achieved my goal, for which I joined the courses, best networking and I got new job as founder\'s office.',
+    platform: 'whatsapp',
+  },
+  {
+    id: 5,
+    name: 'Archana Shivram',
+    role: 'Data Scientist',
+    company: 'General Catalyst',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face',
+    content: 'Thanks a lot took a while but worth the wait. Thanks for helping me in this process. Will continue to keep in touch.',
+    platform: 'whatsapp',
+  },
+  {
+    id: 6,
+    name: 'Yashvi',
+    role: 'Investment Banking Analyst',
+    company: 'Leading IB Firm',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face',
+    content: 'I am super happy to share that I\'ve got into a leading IB firm. Grateful to Lex AI for laying a strong conceptual foundation and strengthening my profile. Thank you for being so approachable and encouraging throughout the process.',
+    platform: 'whatsapp',
+  },
+];
 
 export default function Testimonials() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = direction === 'left' ? -400 : 400;
-      scrollContainerRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  const testimonials = [
-    {
-      text: '"My peers and I always appreciated the depth with which Puru approached engineering problems... I believe in Puru\'s ability to make complex ideas simple and their execution simpler."',
-      name: 'Nipun Katyal',
-      title: 'AI Vector Search @ Oracle',
-      initials: 'NK',
-      linkedin: 'https://www.linkedin.com/in/nipun-katyal/',
-    },
-    {
-      text: '"I\'ve rarely met someone who combines such deep technical mastery with an effortless knack for teaching. Collaborating with him reshaped how I think about technology."',
-      name: 'Nishchay Anand',
-      title: 'Senior Software Engineer',
-      initials: 'NA',
-      linkedin: 'https://www.linkedin.com/in/nishchay-anand-ba3768170/',
-    },
-    {
-      text: '"Puru has a way of making machine learning feel less like rocket science and more like a conversation. You leave each session feeling a little smarter and a lot more confident."',
-      name: 'Abhinav Srivastava',
-      title: 'Consultant @ Deloitte',
-      initials: 'AS',
-      linkedin: '#',
-    },
-  ];
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section ref={ref} id="testimonials" className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4 md:gap-6">
-          <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 md:mb-3">
-              What Engineers Say
-            </h2>
-            <p className="text-sm md:text-base text-slate-500">
-              Feedback from engineers who have learned with Puru.
-            </p>
-          </div>
-          <div className="flex gap-2">
-            <button
-              onClick={() => scroll('left')}
-              className="p-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-brand-500 transition-colors"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => scroll('right')}
-              className="p-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-brand-500 transition-colors"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-
-        <div
-          ref={scrollContainerRef}
-          className="flex overflow-x-auto gap-6 pb-10 hide-scroll snap-x snap-mandatory"
-          style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-          }}
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16"
         >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 mb-6">
+            Trusted by the <span className="italic">Bold.</span>
+            <span className="block">Backed by Our <span className="italic">Community.</span></span>
+          </h2>
+          <p className="text-lg text-neutral-600">
+            We don&apos;t need to say much &mdash; our community already did.
+          </p>
+        </motion.div>
+
+        {/* Testimonials Grid - Masonry style */}
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="min-w-[280px] sm:min-w-[350px] md:min-w-[450px] p-6 sm:p-8 rounded-[2rem] bg-surface-50 border border-slate-100 snap-center flex flex-col justify-between"
+            <motion.div
+              key={testimonial.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: 0.1 + index * 0.05 }}
+              className="break-inside-avoid"
             >
-              <div>
-                <div className="flex items-center gap-1 text-amber-400 text-sm mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
-                  ))}
+              <div className="bg-gradient-to-br from-coral-50/50 to-white rounded-2xl p-6 border border-neutral-100 hover:border-neutral-200 transition-all hover:shadow-lg">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-neutral-100">
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        fill
+                        className="object-cover"
+                        sizes="48px"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-neutral-900">{testimonial.name}</h4>
+                      <p className="text-sm text-neutral-500">
+                        {testimonial.role}, {testimonial.company}
+                      </p>
+                    </div>
+                  </div>
+                  {/* Platform icon */}
+                  {testimonial.platform === 'linkedin' ? (
+                    <div className="w-8 h-8 bg-[#0077b5]/10 rounded-full flex items-center justify-center">
+                      <Linkedin className="w-4 h-4 text-[#0077b5]" />
+                    </div>
+                  ) : (
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <MessageSquare className="w-4 h-4 text-green-600" />
+                    </div>
+                  )}
                 </div>
-                <p className="text-slate-700 leading-relaxed mb-6">{testimonial.text}</p>
+
+                {/* Content */}
+                <p className="text-neutral-600 text-sm leading-relaxed">
+                  {testimonial.content}
+                </p>
               </div>
-              <div className="flex items-center gap-4 pt-6 border-t border-slate-200/50">
-                <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600">
-                  {testimonial.initials}
-                </div>
-                <div>
-                  <div className="font-bold text-slate-900">{testimonial.name}</div>
-                  <div className="text-xs font-medium text-slate-500">{testimonial.title}</div>
-                </div>
-                <Link
-                  href={testimonial.linkedin}
-                  className="ml-auto text-slate-300 hover:text-[#0077b5] transition-colors"
-                >
-                  <Linkedin className="w-6 h-6" />
-                </Link>
-              </div>
-            </div>
+            </motion.div>
           ))}
-          {/* Spacer */}
-          <div className="min-w-[1rem]"></div>
         </div>
       </div>
     </section>

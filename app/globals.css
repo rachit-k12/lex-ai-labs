@@ -1,92 +1,103 @@
 @import './fonts.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    /* Refined Color Palette */
+    --black: #0a0a0a;
+    --gray-900: #171717;
+    --gray-800: #262626;
+    --gray-700: #404040;
+    --gray-600: #525252;
+    --gray-500: #737373;
+    --gray-400: #a3a3a3;
+    --gray-300: #d4d4d4;
+    --gray-200: #e5e5e5;
+    --gray-100: #f5f5f5;
+    --gray-50: #fafafa;
+    --white: #ffffff;
+
+    /* Brand colors - used subtly */
+    --navy: #1e3a5f;
+    --navy-light: #2d5a87;
+    --coral: #FF7F50;
+    --coral-light: #fff5f2;
+    --coral-pale: #fffbfa;
+
     --background: #ffffff;
-    --foreground: rgba(32, 32, 32, 0.8);
-    --heading: #323232;
+    --foreground: #171717;
+    --heading: #0a0a0a;
+    --copy: #525252;
     --card: #ffffff;
-    --card-foreground: rgba(50, 50, 50, 0.7);
+    --card-foreground: #404040;
     --popover: #ffffff;
-    --popover-foreground: rgba(32, 32, 32, 0.7);
-    --primary: #323232;
+    --popover-foreground: #171717;
+    --primary: #0a0a0a;
     --primary-foreground: #ffffff;
     --secondary: #f5f5f5;
-    --secondary-foreground: #323232;
+    --secondary-foreground: #171717;
     --muted: #f5f5f5;
-    --muted-foreground: rgba(32, 32, 32, 0.5);
-    --accent: #f5f5f5;
-    --accent-foreground: #323232;
+    --muted-foreground: #737373;
+    --accent: #FF7F50;
+    --accent-foreground: #ffffff;
     --destructive: #ef4444;
     --destructive-foreground: #ffffff;
     --border: #e5e5e5;
     --input: #e5e5e5;
-    --ring: #323232;
-    --radius: 1rem;
-    --chart-1: #ff6b6b;
-    --chart-2: #4ecdc4;
-    --chart-3: #45b7d1;
-    --chart-4: #ffa07a;
-    --chart-5: #98d8c8;
-    --color-1: 0 100% 63%;
-    --color-2: 270 100% 63%;
-    --color-3: 210 100% 63%;
-    --color-4: 195 100% 63%;
-    --color-5: 90 100% 63%;
-  }
-
-  .dark {
-    --background: #0a0a0a;
-    --foreground: rgba(250, 250, 250, 0.9);
-    --heading: #fafafa;
-    --card: #0a0a0a;
-    --card-foreground: rgba(250, 250, 250, 0.9);
-    --popover: #0a0a0a;
-    --popover-foreground: rgba(250, 250, 250, 0.9);
-    --primary: #fafafa;
-    --primary-foreground: #171717;
-    --secondary: #262626;
-    --secondary-foreground: #fafafa;
-    --muted: #262626;
-    --muted-foreground: rgba(250, 250, 250, 0.6);
-    --accent: #262626;
-    --accent-foreground: #fafafa;
-    --destructive: #7f1d1d;
-    --destructive-foreground: #fafafa;
-    --border: #262626;
-    --input: #262626;
-    --ring: #d4d4d4;
-    --chart-1: #60a5fa;
-    --chart-2: #34d399;
-    --chart-3: #fbbf24;
-    --chart-4: #a78bfa;
-    --chart-5: #f87171;
-    --color-1: 0 100% 63%;
-    --color-2: 270 100% 63%;
-    --color-3: 210 100% 63%;
-    --color-4: 195 100% 63%;
-    --color-5: 90 100% 63%;
+    --ring: #0a0a0a;
+    --radius: 0.75rem;
   }
 }
 
 @layer base {
   body {
-    @apply text-primary font-grotesk text-md leading-relaxed;
+    @apply text-neutral-600 font-sans text-base leading-relaxed bg-white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-neutral-900;
+  }
 }
 
 @layer utilities {
+  /* Grainy texture overlay */
+  .grain {
+    position: relative;
+  }
+
+  .grain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Coral gradient backgrounds */
+  .bg-gradient-coral {
+    background: linear-gradient(135deg, #fff5f2 0%, #ffffff 50%, #fffbfa 100%);
+  }
+
+  .bg-gradient-coral-subtle {
+    background: linear-gradient(180deg, #fffbfa 0%, #ffffff 100%);
+  }
+
+  .bg-gradient-warm {
+    background: linear-gradient(135deg, rgba(255, 127, 80, 0.05) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 127, 80, 0.03) 100%);
+  }
+
   /* Navigation underline effect */
   .nav-underline {
     @apply relative;
@@ -115,6 +126,14 @@
   .hide-scroll {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
@@ -176,31 +195,26 @@
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
-  @keyframes rainbow-move {
-    0% {
-      background-position: 0% 50%;
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
     }
-    100% {
-      background-position: 100% 50%;
+    50% {
+      transform: translateY(-20px);
     }
   }
-  .animate-rainbow-move {
-    animation: rainbow-move 3s linear infinite;
-  }
 
-  --animate-meteor-effect: meteor 5s linear infinite;
+  --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
 
-  @keyframes meteor {
-    0% {
-      transform: rotate(215deg) translateX(0);
-      opacity: 1;
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.4;
     }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(215deg) translateX(-500px);
-      opacity: 0;
+    50% {
+      opacity: 0.8;
     }
   }
 }

@@ -1,140 +1,121 @@
+'use client';
+
 import Link from 'next/link';
-import { Brain, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import Image from 'next/image';
+import { Linkedin, Twitter, Instagram, Youtube, ArrowUpRight } from 'lucide-react';
+
+const menuLinks = [
+  { label: 'Program', href: '#programs' },
+  { label: 'Events and community', href: '#community' },
+  { label: 'Case study', href: '#testimonials' },
+  { label: 'Talent', href: '#' },
+];
+
+const policyLinks = [
+  { label: 'Refund Policy', href: '#' },
+  { label: 'Privacy Policy', href: '#' },
+  { label: 'Terms and conditions', href: '#' },
+];
+
+const socialLinks = [
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/lex-ai-labs', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://twitter.com/lexailabs', label: 'Twitter' },
+  { icon: Instagram, href: 'https://www.instagram.com/lexailabs/', label: 'Instagram' },
+  { icon: Youtube, href: '#', label: 'YouTube' },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-surface-50 border-t border-slate-200 pt-12 md:pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white">
-                <Brain className="w-5 h-5" />
-              </div>
-              <span className="font-bold text-slate-900">Lex AI Labs</span>
-            </Link>
-            <p className="text-sm text-slate-500 mb-6">
-              Empowering India to learn, build, and lead with AI.
-            </p>
-            <div className="flex gap-4">
-              <Link
-                href="https://www.linkedin.com/company/lex-ai-labs"
-                className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:border-brand-200 transition-all"
-              >
-                <Linkedin className="w-5 h-5" />
-              </Link>
-              <Link
-                href="https://www.instagram.com/lexailabs/"
-                className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-pink-600 hover:border-pink-200 transition-all"
-              >
-                <Instagram className="w-5 h-5" />
-              </Link>
+    <footer
+      id="contact"
+      className="bg-gradient-to-b from-neutral-50 to-white text-neutral-900 overflow-hidden border-t border-neutral-200"
+    >
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 max-w-4xl mx-auto">
+          {/* Social Links */}
+          <div className="text-center lg:text-left">
+            <h4 className="font-semibold text-neutral-900 mb-6 text-base uppercase tracking-wider">
+              Connect
+            </h4>
+            <div className="flex items-center gap-3 justify-center lg:justify-start">
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.label}
+                  href={social.href}
+                  className="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center text-neutral-600 hover:bg-blue-600 hover:text-white transition-all"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </Link>
+              ))}
+            </div>
+            <Image
+              src="/assets/lexailogo.svg"
+              alt="Lex AI Labs"
+              width={80}
+              height={80}
+              className="w-56 h-56 mx-auto lg:mx-0"
+            />
+          </div>
+
+          {/* Get in Touch */}
+          <div className="text-center lg:text-left">
+            <h4 className="font-semibold text-neutral-900 mb-6 text-base uppercase tracking-wider">
+              Get in Touch
+            </h4>
+            <div className="space-y-3 text-base">
+              <p>
+                <a
+                  href="mailto:team@lexailabs.in"
+                  className="text-neutral-600 hover:text-blue-600 transition-colors"
+                >
+                  team@lexailabs.in
+                </a>
+              </p>
+              <p>
+                <a
+                  href="tel:+911169266219"
+                  className="text-neutral-600 hover:text-blue-600 transition-colors"
+                >
+                  +91 11-69266219
+                </a>
+              </p>
             </div>
           </div>
 
-          <div>
-            <h4 className="font-bold text-slate-900 mb-6 text-sm">Programs</h4>
-            <ul className="space-y-3 text-sm text-slate-500">
-              <li>
-                <Link
-                  href="https://aiseekhegaindia.com/fellowship/"
-                  className="hover:text-brand-600 transition-colors"
-                >
-                  AI Fellowship
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://aiseekhegaindia.com/fellowship/"
-                  className="hover:text-brand-600 transition-colors"
-                >
-                  AI for Leaders
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.lexailabs.com/companies"
-                  className="hover:text-brand-600 transition-colors"
-                >
-                  Enterprise Solutions
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-slate-900 mb-6 text-sm">Company</h4>
-            <ul className="space-y-3 text-sm text-slate-500">
-              <li>
-                <Link
-                  href="https://www.lexailabs.com/about"
-                  className="hover:text-brand-600 transition-colors"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.lexailabs.com/support"
-                  className="hover:text-brand-600 transition-colors"
-                >
-                  Support
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.lexailabs.com/contact"
-                  className="hover:text-brand-600 transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-slate-900 mb-6 text-sm">
-              Get in Touch
+          {/* Quick Links */}
+          <div className="text-center lg:text-left">
+            <h4 className="font-semibold text-neutral-900 mb-6 text-base uppercase tracking-wider">
+              Quick Links
             </h4>
-            <ul className="space-y-3 text-sm text-slate-500">
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4" /> contact@lexailabs.com
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4" /> +91 999 669 2323
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" /> Gurgaon, India
-              </li>
+            <ul className="space-y-3">
+              {menuLinks.concat(policyLinks).map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-base text-neutral-600 hover:text-blue-600 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <p>&copy; 2025 LexAI Technologies Pvt Ltd. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link
-              href="https://www.lexailabs.com/terms"
-              className="hover:text-slate-600 transition-colors"
-            >
-              Terms
-            </Link>
-            <Link
-              href="https://www.lexailabs.com/privacy"
-              className="hover:text-slate-600 transition-colors"
-            >
-              Privacy
-            </Link>
-            <Link
-              href="https://www.lexailabs.com/refunds"
-              className="hover:text-slate-600 transition-colors"
-            >
-              Refunds
-            </Link>
+        {/* Bottom Bar */}
+        <div className="mt-20 pt-8 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-base text-neutral-500">
+            &copy; {new Date().getFullYear()} Lex AI Labs. All rights reserved.
+          </p>
+          <div className="flex items-center gap-2">
+            <p className="text-base text-neutral-600">Built for the future of AI</p>
+            <span className="text-blue-500">•</span>
+            <p className="text-base text-blue-600 font-semibold">#AISeekhegaIndia</p>
           </div>
         </div>
       </div>
     </footer>
   );
 }
-

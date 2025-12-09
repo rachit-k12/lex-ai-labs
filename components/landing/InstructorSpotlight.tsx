@@ -1,90 +1,156 @@
-import { Code, Globe, GraduationCap, Linkedin } from 'lucide-react';
+'use client';
+
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Linkedin } from 'lucide-react';
+
+const instructors = [
+  {
+    name: 'Puru Kathuria',
+    role: 'Software Engineer',
+    company: 'Google',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQGQtno9QlQ5ug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715758859402?e=1765411200&v=beta&t=np7r7hUMfJbVL_DZWOulEPN2I7sCnSlxFurZSPg3LWs',
+    linkedin: 'https://www.linkedin.com/in/purukathuria/',
+  },
+  {
+    name: 'Ankit Sharma',
+    role: 'ML Engineer',
+    company: 'Amazon',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face',
+    linkedin: '#',
+  },
+  {
+    name: 'Priya Menon',
+    role: 'AI Lead',
+    company: 'Microsoft',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop&crop=face',
+    linkedin: '#',
+  },
+  {
+    name: 'Rajesh Kumar',
+    role: 'Founder & CEO',
+    company: 'AI Startup',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face',
+    linkedin: '#',
+  },
+];
 
 export default function InstructorSpotlight() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="py-16 md:py-24 bg-white border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-20 relative overflow-hidden border border-slate-100">
-          {/* Background Decorative */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-white via-brand-50 to-transparent rounded-full translate-x-1/3 -translate-y-1/3 opacity-50"></div>
+    <section ref={ref} className="py-20 md:py-32 bg-gradient-to-b from-white to-coral-50/30 relative overflow-hidden">
+      {/* Subtle grainy texture */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <svg className="w-full h-full">
+          <filter id="instructorNoise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#instructorNoise)" opacity="0.3" />
+        </svg>
+      </div>
 
-          <div className="relative z-10 grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5">
-              <div className="relative">
-                <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-slate-200 shadow-2xl rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
-                  <Image
-                    src="https://media.licdn.com/dms/image/v2/D4D03AQGQtno9QlQ5ug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715758859402?e=1765411200&v=beta&t=np7r7hUMfJbVL_DZWOulEPN2I7sCnSlxFurZSPg3LWs"
-                    alt="Puru Kathuria"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                {/* Badge */}
-                <div className="absolute bottom-8 right-8 bg-white/90 backdrop-blur px-6 py-3 rounded-xl shadow-lg border border-slate-100">
-                  <p className="font-bold text-slate-900">Ex-Google</p>
-                  <p className="text-xs text-slate-500">Software Engineer</p>
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-7">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-[1px] bg-slate-900"></span>
-                <span className="text-sm font-bold uppercase tracking-widest text-slate-900">
-                  Meet The Founder
-                </span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
-                Puru Kathuria
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl text-slate-500 mb-6 md:mb-8 leading-relaxed">
-                Software Engineer at Google working on Cloud Security. Previously at MathWorks
-                building ML systems for self-driving cars and speech recognition. I teach engineers
-                how to build production AI systems - the same techniques I use at work every day.
-              </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 mb-6">
+            Learn from the Ones
+            <br />
+            Who&apos;ve <span className="italic">Done It</span>
+          </h2>
+          <p className="text-lg text-neutral-600">
+            Meet the experts behind the insights &ndash; experienced engineers, founders & leaders helping you break into AI.
+          </p>
+        </motion.div>
 
-              <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
-                <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-600 border border-slate-100 shrink-0">
-                    <Code className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900">Production Experience</h4>
-                    <p className="text-sm text-slate-500 mt-1">
-                      Built distributed ML systems at Google & MathWorks.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-600 border border-slate-100 shrink-0">
-                    <GraduationCap className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900">Teaching Track Record</h4>
-                    <p className="text-sm text-slate-500 mt-1">
-                      Taught ML to Google engineers and IIIT Delhi students.
-                    </p>
-                  </div>
-                </div>
-              </div>
+        {/* Instructors Grid */}
+        <div className="relative">
+          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
+            {instructors.map((instructor, index) => (
+              <motion.div
+                key={instructor.name}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
+                className="group relative w-64"
+              >
+                {/* Card */}
+                <div className="relative">
+                  {/* Coral shadow effect */}
+                  <div className="absolute -inset-1 bg-gradient-to-br from-coral-200/50 to-coral-100/30 rounded-2xl transform rotate-2 group-hover:rotate-4 transition-transform duration-300" />
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="https://www.linkedin.com/in/purukathuria/"
-                  className="px-6 py-3 bg-[#0077b5] text-white rounded-full font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
-                >
-                  <Linkedin className="w-5 h-5" /> Follow on LinkedIn
-                </Link>
-                <Link
-                  href="https://purukathuria.com/"
-                  className="px-6 py-3 bg-white text-slate-900 border border-slate-200 rounded-full font-medium hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
-                >
-                  <Globe className="w-5 h-5" /> Personal Site
-                </Link>
-              </div>
-            </div>
+                  {/* Image Container */}
+                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200">
+                    <Image
+                      src={instructor.image}
+                      alt={instructor.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="256px"
+                    />
+                    {/* Grainy overlay on hover */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none mix-blend-overlay">
+                      <svg className="w-full h-full">
+                        <filter id={`cardNoise-${index}`}>
+                          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" />
+                        </filter>
+                        <rect width="100%" height="100%" filter={`url(#cardNoise-${index})`} opacity="0.5" />
+                      </svg>
+                    </div>
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-transparent to-transparent" />
+                  </div>
+                </div>
+
+                {/* Info - Outside the card */}
+                <div className="mt-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-semibold text-neutral-900 text-lg">
+                        {instructor.name}
+                      </h3>
+                      <p className="text-sm text-neutral-500">
+                        {instructor.role}, {instructor.company}
+                      </p>
+                    </div>
+                    <Link
+                      href={instructor.linkedin}
+                      className="w-9 h-9 bg-neutral-100 rounded-full flex items-center justify-center text-neutral-500 hover:bg-[#0077b5] hover:text-white transition-all"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
+
+          {/* Pagination dots */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex justify-center gap-1.5 mt-12"
+          >
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div
+                key={i}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === 3 ? 'w-8 bg-neutral-800' : 'w-1.5 bg-neutral-300'
+                }`}
+              />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

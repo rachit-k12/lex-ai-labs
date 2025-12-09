@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     "Turning AI complexity into clarity. Join India's premier AI fellowships for engineers and leaders.",
   keywords:
     'Lex AI, AI education, AI fellowship, machine learning, data science, AI training India, AI Seekhega India',
+  icons: {
+    icon: '/assets/lexailogo.svg',
+    shortcut: '/assets/lexailogo.svg',
+    apple: '/assets/lexailogo.svg',
+  },
   openGraph: {
     title: 'Lex AI | Break into AI',
     description:

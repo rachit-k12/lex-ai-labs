@@ -27,7 +27,7 @@ export default function ClientProviders({ children }: { children: React.ReactNod
           {children}
         </ThemeProvider>
       </SessionProvider>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   );
 }

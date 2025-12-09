@@ -38,6 +38,18 @@ const nextConfig = {
         port: '',
         pathname: '/content/images/size/wla1000/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.licdn.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   trailingSlash: true, // Better for static hosting

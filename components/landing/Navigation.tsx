@@ -2,7 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Brain, X, Menu } from 'lucide-react';
+import Image from 'next/image';
+import { X, Menu, ArrowRight } from 'lucide-react';
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Programs', href: '#programs' },
+  { label: 'Community', href: '#community' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Contact', href: '#contact' },
+];
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,131 +25,112 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/85 backdrop-blur-xl border-b border-slate-200/60'
-          : 'bg-transparent'
+        scrolled ? 'bg-white/90 backdrop-blur-md border-b border-neutral-100' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex-shrink-0 flex items-center gap-2.5 group"
-          >
-            <div className="w-9 h-9 bg-slate-900 rounded-xl flex items-center justify-center text-white group-hover:scale-105 transition-transform">
-              <Brain className="w-5 h-5" />
-            </div>
-            <span className="text-lg font-bold tracking-tight text-slate-900">
+          <Link href="/" className="flex-shrink-0 flex items-center gap-4 group">
+            <Image
+              src="/assets/lexailogo.svg"
+              alt="Lex AI"
+              width={72}
+              height={72}
+              className="w-16 h-16 md:w-20 md:h-20"
+            />
+            <span className="text-2xl md:text-3xl font-serif italic text-neutral-900 tracking-tight">
               Lex AI
             </span>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            <Link
-              href="/"
-              className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all"
-            >
-              Home
-            </Link>
-            <Link
-              href="https://www.lexailabs.com/about"
-              className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all"
-            >
-              About Lex AI
-            </Link>
-            <Link
-              href="https://aiseekhegaindia.com/fellowship/"
-              className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all"
-            >
-              Programs
-            </Link>
-            <Link
-              href="https://www.lexailabs.com/companies"
-              className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all"
-            >
-              Companies
-            </Link>
-            <Link
-              href="https://www.lexailabs.com/contact"
-              className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all"
-            >
-              Contact
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="px-4 py-2 text-base font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          {/* CTA & Mobile Toggle */}
-          <div className="flex items-center gap-4">
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
             <Link
-              href="https://aiseekhegaindia.com/fellowship/"
-              className="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5"
+              href="#apply"
+              className="group inline-flex items-center gap-2 px-6 py-3 text-base font-medium text-white bg-neutral-900 rounded-full hover:bg-neutral-800 transition-all"
             >
-              Get Started
+              Apply Now
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 text-neutral-600 hover:text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden absolute w-full bg-white border-b border-slate-100 shadow-xl z-50">
-          <div className="px-6 py-6 space-y-4">
+      <div
+        className={`lg:hidden fixed inset-0 top-16 bg-white z-50 transform transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="px-6 py-8 space-y-2 h-full overflow-y-auto">
+          {navLinks.map((link) => (
             <Link
-              href="/"
-              className="block text-base font-medium text-slate-600 hover:text-slate-900"
+              key={link.label}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-3 px-4 text-base font-medium text-neutral-900 rounded-xl hover:bg-neutral-50 transition-colors"
             >
-              Home
+              {link.label}
             </Link>
+          ))}
+
+          <div className="pt-6 border-t border-neutral-100 space-y-3 mt-6">
             <Link
-              href="https://www.lexailabs.com/about"
-              className="block text-base font-medium text-slate-600 hover:text-slate-900"
+              href="#apply"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-center gap-2 w-full py-4 text-base font-medium text-white bg-neutral-900 rounded-full"
             >
-              About Lex AI
+              Apply Now
+              <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link
-              href="https://aiseekhegaindia.com/fellowship/"
-              className="block text-base font-medium text-slate-600 hover:text-slate-900"
-            >
-              Programs
-            </Link>
-            <Link
-              href="https://www.lexailabs.com/companies"
-              className="block text-base font-medium text-slate-600 hover:text-slate-900"
-            >
-              Companies
-            </Link>
-            <Link
-              href="https://www.lexailabs.com/contact"
-              className="block text-base font-medium text-slate-600 hover:text-slate-900"
-            >
-              Contact
-            </Link>
-            <div className="pt-4 border-t border-slate-100">
-              <Link
-                href="https://aiseekhegaindia.com/fellowship/"
-                className="block w-full text-center px-5 py-3 text-base font-semibold text-white bg-slate-900 rounded-xl"
-              >
-                Get Started
-              </Link>
-            </div>
           </div>
         </div>
+      </div>
+
+      {/* Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/20 z-40"
+          onClick={() => setMobileMenuOpen(false)}
+        />
       )}
     </header>
   );
 }
-

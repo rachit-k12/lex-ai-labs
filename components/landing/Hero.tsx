@@ -1,70 +1,100 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
-      {/* Mesh Background */}
-      <div className="absolute inset-0 bg-mesh pointer-events-none"></div>
+    <section className="relative min-h-screen pt-20 flex flex-col items-center justify-center overflow-hidden">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/30" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-600 text-xs font-bold uppercase tracking-wider mb-6 md:mb-8 animate-fade-in-up">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-600"></span>
-            </span>
-            New Cohorts Starting Monthly
-          </div>
-
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-6 md:mb-8 leading-[1.1] px-2">
-            Learn to build{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-600 to-brand-400">
-              production AI systems
-            </span>{' '}
-            in 12 weeks
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-500 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-            Weekend AI training for working professionals. Build real ML models, fine-tune LLMs, and
-            deploy AI agents. Taught by a Google engineer.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 md:mb-16 px-4">
-            <Link
-              href="#programs"
-              className="w-full sm:w-auto sm:min-w-[180px] px-8 py-4 text-base font-semibold text-white transition-all duration-300 bg-slate-900 rounded-full hover:bg-slate-800 hover:shadow-xl hover:shadow-slate-900/10 hover:-translate-y-1 text-center"
-            >
-              Explore Programs
-            </Link>
-            <Link
-              href="https://www.lexailabs.com/contact"
-              className="w-full sm:w-auto sm:min-w-[180px] px-8 py-4 text-base font-semibold text-slate-600 transition-all duration-300 bg-white border border-slate-200 rounded-full hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 text-center"
-            >
-              Book Consultation
-            </Link>
-          </div>
-
-          {/* Tags */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-slate-500 px-2">
-            <span className="px-3 sm:px-4 py-2 bg-slate-50 rounded-lg border border-slate-100 whitespace-nowrap">
-              Live Weekend Sessions
-            </span>
-            <span className="px-3 sm:px-4 py-2 bg-slate-50 rounded-lg border border-slate-100 whitespace-nowrap">
-              1:1 Mentorship
-            </span>
-            <span className="px-3 sm:px-4 py-2 bg-slate-50 rounded-lg border border-slate-100 whitespace-nowrap">
-              Career Support
-            </span>
-            <span className="px-3 sm:px-4 py-2 bg-slate-50 rounded-lg border border-slate-100 whitespace-nowrap">
-              Build Your Own GPT
-            </span>
-          </div>
-        </div>
+      {/* Grainy texture overlay */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <svg className="w-full h-full">
+          <filter id="noiseFilter">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.8"
+              numOctaves="4"
+              stitchTiles="stitch"
+            />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.4" />
+        </svg>
       </div>
+
+      {/* Decorative gradient blobs */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-coral-500/30 rounded-full blur-3xl animate-pulse" />
+      <div
+        className="absolute bottom-20 right-10 w-80 h-80 bg-coral-500/30 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: '1s' }}
+      />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-coral-100/30 to-transparent rounded-full blur-2xl" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 mb-8 shadow-sm"
+        >
+          <Sparkles className="w-4 h-4 text-coral-500" />
+          <span className="text-sm font-medium text-neutral-700">
+            Applications for Cohort 3 are now open
+          </span>
+        </motion.div>
+
+        {/* Main Headline - Using Instrument Serif */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-neutral-900 leading-[1.05] mb-8 tracking-tight"
+        >
+          India&apos;s Premier
+          <span className="italic text-blue-500"> Community</span> for AI Builders.
+        </motion.h1>
+
+        {/* Subheadline */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto mb-12 leading-relaxed"
+        >
+          Join 500+ practitioners from Google, Amazon, and top startups. Accelerate your AI career
+          through expert mentorship, curated peers, and exclusive opportunities.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+        >
+          <Link
+            href="#apply"
+            className="group inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-white bg-neutral-900 rounded-full hover:bg-neutral-800 transition-all shadow-lg hover:shadow-xl"
+          >
+            Apply to Cohort 3
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link
+            href="#programs"
+            className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-neutral-700 bg-white/80 backdrop-blur-sm border border-neutral-200 rounded-full hover:bg-white hover:border-neutral-300 transition-all"
+          >
+            Explore What&apos;s Inside
+          </Link>
+        </motion.div>
+      </div>
+
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
     </section>
   );
 }
