@@ -44,19 +44,20 @@ export default function Hero() {
         >
           <Sparkles className="w-4 h-4 text-coral-500" />
           <span className="text-sm font-medium text-neutral-700">
-            Applications for Cohort 3 are now open
+            Applications Open for Cohort 3
           </span>
         </motion.div>
 
-        {/* Main Headline - Using Instrument Serif */}
+        {/* Main Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-neutral-900 leading-[1.05] mb-8 tracking-tight"
         >
-          India&apos;s Premier
-          <span className="italic text-blue-500"> Community</span> for AI Builders.
+          India&apos;s Most Exclusive
+          <br />
+          <span className="italic text-blue-500"> AI Network</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -66,8 +67,8 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto mb-12 leading-relaxed"
         >
-          Join 500+ practitioners from Google, Amazon, and top startups. Accelerate your AI career
-          through expert mentorship, curated peers, and exclusive opportunities.
+          Access Tier-1 engineers, founders, and investors from Google, Amazon, and Microsoft. Your
+          network becomes your strongest career asset.
         </motion.p>
 
         {/* CTAs */}
@@ -81,14 +82,14 @@ export default function Hero() {
             href="#apply"
             className="group inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-white bg-neutral-900 rounded-full hover:bg-neutral-800 transition-all shadow-lg hover:shadow-xl"
           >
-            Apply to Cohort 3
+            Request an Invite
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
-            href="#programs"
+            href="#network"
             className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-neutral-700 bg-white/80 backdrop-blur-sm border border-neutral-200 rounded-full hover:bg-white hover:border-neutral-300 transition-all"
           >
-            Explore What&apos;s Inside
+            See Who&apos;s Inside
           </Link>
         </motion.div>
       </div>

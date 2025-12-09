@@ -2,19 +2,19 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Linkedin, Twitter, Instagram, Youtube, ArrowUpRight } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
 
 const menuLinks = [
-  { label: 'Program', href: '#programs' },
-  { label: 'Events and community', href: '#community' },
-  { label: 'Case study', href: '#testimonials' },
-  { label: 'Talent', href: '#' },
+  { label: 'The Network', href: '#network' },
+  { label: 'Community', href: '#community' },
+  { label: 'Member Stories', href: '#stories' },
+  { label: 'Apply', href: '#apply' },
 ];
 
 const policyLinks = [
-  { label: 'Refund Policy', href: '#' },
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms and conditions', href: '#' },
+  { label: 'Refund Policy', href: '/refund-policy' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms of Service', href: '/terms' },
 ];
 
 const socialLinks = [
@@ -45,6 +45,8 @@ export default function Footer() {
                   href={social.href}
                   className="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center text-neutral-600 hover:bg-blue-600 hover:text-white transition-all"
                   aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <social.icon className="w-5 h-5" />
                 </Link>
@@ -52,7 +54,7 @@ export default function Footer() {
             </div>
             <Image
               src="/assets/lexailogo.svg"
-              alt="Lex AI Labs"
+              alt="Lex AI Club"
               width={80}
               height={80}
               className="w-56 h-56 mx-auto lg:mx-0"
@@ -107,7 +109,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-20 pt-8 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-base text-neutral-500">
-            &copy; {new Date().getFullYear()} Lex AI Labs. All rights reserved.
+            &copy; {new Date().getFullYear()} Lex AI Club. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
             <p className="text-base text-neutral-600">Built for the future of AI</p>

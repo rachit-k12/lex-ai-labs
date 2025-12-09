@@ -47,7 +47,7 @@ export default function FinalCTA() {
           >
             <Image
               src={communityImages[0]}
-              alt="Community"
+              alt="Community member"
               fill
               className="object-cover"
               sizes="96px"
@@ -71,7 +71,7 @@ export default function FinalCTA() {
           >
             <Image
               src={communityImages[1]}
-              alt="Community"
+              alt="Community member"
               fill
               className="object-cover"
               sizes="112px"
@@ -86,7 +86,7 @@ export default function FinalCTA() {
           >
             <Image
               src={communityImages[2]}
-              alt="Community"
+              alt="Community member"
               fill
               className="object-cover"
               sizes="80px"
@@ -101,7 +101,7 @@ export default function FinalCTA() {
           >
             <Image
               src={communityImages[3]}
-              alt="Community"
+              alt="Community member"
               fill
               className="object-cover"
               sizes="96px"
@@ -117,7 +117,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6"
           >
-            Shape What&apos;s <span className="italic">Next</span>
+            Your Network is Your <span className="italic">Net Worth</span>
           </motion.h2>
 
           <motion.p
@@ -126,7 +126,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg md:text-xl text-white/70 mb-4"
           >
-            The most valuable capital isn&apos;t money &mdash; it&apos;s access.
+            The most valuable capital isn&apos;t money &mdash; it&apos;s access to the right people.
           </motion.p>
 
           <motion.p
@@ -135,7 +135,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-base md:text-lg text-white/50 mb-3"
           >
-            Join a membership built for bold thinkers, smart operators, and future AI leaders.
+            Join a high-trust circle of ambitious minds. Unlimited value through people.
           </motion.p>
 
           <motion.p
@@ -144,7 +144,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-lg text-coral-400 font-medium mb-10"
           >
-            Request an invite only @ 39,999/-
+            Request an invite at ₹39,999
           </motion.p>
 
           <motion.div
@@ -156,7 +156,7 @@ export default function FinalCTA() {
               href="https://aiseekhegaindia.com/fellowship/"
               className="group inline-flex items-center gap-3 px-10 py-5 bg-white text-neutral-900 text-lg font-medium rounded-full hover:bg-neutral-100 transition-all shadow-xl"
             >
-              Become a Member Today
+              Apply for Membership
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
           </motion.div>

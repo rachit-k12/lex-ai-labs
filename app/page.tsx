@@ -1,7 +1,8 @@
+import CommunityLeaders from '@/components/landing/CommunityLeaders';
+import EventsPreview from '@/components/landing/EventsPreview';
 import FinalCTA from '@/components/landing/FinalCTA';
 import Footer from '@/components/landing/Footer';
 import Hero from '@/components/landing/Hero';
-import InstructorSpotlight from '@/components/landing/InstructorSpotlight';
 import Navigation from '@/components/landing/Navigation';
 import Testimonials from '@/components/landing/Testimonials';
 import TrustedBy from '@/components/landing/TrustedBy';
@@ -15,7 +16,8 @@ export default function Home() {
         <Hero />
         <TrustedBy />
         <ValueProposition />
-        <InstructorSpotlight />
+        <CommunityLeaders />
+        <EventsPreview />
         <Testimonials />
         <FinalCTA />
       </main>

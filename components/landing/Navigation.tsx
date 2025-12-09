@@ -7,9 +7,9 @@ import { X, Menu, ArrowRight } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Programs', href: '#programs' },
+  { label: 'The Network', href: '#network' },
   { label: 'Community', href: '#community' },
-  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Stories', href: '#stories' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -48,7 +48,7 @@ export default function Navigation() {
           <Link href="/" className="flex-shrink-0 flex items-center gap-4 group">
             <Image
               src="/assets/lexailogo.svg"
-              alt="Lex AI"
+              alt="Lex AI Club"
               width={72}
               height={72}
               className="w-16 h-16 md:w-20 md:h-20"
@@ -77,7 +77,7 @@ export default function Navigation() {
               href="#apply"
               className="group inline-flex items-center gap-2 px-6 py-3 text-base font-medium text-white bg-neutral-900 rounded-full hover:bg-neutral-800 transition-all"
             >
-              Apply Now
+              Request Invite
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
@@ -117,7 +117,7 @@ export default function Navigation() {
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center justify-center gap-2 w-full py-4 text-base font-medium text-white bg-neutral-900 rounded-full"
             >
-              Apply Now
+              Request Invite
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

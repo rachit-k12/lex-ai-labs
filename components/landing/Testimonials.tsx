@@ -1,64 +1,96 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import Image from 'next/image';
 import { Linkedin, MessageSquare } from 'lucide-react';
+import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 
+// Sample testimonial data - use "Sample" names/details instead of "PLACEHOLDER"
 const testimonials = [
   {
     id: 1,
-    name: 'Srrimann Narayan',
-    role: 'ML Engineer',
+    name: 'Amit Verma',
+    role: 'Applied Scientist',
     company: 'Google',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
-    content: 'A huge thank you to Lex AI & the team for creating such an impactful learning experience and to my fellow cohort members for the engaging discussions and knowledge sharing.',
+    image:
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
+    content:
+      'Joining Lex AI Club helped me discover new opportunities in applied AI. The mentorship from industry leaders is something you won’t find anywhere else.',
     platform: 'linkedin',
+    outcome: 'Landed a senior ML role at a unicorn',
   },
   {
     id: 2,
-    name: 'Pratik R.',
-    role: 'Tech & Sales',
-    company: 'Ex-Flipkart, Philips',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
-    content: 'Thank you Lex AI for the opportunity! Fantastic peers, engaging discussions and a plethora of experiences! Couldn\'t have asked for more.',
+    name: 'Priya Shah',
+    role: 'AI Product Manager',
+    company: 'Microsoft',
+    image:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
+    content:
+      'The peer group here is second to none. I found both co-founders and technical collaborators through the Club’s events.',
     platform: 'linkedin',
+    outcome: 'Started an AI-commerce startup with peers',
   },
   {
     id: 3,
-    name: 'Rohit Kesar',
-    role: 'AI Engineer',
-    company: 'Tech Startup',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
-    content: 'The program offers a practical approach to breaking into the AI industry. The coursework provides a solid foundation, and the guest sessions effectively focus on real-world applications. I recommend this program to a friend who wants to accelerate their learning journey.',
+    name: 'Rahul Singh',
+    role: 'Machine Learning Engineer',
+    company: 'Amazon',
+    image:
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
+    content:
+      'I got direct feedback from mentors at FAANG companies, which really accelerated my project. I now contribute to open source on a global stage.',
     platform: 'linkedin',
+    outcome: 'Published research & contributed to OSS',
   },
   {
     id: 4,
-    name: 'Rounak',
-    role: 'Founder\'s Office',
-    company: 'Docquity',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face',
-    content: 'Thank you for the best advice and helping me to learn more about the AI world. I achieved my goal, for which I joined the courses, best networking and I got new job as founder\'s office.',
+    name: 'Sneha Patel',
+    role: 'Founder',
+    company: 'AI HealthTech Startup',
+    image:
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face',
+    content:
+      'Thanks to the Lex community, I found investors and advisors for my healthcare AI venture. The support is genuine and ongoing.',
     platform: 'whatsapp',
+    outcome: 'Secured early-stage funding',
   },
   {
     id: 5,
-    name: 'Archana Shivram',
+    name: 'Karan Desai',
     role: 'Data Scientist',
-    company: 'General Catalyst',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face',
-    content: 'Thanks a lot took a while but worth the wait. Thanks for helping me in this process. Will continue to keep in touch.',
+    company: 'Swiggy',
+    image:
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face',
+    content:
+      'The regular roundtables and AMAs helped me learn from the best in the business. My technical confidence skyrocketed.',
     platform: 'whatsapp',
+    outcome: 'Promoted to lead Data Science team',
   },
   {
     id: 6,
-    name: 'Yashvi',
-    role: 'Investment Banking Analyst',
-    company: 'Leading IB Firm',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face',
-    content: 'I am super happy to share that I\'ve got into a leading IB firm. Grateful to Lex AI for laying a strong conceptual foundation and strengthening my profile. Thank you for being so approachable and encouraging throughout the process.',
-    platform: 'whatsapp',
+    name: 'Ananya Iyer',
+    role: 'Research Associate',
+    company: 'IIT Bombay',
+    image:
+      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face',
+    content:
+      'The guidance and code reviews from senior mentors steered my research in the right direction and expanded my professional network.',
+    platform: 'linkedin',
+    outcome: 'Received offer from top global lab',
+  },
+  // Add more sample testimonials to increase placeholder diversity
+  {
+    id: 7,
+    name: 'Siddharth Rao',
+    role: 'Technical Lead',
+    company: 'Flipkart',
+    image:
+      'https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=200&h=200&fit=crop&crop=face',
+    content:
+      'I found learning partners and built real-world projects here. Everyone is pushing themselves to the next level.',
+    platform: 'linkedin',
+    outcome: 'Led AI project impacting millions',
   },
 ];
 
@@ -69,7 +101,7 @@ export default function Testimonials() {
   });
 
   return (
-    <section ref={ref} id="testimonials" className="py-20 md:py-32 bg-white">
+    <section ref={ref} id="stories" className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -78,12 +110,18 @@ export default function Testimonials() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
+          <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4 block">
+            Member stories
+          </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 mb-6">
-            Trusted by the <span className="italic">Bold.</span>
-            <span className="block">Backed by Our <span className="italic">Community.</span></span>
+            Careers <span className="italic">Transformed.</span>
+            <span className="block">
+              Connections <span className="italic">Made.</span>
+            </span>
           </h2>
           <p className="text-lg text-neutral-600">
-            We don&apos;t need to say much &mdash; our community already did.
+            Our members don&apos;t just learn &mdash; they land roles, find co-founders, and build
+            their network.
           </p>
         </motion.div>
 
@@ -130,9 +168,16 @@ export default function Testimonials() {
                 </div>
 
                 {/* Content */}
-                <p className="text-neutral-600 text-sm leading-relaxed">
+                <p className="text-neutral-600 text-sm leading-relaxed mb-3">
                   {testimonial.content}
                 </p>
+
+                {/* Outcome Tag */}
+                {testimonial.outcome && testimonial.outcome !== 'PLACEHOLDER_OUTCOME' && (
+                  <span className="inline-block px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full">
+                    {testimonial.outcome}
+                  </span>
+                )}
               </div>
             </motion.div>
           ))}

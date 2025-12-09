@@ -29,7 +29,7 @@ export default function TrustedBy() {
           transition={{ duration: 0.4 }}
           className="text-center text-base font-semibold text-neutral-500 uppercase tracking-wider mb-10"
         >
-          Our members come from
+          Our members work at
         </motion.p>
 
         {/* Marquee Container */}

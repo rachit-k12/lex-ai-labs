@@ -1,0 +1,271 @@
+{
+  "brand": {
+    "name": "Lex AI Club",
+    "tagline": "India's Most Exclusive AI Network",
+    "description": "Access Tier-1 Engineers, Founders, and Investors",
+    "email": "team@lexailabs.in",
+    "phone": "+91 11-69266219",
+    "website": "https://lexailabs.in",
+    "applyUrl": "https://aiseekhegaindia.com/fellowship/"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/lex-ai-labs",
+    "twitter": "https://twitter.com/lexailabs",
+    "instagram": "https://www.instagram.com/lexailabs/",
+    "youtube": "#"
+  },
+  "stats": {
+    "members": "500+",
+    "countries": "8+",
+    "expertSessions": "50+",
+    "mentors": "10+"
+  },
+  "pricing": {
+    "amount": "39,999",
+    "currency": "INR",
+    "period": "one-time",
+    "displayText": "₹39,999"
+  },
+  "navigation": [
+    { "label": "Home", "href": "/" },
+    { "label": "The Network", "href": "#network" },
+    { "label": "Community", "href": "#community" },
+    { "label": "Stories", "href": "#stories" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "companies": [
+    { "name": "Google", "logo": "/logos/google.svg" },
+    { "name": "Amazon", "logo": "/logos/amazon.svg" },
+    { "name": "Microsoft", "logo": "/logos/microsoft.svg" },
+    { "name": "Meta", "logo": "/logos/meta.svg" },
+    { "name": "Flipkart", "logo": "/logos/flipkart.svg" },
+    { "name": "Razorpay", "logo": "/logos/razorpay.svg" },
+    { "name": "CRED", "logo": "/logos/cred.svg" },
+    { "name": "Swiggy", "logo": "/logos/swiggy.svg" }
+  ],
+  "communityBenefits": [
+    {
+      "id": "peer-support",
+      "icon": "Users",
+      "title": "Peer-to-Peer Support",
+      "description": "Post what you're building. Get solutions, guidance, and technical support from experienced practitioners who've solved the same problems."
+    },
+    {
+      "id": "mentorship",
+      "icon": "Compass",
+      "title": "Tier-1 Mentorship",
+      "description": "Direct access to engineers and scientists from Google, Microsoft, and Amazon who review your work and guide your career."
+    },
+    {
+      "id": "networking",
+      "icon": "Network",
+      "title": "High-Value Networking",
+      "description": "Connect with AI-focused recruiters, active investors, successful founders, and engineers from FAANG and unicorns."
+    },
+    {
+      "id": "opportunities",
+      "icon": "Briefcase",
+      "title": "Exclusive Opportunities",
+      "description": "Hear about AI roles, collaborations, and partnerships before they hit the open market. Your next opportunity is one conversation away."
+    },
+    {
+      "id": "events",
+      "icon": "Calendar",
+      "title": "Weekly Events",
+      "description": "Investor roundtables, AMA sessions, founder forums, and live expert deep-dives. Every week brings new connections."
+    },
+    {
+      "id": "learning",
+      "icon": "BookOpen",
+      "title": "AI Learning Track",
+      "description": "Self-paced fellowship curriculum included. Videos, notes, and live sessions to accelerate your technical skills."
+    }
+  ],
+  "communityLeaders": [
+    {
+      "id": "leader-1",
+      "name": "Amit Verma",
+      "role": "Applied Scientist",
+      "company": "Google",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
+      "linkedin": "https://www.linkedin.com/in/amit-verma",
+      "bio": "Amit is an applied scientist at Google, specializing in large-scale AI systems and ML for production. He mentors members on cutting-edge research and practical deployment."
+    },
+    {
+      "id": "leader-2",
+      "name": "Priya Shah",
+      "role": "AI Product Manager",
+      "company": "Microsoft",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face",
+      "linkedin": "https://www.linkedin.com/in/priya-shah",
+      "bio": "Priya leads AI-driven product teams at Microsoft, driving business impact with ML. She is passionate about inclusive leadership and cross-functional collaboration."
+    },
+    {
+      "id": "leader-3",
+      "name": "Rahul Singh",
+      "role": "Machine Learning Engineer",
+      "company": "Amazon",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face",
+      "linkedin": "https://www.linkedin.com/in/rahul-singh",
+      "bio": "Rahul builds and optimizes ML pipelines for global Amazon teams. His mentoring focuses on scalable ML engineering and open source contributions."
+    },
+    {
+      "id": "leader-4",
+      "name": "Sneha Patel",
+      "role": "Founder",
+      "company": "AI HealthTech Startup",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
+      "linkedin": "https://www.linkedin.com/in/sneha-patel",
+      "bio": "Sneha is a founder building healthcare AI solutions. She advises early-stage startups on fundraising, product strategy, and community growth."
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "testimonial-1",
+      "name": "Amit Verma",
+      "role": "Applied Scientist",
+      "company": "Google",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
+      "content": "Joining Lex AI Club helped me discover new opportunities in applied AI. The mentorship from industry leaders is something you won’t find anywhere else.",
+      "platform": "linkedin",
+      "outcome": "Landed a senior ML role at a unicorn"
+    },
+    {
+      "id": "testimonial-2",
+      "name": "Priya Shah",
+      "role": "AI Product Manager",
+      "company": "Microsoft",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face",
+      "content": "The peer group here is second to none. I found both co-founders and technical collaborators through the Club’s events.",
+      "platform": "linkedin",
+      "outcome": "Started an AI-commerce startup with peers"
+    },
+    {
+      "id": "testimonial-3",
+      "name": "Rahul Singh",
+      "role": "Machine Learning Engineer",
+      "company": "Amazon",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face",
+      "content": "I got direct feedback from mentors at FAANG companies, which really accelerated my project. I now contribute to open source on a global stage.",
+      "platform": "whatsapp",
+      "outcome": "Published research & contributed to OSS"
+    },
+    {
+      "id": "testimonial-4",
+      "name": "Sneha Patel",
+      "role": "Founder",
+      "company": "AI HealthTech Startup",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
+      "content": "Thanks to the Lex community, I found investors and advisors for my healthcare AI venture. The support is genuine and ongoing.",
+      "platform": "linkedin",
+      "outcome": "Secured early-stage funding"
+    },
+    {
+      "id": "testimonial-5",
+      "name": "Karan Desai",
+      "role": "Data Scientist",
+      "company": "Swiggy",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face",
+      "content": "The regular roundtables and AMAs helped me learn from the best in the business. My technical confidence skyrocketed.",
+      "platform": "whatsapp",
+      "outcome": "Promoted to lead Data Science team"
+    },
+    {
+      "id": "testimonial-6",
+      "name": "Ananya Iyer",
+      "role": "Research Associate",
+      "company": "IIT Bombay",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
+      "content": "The guidance and code reviews from senior mentors steered my research in the right direction and expanded my professional network.",
+      "platform": "linkedin",
+      "outcome": "Received offer from top global lab"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-1",
+      "type": "roundtable",
+      "title": "Investor Roundtable",
+      "description": "Weekly sessions where 5 startups pitch to active AI investors",
+      "frequency": "Every Sunday",
+      "icon": "TrendingUp"
+    },
+    {
+      "id": "event-2",
+      "type": "ama",
+      "title": "Ask Me Anything",
+      "description": "Direct Q&A with industry leaders from top AI companies",
+      "frequency": "Bi-weekly",
+      "icon": "MessageCircle"
+    },
+    {
+      "id": "event-3",
+      "type": "forum",
+      "title": "Founder Forums",
+      "description": "Peer support sessions for AI founders to share challenges and wins",
+      "frequency": "Monthly",
+      "icon": "Users"
+    },
+    {
+      "id": "event-4",
+      "type": "expert",
+      "title": "Expert Deep-Dives",
+      "description": "Technical sessions on LLMs, agents, and production ML systems",
+      "frequency": "Weekly",
+      "icon": "Layers"
+    }
+  ],
+  "footerLinks": {
+    "quickLinks": [
+      { "label": "The Network", "href": "#network" },
+      { "label": "Community", "href": "#community" },
+      { "label": "Member Stories", "href": "#stories" },
+      { "label": "Events", "href": "#events" }
+    ],
+    "legal": [
+      { "label": "Refund Policy", "href": "/refund-policy" },
+      { "label": "Privacy Policy", "href": "/privacy-policy" },
+      { "label": "Terms of Service", "href": "/terms" }
+    ]
+  },
+  "copy": {
+    "hero": {
+      "badge": "Applications Open for Cohort 3",
+      "headline": "India's Most Exclusive AI Network",
+      "subheadline": "Access Tier-1 engineers, founders, and investors from Google, Amazon, and Microsoft. Your network becomes your strongest career asset.",
+      "primaryCta": "Request an Invite",
+      "secondaryCta": "See Who's Inside"
+    },
+    "trustedBy": {
+      "label": "Our members work at"
+    },
+    "community": {
+      "tag": "More than a program",
+      "headline": "Access People, Not Just Content",
+      "subheadline": "The Lex AI Club gives you something no course can — direct connections to the people shaping AI's future."
+    },
+    "network": {
+      "headline": "Your Inner Circle",
+      "subheadline": "Connect with Tier-1 AI professionals who actively mentor, collaborate, and open doors."
+    },
+    "testimonials": {
+      "headline": "Careers Transformed. Connections Made.",
+      "subheadline": "Our members don't just learn — they land roles, find co-founders, and build their network."
+    },
+    "events": {
+      "headline": "Every Week, New Opportunities",
+      "subheadline": "Investor roundtables, AMAs, founder forums, and expert sessions. The community never stops moving."
+    },
+    "cta": {
+      "headline": "Your Network is Your Net Worth",
+      "subheadline": "The most valuable capital isn't money — it's access to the right people.",
+      "description": "Join a high-trust circle of ambitious minds. Unlimited value through people.",
+      "price": "Request an invite at ₹39,999",
+      "buttonText": "Apply for Membership"
+    },
+    "footer": {
+      "tagline": "Built for the future of AI",
+      "hashtag": "#AISeekhegaIndia"
+    }
+  }
+}

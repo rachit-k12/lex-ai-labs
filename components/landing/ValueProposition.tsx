@@ -1,33 +1,44 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Users, Lightbulb, Rocket, Play } from 'lucide-react';
+import { BookOpen, Briefcase, Calendar, Compass, Network, Play, Users } from 'lucide-react';
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 
 const benefits = [
   {
     icon: Users,
-    title: 'Connections That Count',
-    description: 'Build relationships with decision-makers at Google, Amazon, top AI startups, and leading research labs.',
+    title: 'Peer-to-Peer Support',
+    description:
+      "Post what you're building. Get solutions and support from practitioners who've solved the same problems.",
   },
   {
-    icon: Lightbulb,
-    title: 'Insider Knowledge',
-    description: 'Get real-world AI frameworks and strategies straight from engineers and founders who build production systems.',
+    icon: Compass,
+    title: 'Tier-1 Mentorship',
+    description:
+      'Direct access to engineers and scientists from Google, Microsoft, and Amazon who review your work and guide your career.',
   },
   {
-    icon: Rocket,
-    title: 'Opportunities First',
-    description: 'Hear about AI roles, collaborations, and partnerships before they hit the open market.',
+    icon: Network,
+    title: 'High-Value Networking',
+    description:
+      'Connect with AI-focused recruiters, active investors, successful founders, and engineers from FAANG and unicorns.',
+  },
+  {
+    icon: Briefcase,
+    title: 'Exclusive Opportunities',
+    description:
+      'Hear about AI roles, collaborations, and partnerships before they hit the market. Your next opportunity is one conversation away.',
   },
 ];
 
-const skillTags = [
-  { label: 'LLM Fine-tuning' },
-  { label: 'Building AI Agents' },
-  { label: 'Live Expert Sessions' },
-  { label: 'Career Mentorship' },
+const communityPerks = [
+  { icon: Calendar, label: 'Weekly Roundtables' },
+  { icon: Users, label: 'Founder Forums' },
+  { icon: BookOpen, label: 'Expert Sessions' },
+  { icon: Network, label: 'Recruiter Access' },
+  { icon: BookOpen, label: 'AI Fellowship Curriculum' },
+  { icon: BookOpen, label: 'AI for Leaders Curriculum' },
 ];
 
 export default function ValueProposition() {
@@ -37,7 +48,7 @@ export default function ValueProposition() {
   });
 
   return (
-    <section ref={ref} id="programs" className="py-20 md:py-32 bg-white overflow-hidden relative">
+    <section ref={ref} id="community" className="py-20 md:py-32 bg-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Tag */}
         <motion.div
@@ -47,23 +58,34 @@ export default function ValueProposition() {
           className="text-center mb-6"
         >
           <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-            From learning to leading, the Lex AI way.
+            More than a program
           </span>
         </motion.div>
 
-        {/* Main Headline - Instrument Serif */}
+        {/* Main Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-center max-w-4xl mx-auto mb-16"
+          className="text-center max-w-4xl mx-auto mb-6"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 leading-[1.1]">
-            The <span className="italic">Membership</span>
+            Access <span className="italic">People,</span>
             <br className="hidden sm:block" />
-            That Opens <span className="italic">Doors.</span>
+            Not Just <span className="italic">Content.</span>
           </h2>
         </motion.div>
+
+        {/* Subheadline */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="text-center text-lg text-neutral-600 max-w-2xl mx-auto mb-16"
+        >
+          The Lex AI Club gives you something no course can — direct connections to the people
+          shaping AI&apos;s future.
+        </motion.p>
 
         {/* Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -78,7 +100,7 @@ export default function ValueProposition() {
               <div className="aspect-[4/3] relative bg-neutral-100">
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-                  alt="AI Community Event"
+                  alt="Lex AI Club Community"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -87,7 +109,12 @@ export default function ValueProposition() {
                 <div className="absolute inset-0 opacity-30 pointer-events-none mix-blend-overlay">
                   <svg className="w-full h-full">
                     <filter id="imageNoise">
-                      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" />
+                      <feTurbulence
+                        type="fractalNoise"
+                        baseFrequency="0.9"
+                        numOctaves="4"
+                        stitchTiles="stitch"
+                      />
                     </filter>
                     <rect width="100%" height="100%" filter="url(#imageNoise)" opacity="0.5" />
                   </svg>
@@ -123,13 +150,13 @@ export default function ValueProposition() {
             </div>
           </motion.div>
 
-          {/* Right Column - Video & Skills */}
+          {/* Right Column - Video & Perks */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            {/* Program Card */}
+            {/* Experience Card */}
             <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden mb-8">
               {/* Video Placeholder with gradient */}
               <div className="aspect-video relative flex items-center justify-center overflow-hidden">
@@ -138,76 +165,79 @@ export default function ValueProposition() {
                 <div className="absolute inset-0 opacity-40 pointer-events-none">
                   <svg className="w-full h-full">
                     <filter id="videoNoise">
-                      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" stitchTiles="stitch" />
+                      <feTurbulence
+                        type="fractalNoise"
+                        baseFrequency="0.7"
+                        numOctaves="4"
+                        stitchTiles="stitch"
+                      />
                     </filter>
                     <rect width="100%" height="100%" filter="url(#videoNoise)" opacity="0.4" />
                   </svg>
                 </div>
                 <div className="relative z-10 text-center px-6">
-                  <div className="w-16 h-16 bg-neutral-900 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl">
+                  <div className="w-16 h-16 bg-neutral-900 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl cursor-pointer hover:bg-neutral-800 transition-colors">
                     <Play className="w-6 h-6 text-white ml-1" />
                   </div>
                   <h3 className="text-xl font-serif italic text-neutral-900 mb-2">
-                    The Lex AI Experience
+                    Inside the Club
                   </h3>
-                  <p className="text-neutral-600 text-sm">
-                    Watch our community in action
-                  </p>
+                  <p className="text-neutral-600 text-sm">See how members connect and grow</p>
                 </div>
               </div>
 
-              {/* Program Info */}
+              {/* Community Info */}
               <div className="p-6">
                 <span className="inline-block px-3 py-1 bg-coral-50 text-neutral-700 text-xs font-semibold rounded-full mb-3 uppercase tracking-wide">
-                  AI Program
+                  Membership Includes
                 </span>
-                <h3 className="text-xl font-serif text-neutral-900 mb-3">
-                  AI Fellowship
-                </h3>
+                <h3 className="text-xl font-serif text-neutral-900 mb-3">Your All-Access Pass</h3>
                 <p className="text-neutral-600 text-sm mb-6 leading-relaxed">
-                  Lex AI is India&apos;s premier program equipping engineers, founders, and professionals with practical skills in AI/ML, LLMs, and multi-agent systems&mdash;featuring members from top institutions and 8+ countries.
+                  Unlimited community access, mentor network, weekly events, recruiter and investor
+                  connections, plus our self-paced AI fellowship curriculum and AI for Leaders
+                  curriculum.
                 </p>
                 <button className="inline-flex items-center gap-2 px-5 py-3 bg-neutral-900 text-white text-sm font-medium rounded-full hover:bg-neutral-800 transition-all">
-                  View more
+                  See what&apos;s included
                 </button>
               </div>
             </div>
 
-            {/* Skill Tags */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              {skillTags.map((tag, index) => (
-                <motion.span
+            {/* Community Perks */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              {communityPerks.map((perk, index) => (
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={inView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.3, delay: 0.5 + index * 0.05 }}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-100 text-neutral-700 text-sm font-medium rounded-full border border-neutral-200"
+                  className="flex items-center gap-3 px-4 py-3 bg-neutral-50 text-neutral-700 text-sm font-medium rounded-xl border border-neutral-100"
                 >
-                  <span className="w-1.5 h-1.5 bg-coral-400 rounded-full" />
-                  {tag.label}
-                </motion.span>
+                  <perk.icon className="w-5 h-5 text-coral-500" />
+                  {perk.label}
+                </motion.div>
               ))}
             </div>
 
-            {/* Stats Card to balance height */}
+            {/* Stats Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-2xl p-6 text-white"
+              className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-2xl p-9 text-white"
             >
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <p className="text-2xl md:text-3xl font-bold">500+</p>
-                  <p className="text-xs text-neutral-400 mt-1">AI Builders</p>
+                  <p className="text-2xl md:text-4xl font-bold">500+</p>
+                  <p className="text-xs text-neutral-400 mt-1">Members</p>
                 </div>
                 <div>
-                  <p className="text-2xl md:text-3xl font-bold">8+</p>
+                  <p className="text-2xl md:text-4xl font-bold">10+</p>
+                  <p className="text-xs text-neutral-400 mt-1">Tier-1 Mentors</p>
+                </div>
+                <div>
+                  <p className="text-2xl md:text-4xl font-bold">8+</p>
                   <p className="text-xs text-neutral-400 mt-1">Countries</p>
-                </div>
-                <div>
-                  <p className="text-2xl md:text-3xl font-bold">50+</p>
-                  <p className="text-xs text-neutral-400 mt-1">Expert Sessions</p>
                 </div>
               </div>
             </motion.div>
