@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Removed 'output: export' to enable API routes for lead capture
+  // Deploy to Vercel or similar platform that supports Next.js API routes
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: false, // Enable image optimization
     remotePatterns: [
       {
         protocol: 'https',
@@ -52,7 +53,6 @@ const nextConfig = {
       },
     ],
   },
-  trailingSlash: true, // Better for static hosting
 };
 
 export default nextConfig;

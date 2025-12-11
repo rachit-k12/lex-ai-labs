@@ -6,10 +6,10 @@ import Image from 'next/image';
 import { X, Menu, ArrowRight } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
   { label: 'The Network', href: '#network' },
-  { label: 'Community', href: '#community' },
-  { label: 'Stories', href: '#stories' },
+  { label: 'Community', href: '/community' },
+  { label: 'Stories', href: '/stories' },
   { label: 'Contact', href: '#contact' },
 ];
 
