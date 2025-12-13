@@ -72,7 +72,7 @@ export default function CommunityFeatures() {
             More than just a community
           </h2>
           <p className="text-lg text-slate-500">
-            Access a complete ecosystem designed to help you succeed in AI — from learning and networking to career opportunities.
+            Access a complete ecosystem designed to help you succeed in AI: from learning and networking to career opportunities.
           </p>
         </motion.div>
 

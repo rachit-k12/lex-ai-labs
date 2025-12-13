@@ -267,6 +267,14 @@ const config = {
           from: { transform: 'translateY(0)' },
           to: { transform: 'translateY(calc(-100% - var(--gap)))' },
         },
+        'marquee-slow': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
+        'marquee-slow-reverse': {
+          from: { transform: 'translateX(-50%)' },
+          to: { transform: 'translateX(0)' },
+        },
         'border-beam': {
           '100%': { 'offset-distance': '100%' },
         },
@@ -346,6 +354,8 @@ const config = {
         // Magic UI animations
         marquee: 'marquee var(--duration, 40s) linear infinite',
         'marquee-vertical': 'marquee-vertical var(--duration, 40s) linear infinite',
+        'marquee-slow': 'marquee-slow 60s linear infinite',
+        'marquee-slow-reverse': 'marquee-slow-reverse 60s linear infinite',
         'border-beam': 'border-beam calc(var(--duration) * 1s) infinite linear',
         shine: 'shine var(--shine-pulse-duration, 2s) linear infinite',
         'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',

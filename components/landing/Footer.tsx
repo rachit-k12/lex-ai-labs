@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
+import { Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
 import Image from 'next/image';
-import { Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
+import Link from 'next/link';
 
 const menuLinks = [
   { label: 'The Network', href: '#network' },
@@ -31,7 +31,7 @@ export default function Footer() {
       className="bg-gradient-to-b from-neutral-50 to-white text-neutral-900 overflow-hidden border-t border-neutral-200"
     >
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 !pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 max-w-4xl mx-auto">
           {/* Social Links */}
           <div className="text-center lg:text-left">
@@ -107,7 +107,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-20 pt-8 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-6 mt-10 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-base text-neutral-500">
             &copy; {new Date().getFullYear()} Lex AI Club. All rights reserved.
           </p>

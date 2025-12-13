@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BookOpen, Briefcase, Calendar, Compass, Network, Play, Users } from 'lucide-react';
+import { BookOpen, Briefcase, Calendar, Compass, Network, Users } from 'lucide-react';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
+import VideoPlayer from './VideoPlayer';
 
 const benefits = [
   {
@@ -36,7 +37,6 @@ const communityPerks = [
   { icon: Calendar, label: 'Weekly Roundtables' },
   { icon: Users, label: 'Founder Forums' },
   { icon: BookOpen, label: 'Expert Sessions' },
-  { icon: Network, label: 'Recruiter Access' },
   { icon: BookOpen, label: 'AI Fellowship Curriculum' },
   { icon: BookOpen, label: 'AI for Leaders Curriculum' },
 ];
@@ -83,7 +83,7 @@ export default function ValueProposition() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="text-center text-lg text-neutral-600 max-w-2xl mx-auto mb-16"
         >
-          The Lex AI Club gives you something no course can — direct connections to the people
+          The Lex AI Club gives you something no course can: direct connections to the people
           shaping AI&apos;s future.
         </motion.p>
 
@@ -158,33 +158,12 @@ export default function ValueProposition() {
           >
             {/* Experience Card */}
             <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden mb-8">
-              {/* Video Placeholder with gradient */}
-              <div className="aspect-video relative flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-coral-100 via-coral-50 to-white" />
-                {/* Grainy texture */}
-                <div className="absolute inset-0 opacity-40 pointer-events-none">
-                  <svg className="w-full h-full">
-                    <filter id="videoNoise">
-                      <feTurbulence
-                        type="fractalNoise"
-                        baseFrequency="0.7"
-                        numOctaves="4"
-                        stitchTiles="stitch"
-                      />
-                    </filter>
-                    <rect width="100%" height="100%" filter="url(#videoNoise)" opacity="0.4" />
-                  </svg>
-                </div>
-                <div className="relative z-10 text-center px-6">
-                  <div className="w-16 h-16 bg-neutral-900 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl cursor-pointer hover:bg-neutral-800 transition-colors">
-                    <Play className="w-6 h-6 text-white ml-1" />
-                  </div>
-                  <h3 className="text-xl font-serif italic text-neutral-900 mb-2">
-                    Inside the Club
-                  </h3>
-                  <p className="text-neutral-600 text-sm">See how members connect and grow</p>
-                </div>
-              </div>
+              {/* Video Player */}
+              <VideoPlayer
+                src="https://www.youtube.com/watch?v=7ARBJQn6QkM&pp=ygUfYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UgcG9kY2FzdA%3D%3D"
+                title="Inside the Club"
+                subtitle="See how members connect and grow"
+              />
 
               {/* Community Info */}
               <div className="p-6">

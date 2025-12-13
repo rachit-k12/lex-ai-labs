@@ -3,10 +3,17 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
+import LeadCaptureModal from './LeadCaptureModal';
+import Navigation from './Navigation';
 
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <section className="relative min-h-screen pt-20 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] sm:min-h-screen flex flex-col items-center justify-between overflow-hidden">
+      <Navigation />
+
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/30" />
 
@@ -34,7 +41,7 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-coral-100/30 to-transparent rounded-full blur-2xl" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center ">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,9 +50,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 mb-8 shadow-sm"
         >
           <Sparkles className="w-4 h-4 text-coral-500" />
-          <span className="text-sm font-medium text-neutral-700">
-            Applications Open for Cohort 3
-          </span>
+          <span className="text-sm font-medium text-neutral-700">Early Access Opening Soon</span>
         </motion.div>
 
         {/* Main Headline */}
@@ -78,13 +83,13 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
-          <Link
-            href="#apply"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="group inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-white bg-neutral-900 rounded-full hover:bg-neutral-800 transition-all shadow-lg hover:shadow-xl"
           >
             Request an Invite
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </button>
           <Link
             href="#network"
             className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-neutral-700 bg-white/80 backdrop-blur-sm border border-neutral-200 rounded-full hover:bg-white hover:border-neutral-300 transition-all"
@@ -96,6 +101,10 @@ export default function Hero() {
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <div className="h-1"></div>
     </section>
   );
 }

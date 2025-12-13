@@ -21,7 +21,7 @@ export default function TrustedBy() {
   });
 
   return (
-    <section ref={ref} className="py-8 md:py-20 bg-gradient-to-b from-white to-neutral-50">
+    <section ref={ref} className="bg-gradient-to-b from-white to-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0, y: 10 }}

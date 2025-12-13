@@ -1,48 +1,123 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { ArrowLeft, ArrowRight, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Linkedin } from 'lucide-react';
-
-// Sample leader data - using sample names/details instead of placeholders
+import { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 const leaders = [
   {
-    id: 'leader-1',
-    name: 'Amit Verma',
-    role: 'Applied Scientist',
+    id: 'puru',
+    name: 'Puru Kathuria',
+    role: 'Founder, Lex AI',
     company: 'Google',
-    image:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face',
-    linkedin: 'https://www.linkedin.com/in/amit-verma',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/puru-kathuria',
   },
   {
-    id: 'leader-2',
-    name: 'Priya Shah',
-    role: 'AI Product Manager',
+    id: 'swati',
+    name: 'Swati Nain',
+    role: 'Senior Engineer',
     company: 'Microsoft',
-    image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop&crop=face',
-    linkedin: 'https://www.linkedin.com/in/priya-shah',
+    img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/swati-nain',
   },
   {
-    id: 'leader-3',
-    name: 'Rahul Singh',
-    role: 'Machine Learning Engineer',
-    company: 'Amazon',
-    image:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face',
-    linkedin: 'https://www.linkedin.com/in/rahul-singh',
+    id: 'aashish',
+    name: 'Aashish Joshi',
+    role: 'Engineering Manager',
+    company: 'Google',
+    img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/aashish-joshi',
   },
   {
-    id: 'leader-4',
-    name: 'Sneha Patel',
+    id: 'nikhil',
+    name: 'Nikhil Reedy',
+    role: 'Research Scientist',
+    company: 'IIT Delhi',
+    img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/nikhil-reedy',
+  },
+  {
+    id: 'nipun',
+    name: 'Nipun Katyal',
+    role: 'AI Engineer',
+    company: 'Meta',
+    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/nipun-katyal',
+  },
+  {
+    id: 'rohan',
+    name: 'Rohan Gurve',
+    role: 'Software Engineer',
+    company: 'Google',
+    img: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/rohan-gurve',
+  },
+  {
+    id: 'vidhi',
+    name: 'Vidhi Gupta',
+    role: 'Engineering Manager',
+    company: 'Google',
+    img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/vidhi-gupta',
+  },
+  {
+    id: 'aakanksha',
+    name: 'Aakanksha',
+    role: 'Tech Lead',
+    company: 'Meesho',
+    img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/aakanksha',
+  },
+  {
+    id: 'divish',
+    name: 'Divish',
+    role: 'Tech Lead',
+    company: 'Google',
+    img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/divish',
+  },
+  {
+    id: 'sunil',
+    name: 'Sunil',
     role: 'Founder',
-    company: 'AI HealthTech Startup',
-    image:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face',
-    linkedin: 'https://www.linkedin.com/in/sneha-patel',
+    company: 'BlueSemi',
+    img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/sunil',
+  },
+  {
+    id: 'nitin',
+    name: 'Nitin Bansal',
+    role: 'Staff Engineer',
+    company: 'Databricks',
+    img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/nitin-bansal',
+  },
+  {
+    id: 'harsh',
+    name: 'Harsh Parikh',
+    role: 'Senior SDE',
+    company: 'Amazon',
+    img: 'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/harsh-parikh',
+  },
+  {
+    id: 'deepak',
+    name: 'Deepak Kumar',
+    role: 'ML Engineer',
+    company: 'IIIT Hyderabad',
+    img: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/deepak-kumar',
+  },
+  {
+    id: 'saahil',
+    name: 'Saahil Shah',
+    role: 'Product Lead',
+    company: 'Stripe',
+    img: 'https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/saahil-shah',
   },
 ];
 
@@ -52,133 +127,163 @@ export default function CommunityLeaders() {
     threshold: 0.1,
   });
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerView = 4;
+  const maxIndex = Math.max(0, leaders.length - itemsPerView);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
+  };
+
   return (
     <section
       ref={ref}
       id="network"
-      className="py-20 md:py-32 bg-gradient-to-b from-white to-coral-50/30 relative overflow-hidden"
+      className="py-24 md:py-36 bg-neutral-50 relative overflow-hidden"
     >
-      {/* Subtle grainy texture */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-        <svg className="w-full h-full">
-          <filter id="leaderNoise">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.8"
-              numOctaves="4"
-              stitchTiles="stitch"
-            />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#leaderNoise)" opacity="0.3" />
-        </svg>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4 block">
-            Your inner circle
-          </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 mb-6">
-            Connect with the
-            <br />
-            <span className="italic">Best in AI</span>
-          </h2>
-          <p className="text-lg text-neutral-600">
-            Tier-1 engineers, founders, and investors who actively mentor, collaborate, and open
-            doors for members.
-          </p>
-        </motion.div>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            className="max-w-xl"
+          >
+            <span className="text-xs font-medium text-neutral-500 uppercase tracking-[0.2em] mb-6 block">
+              The Network
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif text-neutral-900 leading-[1.1]">
+              Learn from those who&apos;ve
+              <span className="block text-blue-500 italic mt-1">been there</span>
+            </h2>
+          </motion.div>
 
-        {/* Leaders Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            className="flex items-center gap-3"
+          >
+            <button
+              onClick={prevSlide}
+              disabled={currentIndex === 0}
+              className="w-12 h-12 border border-neutral-600 rounded-full flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:border-neutral-900 disabled:opacity-30 hover:bg-neutral-200 disabled:cursor-not-allowed transition-all duration-500"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={nextSlide}
+              disabled={currentIndex >= maxIndex}
+              className="w-12 h-12 border border-neutral-600 rounded-full flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:border-neutral-900 disabled:opacity-30 hover:bg-neutral-200 disabled:cursor-not-allowed transition-all duration-500"
+            >
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </motion.div>
+        </div>
+
+        {/* Carousel */}
         <div className="relative">
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
-            {leaders.map((leader, index) => (
-              <motion.div
-                key={leader.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-                className="group relative w-64"
-              >
-                {/* Card */}
-                <div className="relative">
-                  {/* Coral shadow effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-br from-coral-200/50 to-coral-100/30 rounded-2xl transform rotate-2 group-hover:rotate-4 transition-transform duration-300" />
-
-                  {/* Image Container */}
-                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200">
-                    <Image
-                      src={leader.image}
-                      alt={leader.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="256px"
-                    />
-                    {/* Grainy overlay on hover */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none mix-blend-overlay">
-                      <svg className="w-full h-full">
-                        <filter id={`cardNoise-${index}`}>
-                          <feTurbulence
-                            type="fractalNoise"
-                            baseFrequency="0.9"
-                            numOctaves="4"
-                            stitchTiles="stitch"
-                          />
-                        </filter>
-                        <rect
-                          width="100%"
-                          height="100%"
-                          filter={`url(#cardNoise-${index})`}
-                          opacity="0.5"
-                        />
-                      </svg>
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-5"
+              animate={{
+                x: -currentIndex * (280 + 20),
+              }}
+              transition={{
+                duration: 0.8,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+            >
+              {leaders.map((leader, index) => (
+                <motion.div
+                  key={leader.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{
+                    duration: 0.7,
+                    delay: 0.1 + index * 0.08,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                  className="flex-shrink-0 w-[280px]"
+                >
+                  <div className="group relative">
+                    {/* Image Container */}
+                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200">
+                      <Image
+                        src={leader.img}
+                        alt={leader.name}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        sizes="280px"
+                      />
                     </div>
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-transparent to-transparent" />
-                  </div>
-                </div>
 
-                {/* Info */}
-                <div className="mt-4">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-semibold text-neutral-900 text-lg">{leader.name}</h3>
-                      <p className="text-sm text-neutral-500">
-                        {leader.role}, {leader.company}
-                      </p>
+                    {/* Info */}
+                    <div className="mt-5">
+                      <div className="flex items-start justify-between">
+                        <div className="flex flex-col items-start">
+                          <h3 className="font-medium text-neutral-900 text-xl">{leader.name}</h3>
+                          <p className="text-base text-neutral-500">{leader.role}</p>
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                          <span className="text-xs text-neutral-400 bg-neutral-100 px-2.5 py-1 rounded-full">
+                            {leader.company}
+                          </span>
+                          <Link
+                            href={leader.linkedin}
+                            className="inline-flex items-center justify-center w-8 h-8 bg-neutral-100 rounded-full text-neutral-400 hover:bg-[#0077b5] hover:text-white transition-all duration-300"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Connect with ${leader.name} on LinkedIn`}
+                          >
+                            <Linkedin className="w-4 h-4" />
+                          </Link>
+                        </div>
+                      </div>
+                      {/* LinkedIn Icon - Below badge */}
                     </div>
-                    <Link
-                      href={leader.linkedin}
-                      className="w-9 h-9 bg-neutral-100 rounded-full flex items-center justify-center text-neutral-500 hover:bg-[#0077b5] hover:text-white transition-all"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                    </Link>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
-          {/* View All CTA */}
+          {/* Progress indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex justify-center mt-12"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-12 flex items-center gap-4"
           >
-            <p className="text-neutral-500 text-sm">
-              10+ mentors from Google, Microsoft, Amazon, and leading AI startups
-            </p>
+            <div className="flex-1 h-px bg-neutral-200 relative overflow-hidden">
+              <motion.div
+                className="absolute inset-y-0 left-0 bg-neutral-900"
+                animate={{
+                  width: `${((currentIndex + 1) / (maxIndex + 1)) * 100}%`,
+                }}
+                transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+              />
+            </div>
+            <span className="text-xs text-neutral-400 tabular-nums">
+              {String(currentIndex + 1).padStart(2, '0')} / {String(maxIndex + 1).padStart(2, '0')}
+            </span>
           </motion.div>
         </div>
+
+        {/* Bottom text */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center text-neutral-400 text-sm mt-16"
+        >
+          Mentors from Google, Microsoft, Amazon, Meta & leading AI startups
+        </motion.p>
       </div>
     </section>
   );

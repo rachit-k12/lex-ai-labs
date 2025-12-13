@@ -1,10 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
+import { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import LeadCaptureModal from './LeadCaptureModal';
 
 const communityImages = [
   'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=200&h=200&fit=crop',
@@ -18,6 +19,7 @@ export default function FinalCTA() {
     triggerOnce: true,
     threshold: 0.1,
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section ref={ref} id="apply" className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
@@ -126,7 +128,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg md:text-xl text-white/70 mb-4"
           >
-            The most valuable capital isn&apos;t money &mdash; it&apos;s access to the right people.
+            The most valuable capital isn&apos;t money. It&apos;s access to the right people.
           </motion.p>
 
           <motion.p
@@ -152,16 +154,19 @@ export default function FinalCTA() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Link
-              href="https://aiseekhegaindia.com/fellowship/"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="group inline-flex items-center gap-3 px-10 py-5 bg-white text-neutral-900 text-lg font-medium rounded-full hover:bg-neutral-100 transition-all shadow-xl"
             >
               Apply for Membership
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </Link>
+            </button>
           </motion.div>
         </div>
       </div>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }
