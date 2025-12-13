@@ -142,14 +142,10 @@ export default function CommunityLeaders() {
   };
 
   return (
-    <section
-      ref={ref}
-      id="network"
-      className="py-24 md:py-36 bg-neutral-50 relative overflow-hidden"
-    >
+    <section ref={ref} id="network" className="py-24 bg-neutral-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -233,12 +229,12 @@ export default function CommunityLeaders() {
                           <p className="text-base text-neutral-500">{leader.role}</p>
                         </div>
                         <div className="flex flex-col items-center gap-2">
-                          <span className="text-xs text-neutral-400 bg-neutral-100 px-2.5 py-1 rounded-full">
+                          <span className="text-xs text-neutral-700 bg-neutral-100 px-2.5 py-1 rounded-full">
                             {leader.company}
                           </span>
                           <Link
                             href={leader.linkedin}
-                            className="inline-flex items-center justify-center w-8 h-8 bg-neutral-100 rounded-full text-neutral-400 hover:bg-[#0077b5] hover:text-white transition-all duration-300"
+                            className="inline-flex items-center justify-center w-8 h-8 bg-blue-50 rounded-full text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={`Connect with ${leader.name} on LinkedIn`}
@@ -282,7 +278,7 @@ export default function CommunityLeaders() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center text-neutral-400 text-sm mt-16"
+          className="text-center text-neutral-400 text-sm mt-10"
         >
           Mentors from Google, Microsoft, Amazon, Meta & leading AI startups
         </motion.p>

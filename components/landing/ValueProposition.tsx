@@ -37,6 +37,7 @@ const communityPerks = [
   { icon: Calendar, label: 'Weekly Roundtables' },
   { icon: Users, label: 'Founder Forums' },
   { icon: BookOpen, label: 'Expert Sessions' },
+  { icon: BookOpen, label: 'Elite Private Group' },
   { icon: BookOpen, label: 'AI Fellowship Curriculum' },
   { icon: BookOpen, label: 'AI for Leaders Curriculum' },
 ];
