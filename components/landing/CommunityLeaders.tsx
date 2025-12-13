@@ -153,11 +153,11 @@ export default function CommunityLeaders() {
             className="max-w-xl"
           >
             <span className="text-xs font-medium text-neutral-500 uppercase tracking-[0.2em] mb-6 block">
-              The Network
+              Meet The Network
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-neutral-900 leading-[1.1]">
-              Learn from those who&apos;ve
-              <span className="block text-blue-500 italic mt-1">been there</span>
+              Connect With Those Building
+              <span className="block text-blue-500 italic mt-1">AI&apos;s Future</span>
             </h2>
           </motion.div>
 
@@ -280,7 +280,7 @@ export default function CommunityLeaders() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center text-neutral-400 text-sm mt-10"
         >
-          Mentors from Google, Microsoft, Amazon, Meta & leading AI startups
+          Engineers, founders, and leaders from Google, Microsoft, Amazon, Meta &amp; India&apos;s top AI startups
         </motion.p>
       </div>
     </section>

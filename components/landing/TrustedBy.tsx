@@ -22,12 +22,12 @@ export default function TrustedBy() {
 
   return (
     <section ref={ref} className="bg-gradient-to-b from-white to-neutral-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="text-center text-base font-semibold text-neutral-500 uppercase tracking-wider mb-10"
+          className="text-center text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-10"
         >
           Our members work at
         </motion.p>
@@ -35,8 +35,8 @@ export default function TrustedBy() {
         {/* Marquee Container */}
         <div className="relative overflow-hidden">
           {/* Gradient masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-neutral-50 via-neutral-50/50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-neutral-50 via-neutral-50/50 to-transparent z-10 pointer-events-none" />
 
           {/* Marquee Track */}
           <motion.div

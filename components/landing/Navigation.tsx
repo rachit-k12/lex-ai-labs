@@ -9,9 +9,9 @@ import LeadCaptureModal from './LeadCaptureModal';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'The Network', href: '#network' },
   { label: 'Community', href: '#community' },
-  { label: 'Stories', href: '#stories' },
+  { label: 'The Network', href: '#network' },
+  { label: 'Transformations', href: '#stories' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -161,7 +161,7 @@ export default function Navigation() {
                       <ArrowRight className="w-5 h-5" />
                     </button>
                     <p className="text-center text-sm text-neutral-500 mt-4">
-                      Join India&apos;s most exclusive AI network
+                      Join India&apos;s most ambitious AI community
                     </p>
                   </motion.div>
                 </nav>

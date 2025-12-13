@@ -5,10 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const menuLinks = [
-  { label: 'The Network', href: '#network' },
   { label: 'Community', href: '#community' },
-  { label: 'Member Stories', href: '#stories' },
-  { label: 'Apply', href: '#apply' },
+  { label: 'The Network', href: '#network' },
+  { label: 'Transformations', href: '#stories' },
+  { label: 'Apply Now', href: '#apply' },
 ];
 
 const policyLinks = [
@@ -109,10 +109,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 mt-10 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-base text-neutral-500">
-            &copy; {new Date().getFullYear()} Lex AI Club. All rights reserved.
+            &copy; {new Date().getFullYear()} Lex AI Labs. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
-            <p className="text-base text-neutral-600">Built for the future of AI</p>
+            <p className="text-base text-neutral-600">Build Intelligence. Build India.</p>
             <span className="text-blue-500">•</span>
             <p className="text-base text-blue-600 font-semibold">#AISeekhegaIndia</p>
           </div>

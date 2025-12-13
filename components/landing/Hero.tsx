@@ -70,7 +70,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto mb-12 leading-relaxed"
+          className="text-lg  text-neutral-600 max-w-4xl mx-auto mb-12 leading-relaxed"
         >
           Access Tier-1 engineers, founders, and investors from Google, Amazon, and Microsoft. Your
           network becomes your strongest career asset.
@@ -87,12 +87,12 @@ export default function Hero() {
             onClick={() => setIsModalOpen(true)}
             className="group inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-white bg-neutral-900 rounded-full hover:bg-neutral-800 transition-all shadow-lg hover:shadow-xl"
           >
-            Request an Invite
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Apply Now
+            <ArrowRight className="w-6 h-5 group-hover:translate-x-1.5 transition-transform duration-500" />
           </button>
           <Link
             href="#network"
-            className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-neutral-700 bg-white/80 backdrop-blur-sm border border-neutral-200 rounded-full hover:bg-white hover:border-neutral-300 transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-neutral-700 bg-white/70 backdrop-blur-sm border border-neutral-200 rounded-full hover:bg-white hover:border-neutral-500 transition-all duration-500 ease-in-out"
           >
             See Who&apos;s Inside
           </Link>

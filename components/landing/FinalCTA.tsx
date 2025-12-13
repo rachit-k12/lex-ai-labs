@@ -119,7 +119,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6"
           >
-            Your Network is Your <span className="italic">Net Worth</span>
+            Ready to Build <span className="italic">What&apos;s Next?</span>
           </motion.h2>
 
           <motion.p
@@ -128,7 +128,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg md:text-xl text-white/70 mb-4"
           >
-            The most valuable capital isn&apos;t money. It&apos;s access to the right people.
+            Join 500+ engineers, founders, and leaders who chose to stop watching from the sidelines.
           </motion.p>
 
           <motion.p
@@ -137,7 +137,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-base md:text-lg text-white/50 mb-3"
           >
-            Join a high-trust circle of ambitious minds. Unlimited value through people.
+            Applications are reviewed within 48 hours. Limited seats per cohort.
           </motion.p>
 
           <motion.p
@@ -146,7 +146,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-lg text-coral-400 font-medium mb-10"
           >
-            Request an invite at ₹39,999
+            Membership starts at ₹39,999/year
           </motion.p>
 
           <motion.div
@@ -158,7 +158,7 @@ export default function FinalCTA() {
               onClick={() => setIsModalOpen(true)}
               className="group inline-flex items-center gap-3 px-10 py-5 bg-white text-neutral-900 text-lg font-medium rounded-full hover:bg-neutral-100 transition-all shadow-xl"
             >
-              Apply for Membership
+              Apply Now
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
           </motion.div>

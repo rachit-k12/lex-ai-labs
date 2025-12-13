@@ -15,7 +15,7 @@ const testimonials = [
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
     content:
       'I had the pleasure of working with Puru at MathWorks. My peers and I always appreciated the depth with which Puru approached engineering problems as well as his philosophy towards designing solutions. He has a commendable grasp on a variety of domains like natural language processing and audio processing.',
-    outcome: 'Learned model quantization for low resource hardware',
+    outcome: 'Mastered AI model optimization',
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const testimonials = [
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face',
     content:
       'I had the privilege of learning from Puru during the System Design Fellowship. He turns each learning session into an approachable conversation, bridging the gap between theory and real-world intuition. His sessions will always leave you smarter, more confident, and genuinely excited to build.',
-    outcome: 'Elevated software engineering skills',
+    outcome: 'Advanced system design expertise',
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const testimonials = [
       'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
     content:
       "I've had the chance to interact with Puru and learn valuable insights into Machine Learning through him. He has a natural ability to simplify complex topics and explain them in a way that makes sense, no matter how technical they are.",
-    outcome: 'Gained deep ML insights',
+    outcome: 'Achieved ML leadership skills',
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const testimonials = [
       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face',
     content:
       'Puru has a way of making machine learning feel less like rocket science and more like a conversation. During my time at the LexAI Fellowship, he made topics that usually seem intimidating feel surprisingly manageable.',
-    outcome: 'Mastered ML fundamentals',
+    outcome: 'Built production ML confidence',
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ const testimonials = [
       'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face',
     content:
       'His mentoring and teaching abilities are truly outstanding, especially his approach of focusing on practical, industry-applicable knowledge. He equipped me with real-world Machine Learning skills and insights needed to thrive.',
-    outcome: 'Fostered professional growth',
+    outcome: 'Accelerated career trajectory',
   },
   {
     id: 6,
@@ -70,7 +70,7 @@ const testimonials = [
       'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face',
     content:
       "I've had the opportunity to learn from Puru during the Lex AI Fellowship. He breaks down complex concepts—especially the math—into simple, intuitive steps. Even the most abstract ideas feel approachable.",
-    outcome: 'Grasped ML theory and practice',
+    outcome: 'Transformed from theory to practice',
   },
   {
     id: 7,
@@ -81,7 +81,7 @@ const testimonials = [
       'https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=200&h=200&fit=crop&crop=face',
     content:
       'Working with Puru has been one of the most enriching experiences of my journey. His technical depth across system design, AI/ML, and large-scale engineering challenges is truly exceptional. He has a rare ability to simplify complex problems.',
-    outcome: 'Grew tremendously in technical skills',
+    outcome: 'Leveled up to senior engineer',
   },
   {
     id: 8,
@@ -92,7 +92,7 @@ const testimonials = [
       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
     content:
       "Puru didn't just shape how I write code, he changed how I think about technology and its purpose. Watching him work is like seeing someone translate philosophy into engineering: grounded in first principles, deeply thoughtful.",
-    outcome: 'Transformed approach to technology',
+    outcome: 'Developed engineering philosophy',
   },
 ];
 interface TestimonialCardProps {
@@ -105,7 +105,7 @@ function TestimonialCard({ testimonial }: TestimonialCardProps) {
       <div className="flex flex-col gap-4 justify-between bg-white rounded-xl md:rounded-2xl p-4 md:p-6 h-full border border-neutral-100 shadow-sm hover:shadow-lg hover:border-neutral-200 transition-all duration-300">
         {/* Quote icon */}
         <div className="flex flex-col gap-2">
-          <Quote className="w-6 h-6 md:w-8 md:h-8 text-coral-300 mb-3 md:mb-4" />
+          <Quote className="w-6 h-6 md:w-8 md:h-8 text-coral-400 mb-3 md:mb-4" />
           {/* Content */}
 
           <p className="text-neutral-700 text-left leading-relaxed mb-4 md:mb-6 text-sm md:text-[15px]">
@@ -175,11 +175,11 @@ export default function Testimonials() {
           className="text-center mb-10 md:mb-16 px-4"
         >
           <span className="text-[10px] md:text-xs font-medium text-neutral-400 uppercase tracking-[0.15em] md:tracking-[0.2em] mb-4 md:mb-6 block">
-            Member Stories
+            Transformation Stories
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 leading-[1.1]">
-            Real results from
-            <span className="block text-blue-500 italic mt-1">real members</span>
+            Careers Transformed,
+            <span className="block text-blue-500 italic mt-1">Results That Speak.</span>
           </h2>
         </motion.div>
 

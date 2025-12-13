@@ -1,42 +1,41 @@
-# Lex AI Club - Product Documentation
+# Lex AI - Product Documentation
 
-> A premium, closed-door AI community for the next generation of builders, founders, and technical innovators.
+> Build Intelligence. Build India.
 
 ---
 
-## What is Lex AI Club?
+## What is Lex AI?
 
-Lex AI Club is **not a course or a program** — it is an **elite network** of applied scientists, engineers, founders, investors, and recruiters who are shaping the future of AI.
+Lex AI is **India's most ambitious community** of engineers, founders, and leaders building real AI. We're not a course or certification program—we're a **high-trust network** of practitioners who ship production AI systems at Google, Amazon, Microsoft, Meta, and India's top startups.
 
-Members don't simply consume content; they gain **access to people**. Every interaction inside the club is powered by a curated group of Tier-1 AI professionals from companies like Google, Microsoft, and Amazon who actively mentor, collaborate, and guide peers on real-world problems.
+Members don't consume content; they gain **access to people**. Every interaction inside the community is powered by a curated group of Tier-1 AI professionals who actively mentor, collaborate, and guide peers on real-world problems.
 
 ---
 
 ## Core Value Proposition
 
-### The Narrative Shift
-- **Before:** Selling a fellowship/program
-- **Now:** Selling an elite AI club with:
-  - Infinite networking value
-  - Community-led learning
-  - Real-world exposure
-  - High-quality interactions
-  - Tier-1 peer group
+### The Narrative
+- **What We Sell:** Access to people, not just programs
+- **What Members Get:**
+  - Real-world AI engineering & leadership training
+  - Elite cohort-based learning experience
+  - Direct mentorship from world-class AI leaders
+  - Accelerated transformation for careers & companies
 
 ### Brand Message
-> "Pay once, get indefinite long-term value through a premium AI community."
+> "The membership that gives you people, not just programs. Premium content, world-class mentors, and a private network of AI builders—all in one place."
 
-**The community is the hero. The course is included, but it is not the main selling point.**
+**The community is the hero. The programs are included, but they are not the main selling point.**
 
 ---
 
 ## Target Audience
 
 ### Primary
-- AI/ML Engineers looking to level up
+- AI/ML Engineers looking to ship production systems
 - Founders building AI-first products
 - Technical professionals transitioning into AI
-- Researchers wanting practical industry exposure
+- Engineers who want to stop watching from the sidelines
 
 ### Secondary
 - Product managers in AI companies
@@ -45,97 +44,69 @@ Members don't simply consume content; they gain **access to people**. Every inte
 
 ---
 
-## Hierarchy of Assets
+## What Members Unlock
 
-### Primary Assets (The People)
-1. **Mentors** - Tier-1 engineers and scientists from Google, Microsoft, Amazon
-2. **Practitioners** - Working AI professionals building production systems
-3. **Founders** - Building and scaling AI-first companies
-4. **Investors** - Providing funding insights and startup guidance
-5. **Recruiters** - AI/ML specialized recruiters with exclusive opportunities
+### 1. Real-World AI Engineering
+Build production-grade AI systems with hands-on projects. Learn from practitioners who ship code at scale, not just theory.
 
-### Secondary Assets (The Content)
-- Self-paced video content
-- Audio lectures
-- Reading materials and notes
-- Live classes
-- Book material
+### 2. Elite Mentorship Network
+Get 1:1 guidance from engineers at Google, Microsoft, and Amazon. Code reviews, career advice, and insider knowledge—direct from the source.
 
-**Community > Content. People > Material.**
+### 3. Curated Cohort Experience
+Join a vetted community of 500+ builders, founders, and leaders. No noise, just high-signal conversations with people who get it.
 
----
+### 4. Accelerated Career Growth
+Access exclusive AI roles, investor introductions, and partnership opportunities. Your next breakthrough is one connection away.
 
-## Member Benefits
+### 5. Premium Content & Programs
+- **AI Fellowship Program** - For engineers building AI systems
+- **AI for Leaders Program** - For executives making AI decisions
+- Weekly expert deep-dives on LLMs, agents, and production ML
+- Private Slack community with 24/7 access
 
-### 1. Peer-to-Peer Support
-Members can post what they're building and receive:
-- Solutions from experienced practitioners
-- Technical guidance and approaches
-- Code reviews and architecture feedback
-- Problem-solving support
-
-### 2. Tier-1 Mentorship
-Direct access to mentors who:
-- Review your work
-- Guide career decisions
-- Share insider industry knowledge
-- Provide technical coaching
-
-### 3. High-Value Networking
-Closed community interactions with:
-- AI-focused recruiters with exclusive roles
-- Active investors in AI startups
-- Successful founders sharing their journey
-- Top-tier engineers from FAANG and unicorns
-
-### 4. Exclusive Events
-- **Weekly Roundtables:** Investors meet startups every Sunday
-- **Ask-Me-Anything Sessions:** With industry leaders
-- **Founder Forums:** Peer support for builders
-- **Recruiter Interactions:** Direct access to opportunities
-- **Live Expert Sessions:** Deep-dives on trending topics
-
-### 5. AI Learning Material (Bonus)
-- Self-paced fellowship curriculum
-- AI-for-readers program
-- Video lectures and notes
-- Live cohort classes
+### 6. Exclusive Events
+- **Investor Roundtables** - Weekly pitch sessions with active AI investors
+- **Expert AMAs** - Unfiltered Q&A with industry leaders
+- **Founder Forums** - Peer circles to share challenges and wins
+- **Technical Deep-Dives** - Hands-on sessions building real systems
+- **AI Chai Meetups** - In-person gatherings in Bengaluru, Mumbai, Delhi
 
 ---
 
 ## The Member Experience Flow
 
 ```
-1. Join Lex AI Club
+1. Apply to Lex AI Community
    ↓
-2. Gain Immediate Access To:
-   • Community Slack
+2. Application Reviewed (within 48 hours)
+   ↓
+3. Gain Immediate Access To:
+   • Private Slack Community
    • Mentor Network
-   • Peer Group
-   • Networking Events
+   • Weekly Events
+   • Content Library
    ↓
-3. Unlock Learning Content:
-   • Self-paced program
-   • Fellowship material
-   • Live sessions
+4. Unlock Programs:
+   • AI Fellowship (12 weeks)
+   • AI for Leaders (8 weeks)
+   • Expert Sessions
 ```
 
 ---
 
 ## Community Composition
 
-### Current Core Members (10+)
-- Applied Scientists
-- Senior Engineers
-- Engineering Managers
-- From: Google, Microsoft, Amazon
+### Current Network
+- **500+ Members** across 8+ countries
+- **10+ Tier-1 Mentors** from Google, Microsoft, Amazon, Meta
+- Engineers, founders, and leaders from FAANG and top startups
 
-### Growing Network
-- AI/ML Recruiters
-- AI Founders
-- Active Investors
-- Research Scientists
-- Strong Peer Contributors
+### Who's Inside
+- Applied Scientists & ML Engineers
+- Senior Engineers & Tech Leads
+- Engineering Managers
+- Startup Founders
+- Product Leaders
 
 ---
 
@@ -145,7 +116,7 @@ Closed community interactions with:
 |--------|-------|
 | Community Members | 500+ |
 | Countries Represented | 8+ |
-| Expert Sessions | 50+ |
+| Expert Sessions Hosted | 50+ |
 | Tier-1 Mentors | 10+ |
 | Member Companies | Google, Amazon, Microsoft, Meta, and more |
 
@@ -154,15 +125,17 @@ Closed community interactions with:
 ## Pricing
 
 ### Membership Investment
-**₹39,999** (One-time / Annual)
+**₹39,999/year** (One-time Annual)
 
 ### What's Included
 - Lifetime community access
 - All events and roundtables
 - Mentor network access
 - Recruiter and investor connections
-- Self-paced AI program
-- Live cohort sessions
+- AI Fellowship Program
+- AI for Leaders Program
+- Weekly expert sessions
+- Private Slack access
 
 ---
 
@@ -170,13 +143,51 @@ Closed community interactions with:
 
 ### What Makes Us Different
 
-| Others | Lex AI Club |
-|--------|-------------|
+| Others | Lex AI |
+|--------|--------|
 | Sell courses | Sell access to people |
 | Generic cohorts | Curated, vetted members |
-| One-time learning | Indefinite value |
+| One-time learning | Unlimited value through network |
 | Content-first | Community-first |
-| Certificates | Real opportunities |
+| Certificates | Real career outcomes |
+| Theory-heavy | Production-focused |
+
+---
+
+## Website Section Structure
+
+### Page Flow
+1. **Hero** — Build Intelligence. Build India.
+2. **Trusted By** — Companies where members work
+3. **What You Get** — The membership that gives you people, not just programs
+4. **The Network** — Connect with those building AI's future
+5. **Exclusive Events** — Where builders connect
+6. **Transformation Stories** — Careers transformed. Results that speak.
+7. **Final CTA** — Ready to build what's next?
+
+### Key Messages Per Section
+
+**Hero:**
+> "Build Intelligence. Build India."
+> "Join India's most ambitious community of engineers, founders, and leaders building real AI."
+
+**What You Get:**
+> "The Membership That Gives You People, Not Just Programs"
+> "Premium content, world-class mentors, and a private network of AI builders—all in one place."
+
+**The Network:**
+> "Connect With Those Building AI's Future"
+
+**Events:**
+> "Where Builders Connect"
+> "High-signal gatherings designed for people who ship, not just talk."
+
+**Transformations:**
+> "Careers Transformed. Results That Speak."
+
+**Final CTA:**
+> "Ready to Build What's Next?"
+> "Join 500+ engineers, founders, and leaders who chose to stop watching from the sidelines."
 
 ---
 
@@ -196,51 +207,39 @@ Closed community interactions with:
 ## Brand Guidelines
 
 ### Tone of Voice
-- **Exclusive but welcoming** — Not elitist, but selective
-- **Direct and specific** — No vague promises
-- **Outcome-focused** — Emphasize what members achieve
+- **Ambitious but welcoming** — High standards, not elitist
+- **Direct and specific** — No vague promises, clear outcomes
+- **Action-oriented** — Emphasize building and shipping
 - **Community-centric** — Always about the people, not the platform
 
 ### Key Phrases to Use
-- "Access to people, not just content"
-- "Your strongest career asset"
-- "High-trust circle of ambitious minds"
-- "Tier-1 AI professionals"
-- "Unlimited value through people"
+- "Build Intelligence. Build India."
+- "Access people, not just content"
+- "The membership that gives you people, not just programs"
+- "High-signal conversations"
+- "People who ship, not just talk"
+- "Stop watching from the sidelines"
+- "Your next breakthrough is one connection away"
 
 ### Phrases to Avoid
 - "Best AI course"
 - "Learn AI online"
 - "Certification program"
 - "Upskill" or "Reskill"
+- "Exclusive" without substance
 - Generic platform language
 
 ---
 
-## Website Section Structure
+## Primary CTAs
 
-### Recommended Page Flow
-1. **Hero** — Clear value prop: Premium AI community for builders
-2. **Social Proof** — Companies where members work
-3. **Community Benefits** — What you get access to (people first)
-4. **The Network** — Meet the mentors and leaders
-5. **Member Stories** — Testimonials focusing on connections and outcomes
-6. **Events Preview** — Upcoming community events
-7. **Final CTA** — Join the community
-
-### Key Messages Per Section
-
-**Hero:**
-> "India's Most Exclusive AI Network. Access Tier-1 Engineers, Founders, and Investors."
-
-**Benefits:**
-> "The membership that gives you people, not just programs."
-
-**Network:**
-> "Connect with the ones building AI's future."
-
-**CTA:**
-> "Your network is your net worth. Join the inner circle."
+| Location | CTA Text |
+|----------|----------|
+| Hero | "Apply Now" |
+| Navigation | "Apply Now" |
+| Community Section | "View Full Curriculum" |
+| Final CTA | "Apply Now" |
+| Secondary | "Meet the Network" |
 
 ---
 

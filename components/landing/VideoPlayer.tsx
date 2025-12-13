@@ -110,10 +110,7 @@ export default function VideoPlayer({
           </div>
         ) : (
           /* Thumbnail/Preview - shown when not playing inline */
-          <div
-            className="absolute inset-0 cursor-pointer group"
-            onClick={handlePlay}
-          >
+          <div className="absolute inset-0 cursor-pointer group" onClick={handlePlay}>
             {/* Background gradient placeholder */}
             <div className="absolute inset-0 bg-gradient-to-br from-coral-100 via-coral-50 to-white" />
 
@@ -135,7 +132,7 @@ export default function VideoPlayer({
             {/* YouTube thumbnail if available */}
             {isYoutube && (
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 bg-cover bg-center opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
                   backgroundImage: `url(https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg)`,
                 }}
@@ -154,7 +151,9 @@ export default function VideoPlayer({
               >
                 <Play className="w-6 h-6 md:w-8 md:h-8 text-white ml-1" />
               </motion.button>
-              <h3 className="text-lg md:text-xl font-serif italic text-white mb-1 text-shadow">{title}</h3>
+              <h3 className="text-lg md:text-xl font-serif italic text-white mb-1 text-shadow">
+                {title}
+              </h3>
               <p className="text-white/80 text-xs md:text-sm">{subtitle}</p>
             </div>
 

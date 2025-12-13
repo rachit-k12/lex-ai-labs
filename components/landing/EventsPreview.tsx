@@ -9,39 +9,38 @@ const events = [
   {
     id: 'event-1',
     title: 'Investor Roundtable',
-    description: 'Weekly sessions where 5 startups pitch to active AI investors',
+    description: 'Weekly pitch sessions where AI startups meet active investors. Get feedback, make connections, close rounds.',
     frequency: 'Every Sunday',
     highlight: 'Live Pitches',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
   },
   {
     id: 'event-2',
-    title: 'Ask Me Anything',
-    description: 'Direct Q&A with industry leaders from top AI companies',
-    frequency: 'Bi-weekly',
-    highlight: 'FAANG Leaders',
+    title: 'Expert AMAs',
+    description: 'Unfiltered Q&A with engineers and leaders from Google, Amazon, Microsoft, and top AI startups.',
+    frequency: 'Weekly',
+    highlight: 'Industry Leaders',
   },
   {
     id: 'event-3',
     title: 'Founder Forums',
-    description: 'Peer support sessions for AI founders to share challenges and wins',
+    description: 'Peer circles for AI founders. Share challenges, celebrate wins, and build together.',
     frequency: 'Monthly',
-    highlight: 'Peer Network',
+    highlight: 'Peer Support',
   },
   {
     id: 'event-4',
-    title: 'Expert Deep-Dives',
-    description: 'Technical sessions on LLMs, agents, and production ML systems',
+    title: 'Technical Deep-Dives',
+    description: 'Hands-on sessions on LLMs, agents, RAG, and production ML. Build real systems, not toy projects.',
     frequency: 'Weekly',
     highlight: 'Hands-on',
   },
   {
     id: 'event-5',
     title: 'AI Chai Meetups',
-    description:
-      'Monthly in-person meetups in Bengaluru, Mumbai, and Delhi. Network, learn, and make lifelong connections.',
+    description: 'In-person gatherings in Bengaluru, Mumbai, and Delhi. Real conversations, real connections.',
     frequency: '3 Cities',
-    highlight: 'In-person',
+    highlight: 'In-Person',
   },
 ];
 
@@ -79,14 +78,14 @@ export default function EventsPreview() {
           className="max-w-2xl mb-16"
         >
           <span className="text-xs font-medium text-neutral-500 uppercase tracking-[0.2em] mb-6 block">
-            Weekly Events
+            Exclusive Events
           </span>
           <h2 className="text-4xl md:text-5xl font-serif text-white leading-[1.1]">
-            Where connections
-            <span className="text-blue-500 italic">&nbsp;happen</span>
+            Where Builders
+            <span className="text-blue-500 italic">&nbsp;Connect</span>
           </h2>
           <p className="text-lg text-neutral-400 leading-relaxed mt-6">
-            Curated gatherings designed for meaningful exchange.
+            High-signal gatherings designed for people who ship, not just talk.
           </p>
         </motion.div>
 

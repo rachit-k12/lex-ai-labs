@@ -3,43 +3,45 @@
 import { motion } from 'framer-motion';
 import { BookOpen, Briefcase, Calendar, Compass, Network, Users } from 'lucide-react';
 import Image from 'next/image';
+import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import CurriculumModal from './CurriculumModal';
 import VideoPlayer from './VideoPlayer';
 
 const benefits = [
   {
     icon: Users,
-    title: 'Peer-to-Peer Support',
+    title: 'Real-World AI Engineering',
     description:
-      "Post what you're building. Get solutions and support from practitioners who've solved the same problems.",
+      'Build production-grade AI systems with hands-on projects. Learn from practitioners who ship code at scale, not just theory.',
   },
   {
     icon: Compass,
-    title: 'Tier-1 Mentorship',
+    title: 'Elite Mentorship Network',
     description:
-      'Direct access to engineers and scientists from Google, Microsoft, and Amazon who review your work and guide your career.',
+      'Get 1:1 guidance from engineers at Google, Microsoft, and Amazon. Code reviews, career advice, and insider knowledge—direct from the source.',
   },
   {
     icon: Network,
-    title: 'High-Value Networking',
+    title: 'Curated Cohort Experience',
     description:
-      'Connect with AI-focused recruiters, active investors, successful founders, and engineers from FAANG and unicorns.',
+      'Join a vetted community of 500+ builders, founders, and leaders. No noise, just high-signal conversations with people who get it.',
   },
   {
     icon: Briefcase,
-    title: 'Exclusive Opportunities',
+    title: 'Accelerated Career Growth',
     description:
-      'Hear about AI roles, collaborations, and partnerships before they hit the market. Your next opportunity is one conversation away.',
+      'Access exclusive AI roles, investor introductions, and partnership opportunities. Your next breakthrough is one connection away.',
   },
 ];
 
 const communityPerks = [
-  { icon: Calendar, label: 'Weekly Roundtables' },
+  { icon: Calendar, label: 'Weekly AMAs' },
   { icon: Users, label: 'Founder Forums' },
-  { icon: BookOpen, label: 'Expert Sessions' },
-  { icon: BookOpen, label: 'Elite Private Group' },
-  { icon: BookOpen, label: 'AI Fellowship Curriculum' },
-  { icon: BookOpen, label: 'AI for Leaders Curriculum' },
+  { icon: BookOpen, label: 'Expert Deep-Dives' },
+  { icon: Network, label: 'Private Slack' },
+  { icon: BookOpen, label: 'AI Fellowship Program' },
+  { icon: Briefcase, label: 'AI for Leaders Program' },
 ];
 
 export default function ValueProposition() {
@@ -47,6 +49,7 @@ export default function ValueProposition() {
     triggerOnce: true,
     threshold: 0.1,
   });
+  const [isCurriculumOpen, setIsCurriculumOpen] = useState(false);
 
   return (
     <section ref={ref} id="community" className="py-20 md:py-32 bg-white overflow-hidden relative">
@@ -71,9 +74,8 @@ export default function ValueProposition() {
           className="text-center max-w-4xl mx-auto mb-6"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 leading-[1.1]">
-            Access <span className="italic">People,</span>
-            <br className="hidden sm:block" />
-            Not Just <span className="italic">Content.</span>
+            Access People,
+            <span className="block mt-1 italic text-blue-500">Not Just Content.</span>
           </h2>
         </motion.div>
 
@@ -84,8 +86,8 @@ export default function ValueProposition() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="text-center text-lg text-neutral-600 max-w-2xl mx-auto mb-16"
         >
-          The Lex AI Club gives you something no course can: direct connections to the people
-          shaping AI&apos;s future.
+          Premium content, world-class mentors, and a private network of AI builders—all in one
+          place. This is how careers accelerate.
         </motion.p>
 
         {/* Two Column Layout */}
@@ -124,7 +126,7 @@ export default function ValueProposition() {
             </div>
 
             {/* Benefits List */}
-            <div className="bg-white rounded-2xl border border-neutral-200 p-8">
+            <div className="bg-white rounded-2xl border border-neutral-200 p-3 md:p-8">
               <div className="space-y-8">
                 {benefits.map((benefit, index) => (
                   <motion.div
@@ -169,16 +171,20 @@ export default function ValueProposition() {
               {/* Community Info */}
               <div className="p-6">
                 <span className="inline-block px-3 py-1 bg-coral-50 text-neutral-700 text-xs font-semibold rounded-full mb-3 uppercase tracking-wide">
-                  Membership Includes
+                  Unlock Access To
                 </span>
-                <h3 className="text-xl font-serif text-neutral-900 mb-3">Your All-Access Pass</h3>
-                <p className="text-neutral-600 text-sm mb-6 leading-relaxed">
-                  Unlimited community access, mentor network, weekly events, recruiter and investor
-                  connections, plus our self-paced AI fellowship curriculum and AI for Leaders
-                  curriculum.
+                <h3 className="text-2xl font-serif text-neutral-900 mb-4">
+                  Everything You Need to Build in AI
+                </h3>
+                <p className="text-neutral-600 text-base mb-6 leading-relaxed">
+                  Premium content library, AI Fellowship &amp; Leaders programs, weekly expert
+                  sessions, private Slack community, 1:1 mentorship, and exclusive in-person events.
                 </p>
-                <button className="inline-flex items-center gap-2 px-5 py-3 bg-neutral-900 text-white text-sm font-medium rounded-full hover:bg-neutral-800 transition-all">
-                  See what&apos;s included
+                <button
+                  onClick={() => setIsCurriculumOpen(true)}
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-neutral-900 text-white text-sm font-medium rounded-full hover:bg-neutral-800 transition-all"
+                >
+                  View Full Curriculum
                 </button>
               </div>
             </div>
@@ -204,7 +210,7 @@ export default function ValueProposition() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-2xl p-9 text-white"
+              className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-2xl p-10 text-white"
             >
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
@@ -224,6 +230,9 @@ export default function ValueProposition() {
           </motion.div>
         </div>
       </div>
+
+      {/* Curriculum Modal */}
+      <CurriculumModal isOpen={isCurriculumOpen} onClose={() => setIsCurriculumOpen(false)} />
     </section>
   );
 }
