@@ -12,7 +12,7 @@ const leaders = [
     name: 'Puru Kathuria',
     role: 'Founder, Lex AI',
     company: 'Google',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face',
+    img: 'https://media.licdn.com/dms/image/v2/D4D03AQGQtno9QlQ5ug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715758859402?e=1767225600&v=beta&t=G0mHi9hh51Fh1sdkCyQJTm9SbFX7TLtkfFBWodX1m58',
     linkedin: 'https://linkedin.com/in/puru-kathuria',
   },
   {
@@ -20,39 +20,24 @@ const leaders = [
     name: 'Swati Nain',
     role: 'Senior Engineer',
     company: 'Microsoft',
-    img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop&crop=face',
+    img: 'https://media.licdn.com/dms/image/v2/C4D03AQH6h3OFjXZkew/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1657362997803?e=1767225600&v=beta&t=KZIw_NbtgXkOXBEh4wSQAcyGbRxktRdUgLYK8H17JEY',
     linkedin: 'https://linkedin.com/in/swati-nain',
-  },
-  {
-    id: 'aashish',
-    name: 'Aashish Joshi',
-    role: 'Engineering Manager',
-    company: 'Google',
-    img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face',
-    linkedin: 'https://linkedin.com/in/aashish-joshi',
-  },
-  {
-    id: 'nikhil',
-    name: 'Nikhil Reedy',
-    role: 'Research Scientist',
-    company: 'IIT Delhi',
-    img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop&crop=face',
-    linkedin: 'https://linkedin.com/in/nikhil-reedy',
   },
   {
     id: 'nipun',
     name: 'Nipun Katyal',
     role: 'AI Engineer',
     company: 'Meta',
-    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=500&fit=crop&crop=face',
+    img: 'https://media.licdn.com/dms/image/v2/C5103AQF0X2dyoEZGdQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1559472916576?e=1767225600&v=beta&t=0Vcs8FQPX1SzNk5_CCuRCdG2TzsHq-BRmLKhzOq5sLc',
     linkedin: 'https://linkedin.com/in/nipun-katyal',
   },
+
   {
     id: 'rohan',
     name: 'Rohan Gurve',
     role: 'Software Engineer',
     company: 'Google',
-    img: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=400&h=500&fit=crop&crop=face',
+    img: 'https://media.licdn.com/dms/image/v2/C4E03AQEOHQkWpJXSXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1608136537575?e=1767225600&v=beta&t=Cia_OCXvF67SDJuIcRVoKXpbdPjpkUS97AgohfDl0XQ',
     linkedin: 'https://linkedin.com/in/rohan-gurve',
   },
   {
@@ -60,7 +45,7 @@ const leaders = [
     name: 'Vidhi Gupta',
     role: 'Engineering Manager',
     company: 'Google',
-    img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop&crop=face',
+    img: 'https://media.licdn.com/dms/image/v2/C5603AQEUVdi1H6CwOw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516319494067?e=1767225600&v=beta&t=o6Z0raygf1cs-3FFOWkkHdHNovCVGCyuT-r8DT33kv8',
     linkedin: 'https://linkedin.com/in/vidhi-gupta',
   },
   {
@@ -88,6 +73,14 @@ const leaders = [
     linkedin: 'https://linkedin.com/in/sunil',
   },
   {
+    id: 'aashish',
+    name: 'Aashish Joshi',
+    role: 'Engineering Manager',
+    company: 'Google',
+    img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/aashish-joshi',
+  },
+  {
     id: 'nitin',
     name: 'Nitin Bansal',
     role: 'Staff Engineer',
@@ -95,6 +88,15 @@ const leaders = [
     img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop&crop=face',
     linkedin: 'https://linkedin.com/in/nitin-bansal',
   },
+  {
+    id: 'nikhil',
+    name: 'Nikhil Reedy',
+    role: 'Research Scientist',
+    company: 'IIT Delhi',
+    img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&crop=face',
+    linkedin: 'https://linkedin.com/in/nikhil-reedy',
+  },
+
   {
     id: 'harsh',
     name: 'Harsh Parikh',
