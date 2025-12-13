@@ -354,8 +354,9 @@ const config = {
         // Magic UI animations
         marquee: 'marquee var(--duration, 40s) linear infinite',
         'marquee-vertical': 'marquee-vertical var(--duration, 40s) linear infinite',
-        'marquee-slow': 'marquee-slow 60s linear infinite',
-        'marquee-slow-reverse': 'marquee-slow-reverse 60s linear infinite',
+        'sm-marquee-slow': 'marquee-slow 30s linear infinite',
+        'marquee-slow': 'marquee-slow 10s linear infinite',
+        'marquee-slow-reverse': 'marquee-slow-reverse 30s linear infinite',
         'border-beam': 'border-beam calc(var(--duration) * 1s) infinite linear',
         shine: 'shine var(--shine-pulse-duration, 2s) linear infinite',
         'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',

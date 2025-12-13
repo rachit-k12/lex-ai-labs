@@ -179,7 +179,7 @@ export default function Testimonials() {
           {/* Right fade - smaller on mobile */}
           <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 md:w-32 bg-gradient-to-l from-neutral-50 to-transparent z-10 pointer-events-none" />
 
-          <div className="flex animate-marquee-slow">
+          <div className="flex sm:animate-sm-marquee-slow animate-marquee-slow">
             {doubledTestimonials.map((testimonial, index) => (
               <TestimonialCard key={`row1-${testimonial.id}-${index}`} testimonial={testimonial} />
             ))}
