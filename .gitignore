@@ -30,6 +30,12 @@ yarn-error.log*
 
 # vercel
 .vercel
+comprehensive-design-framework.md
+website-improvements-principles.md
+Product.md
+color-scheme-reference.txt
+lex-ai-report.md
+current-website-copy.txt
 
 # typescript
 *.tsbuildinfo

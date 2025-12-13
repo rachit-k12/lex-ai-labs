@@ -2,440 +2,441 @@ LEX AI LABS - COLOR SCHEME & DESIGN SYSTEM
 Complete Color Reference Guide
 ==============================================
 
-Last Updated: November 2025
-Design Style: Clean, Professional, Modern Blue Accent
+Last Updated: December 2025
+Design Style: Premium, Warm, Editorial with Coral Accent
+Typography: Serif Headlines (Instrument Serif) + Sans-serif Body (Inter)
 
 
-═══════════════════════════════════════════════════════════════════════
-PRIMARY BRAND COLORS - Blue Accent Theme
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
+PRIMARY BRAND COLORS - Coral Accent Theme
+===============================================================================
 
-BRAND BLUE (Primary Accent Color)
+CORAL (Primary Accent Color)
 ----------------------------------
-brand-50:  #f2f8ff  (Very Light Blue - Subtle backgrounds)
-brand-100: #e6f1ff  (Light Blue - Icon backgrounds)
-brand-400: #60a5fa  (Medium Blue - Secondary highlights)
-brand-500: #3b82f6  (Bright Blue - Interactive elements)
-brand-600: #2563eb  (Primary Blue - Main brand color, CTAs)
-brand-700: #1d4ed8  (Dark Blue - Hover states)
-brand-900: #0f172a  (Near Black - Dark backgrounds)
+coral-50:  #fffbfa  (Very Light - Subtle backgrounds)
+coral-100: #fff5f2  (Light - Icon backgrounds, section backgrounds)
+coral-200: #ffe6db  (Light-Medium - Hover backgrounds)
+coral-300: #ffcdb8  (Medium Light - Decorative elements)
+coral-400: #ffb494  (Medium - Secondary highlights)
+coral-500: #FF7F50  (Primary Coral - Main brand color)
+coral-600: #e66a3d  (Dark Coral - Hover states)
+coral-700: #cc552a  (Darker - Active states)
+coral-800: #b34017  (Very Dark)
+coral-900: #992b04  (Darkest)
 
 USAGE:
-• brand-600 (#2563eb) - Primary CTA buttons, badges, animated elements
-• brand-500 (#3b82f6) - Hover states, glows, secondary CTAs
-• brand-400 (#60a5fa) - Icon colors on dark backgrounds
-• brand-100 (#e6f1ff) - Icon backgrounds, subtle highlights
-• brand-50 (#f2f8ff) - Decorative background gradients
+- coral-500 (#FF7F50) - Primary accent, gradient blobs, animated elements
+- coral-400 (#ffb494) - Price highlights, secondary CTAs
+- coral-100 (#fff5f2) - Section backgrounds, card backgrounds
+- coral-50 (#fffbfa) - Subtle backgrounds, icon containers
+- coral-500/30 - Decorative blur blobs (30% opacity)
+- coral-500/10 - Dark section gradient overlays
 
 
-═══════════════════════════════════════════════════════════════════════
-NEUTRAL COLORS - Slate Palette (Most Used)
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
+NEUTRAL COLORS - Primary UI Palette
+===============================================================================
 
-SLATE GRAYS (Primary Neutral Palette)
---------------------------------------
-slate-50:  #f8fafc  (Lightest - Subtle backgrounds)
-slate-100: #f1f5f9  (Very Light - Card backgrounds, borders)
-slate-200: #e2e8f0  (Light - Borders, dividers)
-slate-300: #cbd5e1  (Light-Medium - Disabled states)
-slate-400: #94a3b8  (Medium - Secondary text, placeholders)
-slate-500: #64748b  (Medium-Dark - Body text, descriptions)
-slate-600: #475569  (Dark - Primary text on light backgrounds)
-slate-700: #334155  (Darker - Hover states)
-slate-800: #1e293b  (Very Dark - Dark button hover states)
-slate-900: #0f172a  (Darkest - Headlines, primary text, dark backgrounds)
+NEUTRAL GRAYS (Tailwind Default Neutrals)
+------------------------------------------
+neutral-50:  #fafafa  (Lightest - Subtle backgrounds)
+neutral-100: #f5f5f5  (Very Light - Section backgrounds, icon circles)
+neutral-200: #e5e5e5  (Light - Borders, dividers)
+neutral-300: #d4d4d4  (Light-Medium - Disabled states)
+neutral-400: #a3a3a3  (Medium - Placeholder text, muted icons)
+neutral-500: #737373  (Medium-Dark - Secondary labels)
+neutral-600: #525252  (Dark - Body text, descriptions)
+neutral-700: #404040  (Darker - Secondary text)
+neutral-800: #262626  (Very Dark - Dark card backgrounds)
+neutral-900: #171717  (Darkest - Headlines, dark sections, CTA buttons)
 
 USAGE:
-• slate-900 (#0f172a) - Main headlines, bold text, dark CTA buttons
-• slate-600 (#475569) - Secondary button text, medium text
-• slate-500 (#64748b) - Body copy, subheadlines, descriptions
-• slate-400 (#94a3b8) - Muted text, pricing details
-• slate-300 (#cbd5e1) - Light hover states
-• slate-200 (#e2e8f0) - Avatar backgrounds, light borders
-• slate-100 (#f1f5f9) - Card borders, subtle dividers
-• slate-50 (#f8fafc) - Tag backgrounds, light fills
-• slate-800 (#1e293b) - Dark card backgrounds (featured cards)
-• slate-700 (#334155) - Border hover states, dark mode elements
+- neutral-900 (#171717) - Headlines, dark CTAs, dark section backgrounds
+- neutral-700 (#404040) - Quote text, important body text
+- neutral-600 (#525252) - Body copy, descriptions
+- neutral-500 (#737373) - Section labels, secondary text
+- neutral-400 (#a3a3a3) - Muted text, frequency labels
+- neutral-200 (#e5e5e5) - Borders, dividers
+- neutral-100 (#f5f5f5) - Icon backgrounds, light fills
+- neutral-50 (#fafafa) - Section backgrounds
 
 
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
+BLUE (Accent - Minimal Usage)
+===============================================================================
+
+BLUE ACCENT
+-----------
+blue-500: #3b82f6  (Primary Blue - Headline accent "AI Network")
+blue-600: #2563eb  (Hover states, links)
+blue-50:  #eff6ff  (Light Blue - Event card backgrounds)
+
+USAGE:
+- blue-500 - "AI Network" italic text in hero headline
+- blue-600 - Hover states on company logos, link text, event title hovers
+- blue-50 - Investor Roundtable event card icon background
+
+
+===============================================================================
+EVENT CARD COLORS (Multi-color System)
+===============================================================================
+
+INVESTOR ROUNDTABLE:
+- Background: bg-blue-50 (#eff6ff)
+- Icon/Text: text-blue-600 (#2563eb)
+
+ASK ME ANYTHING:
+- Background: bg-green-50 (#f0fdf4)
+- Icon/Text: text-green-600 (#16a34a)
+
+FOUNDER FORUMS:
+- Background: bg-purple-50 (#faf5ff)
+- Icon/Text: text-purple-600 (#9333ea)
+
+EXPERT DEEP-DIVES:
+- Background: bg-coral-50 (#fffbfa)
+- Icon/Text: text-coral-600 (#e66a3d)
+
+
+===============================================================================
 SURFACE COLORS - Background Palette
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
 
 SURFACE NEUTRALS
 ----------------
-surface-50:  #f8fafc  (Light Background - Section backgrounds)
-surface-100: #f1f5f9  (Very Light - Card backgrounds)
-surface-900: #020617  (Dark Background - Reserved for dark mode)
+white:       #ffffff  (Primary backgrounds, cards)
+neutral-50:  #fafafa  (Section backgrounds - Events, Footer gradient)
+coral-50/30: rgba(255,251,250,0.3) (Warm section backgrounds)
+
+DARK SURFACES:
+neutral-900: #171717  (Final CTA section background)
+neutral-800: #262626  (Dark stats card, gradient element)
 
 USAGE:
-• surface-50 (#f8fafc) - Alternating section backgrounds, testimonial cards
-• White (#ffffff) - Main section backgrounds, cards
-• Black/slate-900 - Dark sections (Final CTA)
+- White (#ffffff) - Main backgrounds, cards, navigation
+- neutral-50 - Events section, footer gradient start
+- neutral-900 - Final CTA dark section
+- Gradient: from-white to-neutral-50 (TrustedBy section)
+- Gradient: from-white to-coral-50/30 (CommunityLeaders section)
 
 
-═══════════════════════════════════════════════════════════════════════
-ACCENT COLORS - Supporting Palette
-═══════════════════════════════════════════════════════════════════════
-
-EMERALD GREEN (Success / Consultation)
----------------------------------------
-emerald-100: #d1fae5  (Light - Backgrounds)
-emerald-500: #10b981  (Medium - Icons)
-emerald-600: #059669  (Primary - Used for free consultation elements)
-
-USAGE:
-• emerald-600 - Free consultation icon background
-• emerald-500 - Checkmark icons on consultation card
-
-AMBER YELLOW (Ratings / Stars)
--------------------------------
-amber-400: #fbbf24  (Primary - Star ratings)
-
-USAGE:
-• amber-400 - 5-star rating icons in testimonials
-
-LINKEDIN BLUE (Social Media)
------------------------------
-linkedin-blue: #0077b5  (LinkedIn brand color)
-
-USAGE:
-• LinkedIn button background and social links
-
-
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
 SPECIAL EFFECT COLORS
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
 
-SHADOWS & GLOWS
----------------
-• Box Shadow (Cards): rgba(15, 23, 42, 0.04) - Soft slate shadow
-• Glow Effect: rgba(59, 130, 246, 0.15) - Blue glow for badges
-• Shadow Glow: rgba(37, 99, 235, 0.25) - Stronger blue glow
+GRADIENT BLOBS (Hero Section)
+-----------------------------
+- Coral blob: bg-coral-500/30 (#FF7F50 at 30% opacity)
+- Radial gradient: from-coral-100/30 to transparent
 
-MESH GRADIENT BACKGROUND
+GRAINY TEXTURE OVERLAY
+----------------------
+- SVG feTurbulence filter with opacity-30 to opacity-40
+- Used on: Hero, ValueProposition images, CommunityLeaders, EventsPreview, FinalCTA
+
+MESH/GRADIENT BACKGROUNDS
 -------------------------
-• Start: rgba(37, 99, 235, 0.1) - Blue tint (10% opacity)
-• End: rgba(139, 92, 246, 0.1) - Purple tint (10% opacity)
+Hero: bg-gradient-to-br from-coral-50 via-white to-coral-100/30
+Video placeholder: bg-gradient-to-br from-coral-100 via-coral-50 to-white
+Stats card: bg-gradient-to-br from-neutral-900 to-neutral-800
+Testimonial cards: bg-gradient-to-br from-coral-50/50 to-white
 
-USAGE:
-• Hero section decorative mesh background
+SHADOWS & BORDERS
+-----------------
+- Card shadow on hover: hover:shadow-lg
+- Card borders: border-neutral-200, border-neutral-100
+- Coral shadow effect (leader cards): from-coral-200/50 to-coral-100/30
 
 
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
 COLOR USAGE BY COMPONENT
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
+
+NAVIGATION
+----------
+- Background (scrolled): bg-white/90 backdrop-blur-md border-neutral-100
+- Background (top): bg-transparent
+- Logo text: text-neutral-900 font-serif italic
+- Nav links: text-neutral-600 hover:text-neutral-900
+- CTA button: bg-neutral-900 text-white hover:bg-neutral-800 rounded-full
+- Mobile menu button: text-neutral-600 hover:text-neutral-900
 
 HERO SECTION
 ------------
-• Background: bg-white (#ffffff)
-• Badge Background: bg-slate-50 (#f8fafc)
-• Badge Border: border-slate-200 (#e2e8f0)
-• Badge Text: text-slate-600 (#475569)
-• Animated Dot: bg-brand-500 (#3b82f6), bg-brand-600 (#2563eb)
-• Headline: text-slate-900 (#0f172a)
-• Gradient Text: brand-600 to brand-400 (#2563eb → #60a5fa)
-• Subheadline: text-slate-500 (#64748b)
-• Primary CTA: bg-slate-900 (#0f172a), text-white, hover:bg-slate-800
-• Secondary CTA: bg-white, text-slate-600, border-slate-200, hover:bg-slate-50
-• Tags: bg-slate-50, text-slate-500, border-slate-100
+- Background: bg-gradient-to-br from-coral-50 via-white to-coral-100/30
+- Badge: bg-white/80 backdrop-blur-sm border-neutral-200
+- Badge icon: text-coral-500 (Sparkles)
+- Badge text: text-neutral-700
+- Headline: font-serif text-neutral-900
+- Accent text: italic text-blue-500 ("AI Network")
+- Subheadline: text-neutral-600
+- Primary CTA: bg-neutral-900 text-white rounded-full hover:bg-neutral-800
+- Secondary CTA: bg-white/80 border-neutral-200 text-neutral-700 hover:bg-white
+- Decorative blobs: bg-coral-500/30 blur-3xl animate-pulse
+- Bottom fade: bg-gradient-to-t from-white to-transparent
 
 TRUSTED BY SECTION
 ------------------
-• Background: bg-surface-50 (#f8fafc)
-• Border: border-slate-100 (#f1f5f9)
-• Label: text-slate-400 (#94a3b8)
-• Logos: text-slate-700 (#334155)
+- Background: bg-gradient-to-b from-white to-neutral-50
+- Label: text-neutral-500 uppercase tracking-wider
+- Company names: text-neutral-700 hover:text-blue-600
+- Gradient masks: from-white via-white/80 to-transparent
 
-ABOUT & STATS SECTION
----------------------
-• Background: bg-white (#ffffff)
-• Headline: text-slate-900 (#0f172a)
-• Body Text: text-slate-500 (#64748b)
-• Strong Text: text-slate-900 (#0f172a)
-• Stat Cards: bg-surface-50, border-slate-100
-• Stat Numbers: text-slate-900 (#0f172a)
-• Stat Labels: text-slate-500 (#64748b)
-• Image Background: bg-slate-100 (#f1f5f9)
-• Image Caption: text-white, text-slate-200
-• Decorative Blur: bg-brand-500/20 (20% opacity blue)
+VALUE PROPOSITION SECTION
+-------------------------
+- Background: bg-white
+- Section tag: text-neutral-500 uppercase
+- Headline: font-serif text-neutral-900 with italic spans
+- Subheadline: text-neutral-600
+- Benefits card: bg-white border-neutral-200
+- Icon background: bg-coral-50
+- Icon color: text-neutral-700
+- Benefit title: text-neutral-900
+- Benefit description: text-neutral-600
+- Video card gradient: from-coral-100 via-coral-50 to-white
+- Play button: bg-neutral-900 text-white
+- Membership tag: bg-coral-50 text-neutral-700
+- CTA button: bg-neutral-900 text-white
+- Community perks: bg-neutral-50 border-neutral-100 text-neutral-700
+- Perk icons: text-coral-500
+- Stats card: bg-gradient-to-br from-neutral-900 to-neutral-800
+- Stats numbers: text-white
+- Stats labels: text-neutral-400
 
-PROGRAMS SECTION
-----------------
-• Background: bg-surface-50 (#f8fafc)
-• Section Headline: text-slate-900 (#0f172a)
-• Section Description: text-slate-500 (#64748b)
+COMMUNITY LEADERS SECTION
+-------------------------
+- Background: bg-gradient-to-b from-white to-coral-50/30
+- Section tag: text-neutral-500
+- Headline: font-serif text-neutral-900 with italic "Best in AI"
+- Description: text-neutral-600
+- Card shadow effect: from-coral-200/50 to-coral-100/30 (rotated)
+- Card overlay: bg-gradient-to-t from-neutral-900/60 via-transparent
+- Name: text-neutral-900
+- Role: text-neutral-500
+- LinkedIn button: bg-neutral-100 text-neutral-500 hover:bg-[#0077b5] hover:text-white
 
-CARD 1 - AI FELLOWSHIP (White Card):
-• Card Background: bg-white (#ffffff)
-• Card Border: border-slate-100 (#f1f5f9)
-• Icon Background: bg-brand-100 (#e6f1ff)
-• Icon Color: text-brand-600 (#2563eb)
-• Title: text-slate-900 (#0f172a)
-• Subtitle: text-slate-500 (#64748b)
-• Price: text-slate-900 (#0f172a)
-• Price Detail: text-slate-400 (#94a3b8)
-• Features: text-slate-600 (#475569)
-• Checkmarks: text-brand-600 (#2563eb)
-• CTA: bg-slate-50, text-slate-900, hover:bg-slate-900 hover:text-white
-
-CARD 2 - AI FOR LEADERS (Featured Dark Card):
-• Badge: bg-brand-600 (#2563eb), text-white
-• Card Background: bg-slate-900 (#0f172a)
-• Icon Background: bg-slate-800 (#1e293b)
-• Icon Color: text-brand-400 (#60a5fa)
-• Title: text-white (#ffffff)
-• Subtitle: text-slate-400 (#94a3b8)
-• Border: border-slate-800 (#1e293b)
-• Price: text-white (#ffffff)
-• Price Detail: text-slate-500 (#64748b)
-• Features: text-slate-300 (#cbd5e1)
-• Checkmarks: text-brand-500 (#3b82f6)
-• CTA: bg-brand-600, hover:bg-brand-500
-
-CARD 3 - FREE CONSULTATION (White Card):
-• Icon Background: bg-emerald-100 (#d1fae5)
-• Icon Color: text-emerald-600 (#059669)
-• Title: text-slate-900 (#0f172a)
-• Subtitle: text-slate-500 (#64748b)
-• Features: text-slate-600 (#475569)
-• Checkmarks: text-emerald-500 (#10b981)
-• CTA: bg-slate-50, hover:bg-slate-900 hover:text-white
-
-INSTRUCTOR SPOTLIGHT SECTION
------------------------------
-• Background: bg-white (#ffffff)
-• Section Border: border-slate-100 (#f1f5f9)
-• Container: bg-slate-50 (#f8fafc), border-slate-100
-• Image Background: bg-slate-200 (#e2e8f0)
-• Badge: bg-white/90 (90% opacity), border-slate-100
-• Badge Text: text-slate-900, text-slate-500
-• Line Accent: bg-slate-900 (#0f172a)
-• Label: text-slate-900 (#0f172a)
-• Name: text-slate-900 (#0f172a)
-• Bio: text-slate-500 (#64748b)
-• Icon Circles: bg-white, text-brand-600, border-slate-100
-• Credential Titles: text-slate-900 (#0f172a)
-• Credential Text: text-slate-500 (#64748b)
-• LinkedIn Button: bg-#0077b5, text-white
-• Personal Site Button: bg-white, text-slate-900, border-slate-200, hover:bg-slate-50
+EVENTS PREVIEW SECTION
+----------------------
+- Background: bg-neutral-50
+- Section tag: text-neutral-500
+- Headline: font-serif text-neutral-900 with italic "Opportunities"
+- Description: text-neutral-600
+- Event cards: bg-white border-neutral-200 hover:border-neutral-300 hover:shadow-lg
+- Frequency text: text-neutral-500 with text-neutral-400 icon
+- Event titles: text-neutral-900 hover:text-blue-600
+- Event descriptions: text-neutral-600
+- CTA link: text-blue-600 hover:text-blue-700
 
 TESTIMONIALS SECTION
 --------------------
-• Background: bg-white (#ffffff)
-• Headline: text-slate-900 (#0f172a)
-• Description: text-slate-500 (#64748b)
-• Navigation Buttons: bg-white, border-slate-200, text-slate-600, hover:border-brand-500
-• Card Background: bg-surface-50 (#f8fafc)
-• Card Border: border-slate-100 (#f1f5f9)
-• Stars: text-amber-400 (#fbbf24)
-• Quote Text: text-slate-700 (#334155)
-• Border Divider: border-slate-200/50 (50% opacity)
-• Avatar Background: bg-slate-200 (#e2e8f0)
-• Avatar Text: text-slate-600 (#475569)
-• Name: text-slate-900 (#0f172a)
-• Title: text-slate-500 (#64748b)
-• LinkedIn Icon: text-slate-300, hover:text-#0077b5
+- Background: bg-white
+- Section tag: text-neutral-500
+- Headline: font-serif text-neutral-900 with italic "Transformed" and "Made"
+- Description: text-neutral-600
+- Card: bg-gradient-to-br from-coral-50/50 to-white border-neutral-100 hover:border-neutral-200
+- Name: text-neutral-900
+- Role: text-neutral-500
+- Quote: text-neutral-600
+- LinkedIn icon bg: bg-[#0077b5]/10 text-[#0077b5]
+- WhatsApp icon bg: bg-green-100 text-green-600
+- Outcome tag: bg-green-50 text-green-700
 
 FINAL CTA SECTION
 -----------------
-• Background: bg-slate-900 (#0f172a), text-white
-• Headline: text-white (#ffffff)
-• Description: text-slate-400 (#94a3b8)
-• Primary CTA: bg-brand-600 (#2563eb), hover:bg-brand-500, text-white
-• CTA Shadow: shadow-brand-600/30 (30% opacity)
-• Secondary CTA: bg-transparent, border-slate-700, text-white, hover:bg-white hover:text-slate-900
+- Background: bg-neutral-900
+- Gradient blobs: bg-coral-500/10 blur-3xl
+- Floating images: border-white/10
+- Headline: font-serif text-white with italic "Net Worth"
+- Primary description: text-white/70
+- Secondary description: text-white/50
+- Price text: text-coral-400
+- CTA button: bg-white text-neutral-900 hover:bg-neutral-100 rounded-full shadow-xl
+
+FOOTER
+------
+- Background: bg-gradient-to-b from-neutral-50 to-white border-t border-neutral-200
+- Heading: text-neutral-900 uppercase tracking-wider
+- Links: text-neutral-600 hover:text-blue-600
+- Social buttons: bg-neutral-100 text-neutral-600 hover:bg-blue-600 hover:text-white
+- Copyright: text-neutral-500
+- Tagline: text-neutral-600
+- Hashtag: text-blue-600
 
 
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
 DESIGN SYSTEM SUMMARY
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
 
 PRIMARY PALETTE (Most Used Colors):
 -----------------------------------
-1. slate-900 (#0f172a) - Headlines, dark buttons, primary text
-2. slate-500 (#64748b) - Body text, descriptions
-3. brand-600 (#2563eb) - Primary brand color, CTAs, accents
-4. white (#ffffff) - Backgrounds, light text
-5. surface-50 (#f8fafc) - Alternating section backgrounds
+1. neutral-900 (#171717) - Headlines, dark buttons, dark sections
+2. neutral-600 (#525252) - Body text, descriptions
+3. coral-500 (#FF7F50) - Primary accent, warm highlights
+4. white (#ffffff) - Main backgrounds, cards
+5. neutral-50 (#fafafa) - Section backgrounds
+6. coral-50 (#fffbfa) - Warm subtle backgrounds
 
 SUPPORTING COLORS:
 ------------------
-• slate-50 to slate-800 - Various UI elements
-• brand-400 to brand-500 - Interactive states
-• emerald-500/600 - Success/free elements
-• amber-400 - Star ratings
-• #0077b5 - LinkedIn brand
+- neutral-100 to neutral-800 - Various UI elements
+- blue-500/600 - Limited accent (headlines, links, hovers)
+- green-50/600 - Success/positive outcomes
+- purple-50/600 - Event variety
+- coral-100 to coral-400 - Warm gradients, decorative elements
+- #0077b5 - LinkedIn brand
 
 COLOR STRATEGY:
 ---------------
-1. Clean & Professional - Heavy use of grays and whites
-2. Blue Accent - Brand blue (#2563eb) used sparingly for impact
-3. High Contrast - Dark text on light backgrounds for readability
-4. Subtle Variations - Multiple slate shades for depth without color
-5. Strategic Color - Color only where it adds meaning (CTAs, ratings, brands)
+1. Warm & Premium - Coral accent creates warmth vs cold blues
+2. Editorial Feel - Serif headlines with neutral palette
+3. High Contrast - Dark headlines on light backgrounds
+4. Subtle Warmth - Coral-tinted backgrounds vs pure white
+5. Strategic Color - Color for CTAs, accents, and brand moments
+6. Grainy Texture - Adds tactile, premium quality feel
 
 
-═══════════════════════════════════════════════════════════════════════
-ACCESSIBILITY & CONTRAST RATIOS
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
+TYPOGRAPHY & FONTS
+===============================================================================
 
-PRIMARY TEXT COMBINATIONS (WCAG AA Compliant):
------------------------------------------------
-✓ slate-900 on white - 16.1:1 (AAA) - Headlines
-✓ slate-600 on white - 8.6:1 (AAA) - Secondary text  
-✓ slate-500 on white - 7.5:1 (AAA) - Body text
-✓ white on slate-900 - 16.1:1 (AAA) - Dark sections
-✓ white on brand-600 - 5.9:1 (AA) - CTA buttons
+FONT FAMILIES:
+--------------
+- Headlines: "Instrument Serif", Georgia, serif (italic for emphasis)
+- Body: Inter, "Plus Jakarta Sans", sans-serif
+- Special: FoundersGrotesk, TWKEverett, Manrope (available)
 
-CAUTION COMBINATIONS:
----------------------
-⚠ slate-400 on white - 4.5:1 (AA) - Minimum for small text
-⚠ brand-500 on white - 3.5:1 - Use for large text only
-
-
-═══════════════════════════════════════════════════════════════════════
-SHADOW & EFFECT VALUES
-═══════════════════════════════════════════════════════════════════════
-
-BOX SHADOWS:
-------------
-• shadow-card: 0 2px 8px rgba(15, 23, 42, 0.04), 0 12px 24px rgba(15, 23, 42, 0.04)
-• shadow-glow: 0 0 40px rgba(59, 130, 246, 0.15)
-• shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25)
-• shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1)
-• shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1)
-
-OPACITY VALUES USED:
---------------------
-• /90 - 90% opacity (backdrop blur elements)
-• /80 - 80% opacity (image overlays)
-• /75 - 75% opacity (animated elements)
-• /50 - 50% opacity (subtle borders)
-• /30 - 30% opacity (button shadows)
-• /20 - 20% opacity (decorative blurs)
-• /10 - 10% opacity (mesh backgrounds)
-
-
-═══════════════════════════════════════════════════════════════════════
-BORDER RADIUS VALUES
-═══════════════════════════════════════════════════════════════════════
-
-USED IN DESIGN:
----------------
-• rounded-full - Pills, buttons, tags (9999px)
-• rounded-[3rem] - Large containers (48px)
-• rounded-[2rem] - Cards, images (32px)
-• rounded-[1.5rem] - CTA buttons within cards (24px)
-• rounded-3xl - Featured images (24px)
-• rounded-2xl - Stat cards (16px)
-• rounded-xl - Icons, badges (12px)
-• rounded-lg - Small tags (8px)
-• rounded-full - Navigation dots, avatars
-
-
-═══════════════════════════════════════════════════════════════════════
-TYPOGRAPHY COLORS
-═══════════════════════════════════════════════════════════════════════
-
-HEADING HIERARCHY:
+HEADLINE HIERARCHY:
 ------------------
-H1 (Hero): text-slate-900 (#0f172a) with brand gradient accent
-H2 (Sections): text-slate-900 (#0f172a)
-H3 (Cards): text-slate-900 (#0f172a) or text-white (dark cards)
-H4 (Features): text-slate-900 (#0f172a)
+H1 (Hero): font-serif text-5xl to text-8xl text-neutral-900
+H2 (Sections): font-serif text-4xl to text-6xl text-neutral-900
+H3 (Cards): font-semibold text-xl text-neutral-900
 
 BODY TEXT:
 ----------
-Primary: text-slate-500 (#64748b)
-Secondary: text-slate-600 (#475569)
-Muted: text-slate-400 (#94a3b8)
-Strong: text-slate-900 (#0f172a)
+Primary: text-lg text-neutral-600
+Secondary: text-sm text-neutral-500
+Muted: text-xs text-neutral-400
 
 ON DARK BACKGROUNDS:
 --------------------
-Primary: text-white (#ffffff)
-Secondary: text-slate-400 (#94a3b8)
-Muted: text-slate-300 (#cbd5e1)
+Primary: text-white
+Secondary: text-white/70
+Muted: text-white/50, text-neutral-400
 
 
-═══════════════════════════════════════════════════════════════════════
-COLOR PSYCHOLOGY & BRAND MEANING
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
+ACCESSIBILITY & CONTRAST
+===============================================================================
 
-BLUE (#2563eb):
-• Trust, professionalism, technology
-• Used for: CTAs, brand elements, interactive states
-• Evokes: Intelligence, reliability, innovation
+PRIMARY TEXT COMBINATIONS (WCAG AA Compliant):
+-----------------------------------------------
+- neutral-900 on white - Excellent contrast - Headlines
+- neutral-600 on white - Good contrast - Body text
+- neutral-500 on white - Acceptable - Secondary text
+- white on neutral-900 - Excellent contrast - Dark sections
+- coral-500 on white - Check for accessibility on small text
 
-SLATE GRAYS:
-• Sophistication, neutrality, modernity
-• Used for: Text, backgrounds, structure
-• Evokes: Professionalism, clarity, focus
-
-EMERALD GREEN (#059669):
-• Success, opportunity, growth
-• Used for: Free consultation, positive elements
-• Evokes: Approachability, value, no-risk
-
-AMBER (#fbbf24):
-• Quality, achievement, value
-• Used for: Star ratings, testimonials
-• Evokes: Excellence, satisfaction, trust
+CAUTION COMBINATIONS:
+---------------------
+- neutral-400 on white - Minimum for small text only
+- coral-400 on white - Large text only (price highlights)
 
 
-═══════════════════════════════════════════════════════════════════════
-MOBILE vs DESKTOP COLOR CONSIDERATIONS
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
+SHADOW & EFFECT VALUES
+===============================================================================
 
-MOBILE-FIRST APPROACH:
-----------------------
-• Higher contrast maintained at all sizes
-• Larger touch targets use consistent colors
-• Dark text on light backgrounds (no thin gray on white)
-• CTAs maintain brand-600 blue for visibility
-• No color-only indicators (combined with icons/text)
+BOX SHADOWS:
+------------
+- hover:shadow-lg - Card hover effects
+- shadow-xl - CTA buttons
+- shadow-sm - Badge elements
 
-RESPONSIVE COLOR BEHAVIOR:
---------------------------
-• Colors remain consistent across breakpoints
-• No color changes on resize
-• Shadow intensity may vary for performance
-• Hover states disabled on touch devices
+BLUR EFFECTS:
+-------------
+- blur-3xl - Decorative gradient blobs
+- blur-2xl - Radial gradient backgrounds
+- backdrop-blur-sm - Badges, navigation
+- backdrop-blur-md - Scrolled navigation
+
+OPACITY VALUES USED:
+--------------------
+- /90 - Scrolled nav background
+- /80 - Hero badge background
+- /70 - Dark section primary text
+- /50 - Dark section secondary text
+- /40 - Grainy texture overlay
+- /30 - Gradient blobs, card borders
+- /20 - Grainy texture on images
+- /10 - Dark section gradient blobs
 
 
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
+BORDER RADIUS VALUES
+===============================================================================
+
+USED IN DESIGN:
+---------------
+- rounded-full - CTAs, badges, avatars, social buttons
+- rounded-2xl - Cards, images, containers
+- rounded-xl - Icon backgrounds, tags
+- rounded-lg - Small tags
+
+
+===============================================================================
+ANIMATIONS
+===============================================================================
+
+KEY ANIMATIONS USED:
+--------------------
+- animate-pulse - Hero gradient blobs
+- animate-marquee - TrustedBy company logos
+- Framer Motion - Entry animations (fade-in-up, scale, etc.)
+
+TRANSITION CLASSES:
+-------------------
+- transition-all - General transitions
+- transition-colors - Color-only transitions
+- transition-transform - Transform-only transitions
+- Duration: 300ms default, 500ms for page elements
+
+
+===============================================================================
 QUICK REFERENCE - HEX CODE LOOKUP
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
 
 MOST USED COLORS (By Frequency):
 ---------------------------------
 #ffffff - White (backgrounds, cards, light text)
-#0f172a - slate-900 (headlines, dark sections)
-#64748b - slate-500 (body text)
-#2563eb - brand-600 (primary CTAs, accents)
-#f8fafc - surface-50/slate-50 (subtle backgrounds)
-#f1f5f9 - slate-100 (borders, light fills)
-#e2e8f0 - slate-200 (dividers, borders)
-#475569 - slate-600 (secondary text)
-#94a3b8 - slate-400 (muted text)
-#3b82f6 - brand-500 (hover states)
+#171717 - neutral-900 (headlines, dark sections)
+#525252 - neutral-600 (body text)
+#FF7F50 - coral-500 (primary accent)
+#fafafa - neutral-50 (subtle backgrounds)
+#f5f5f5 - neutral-100 (borders, light fills)
+#e5e5e5 - neutral-200 (dividers, borders)
+#737373 - neutral-500 (secondary text)
+#a3a3a3 - neutral-400 (muted text)
+#3b82f6 - blue-500 (headline accent, links)
 
 ACCENT COLORS:
 --------------
-#059669 - emerald-600 (free consultation)
-#10b981 - emerald-500 (success icons)
-#fbbf24 - amber-400 (star ratings)
+#FF7F50 - coral-500 (primary warm accent)
+#fffbfa - coral-50 (warm backgrounds)
+#fff5f2 - coral-100 (warm backgrounds)
 #0077b5 - LinkedIn blue (social)
+#16a34a - green-600 (success)
+#9333ea - purple-600 (events)
 
 
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
 END OF DOCUMENT
-═══════════════════════════════════════════════════════════════════════
+===============================================================================
 
-Total Unique Colors Used: ~25
-Primary Palette: Slate + Blue
-Design Style: Clean, Professional, High-Contrast
+Total Unique Colors Used: ~30
+Primary Palette: Neutral + Coral
+Typography: Instrument Serif (headlines) + Inter (body)
+Design Style: Premium, Warm, Editorial
 Accessibility: WCAG AA Compliant
 Mobile-First: Yes, maintained across all breakpoints
+Special Effects: Grainy texture overlays, gradient blobs
 

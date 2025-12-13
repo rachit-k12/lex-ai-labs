@@ -14,20 +14,20 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Lex AI | Break into AI',
+  title: 'Lex AI | Build Intelligence. Build India.',
   description:
-    "Turning AI complexity into clarity. Join India's premier AI fellowships for engineers and leaders.",
+    "Join India's most ambitious community of engineers, founders & leaders building real AI. Get access to elite training, mentorship, and a network that accelerates your career.",
   keywords:
-    'Lex AI, AI education, AI fellowship, machine learning, data science, AI training India, AI Seekhega India',
+    'Lex AI, AI community India, AI fellowship, machine learning, AI engineering, AI mentorship, AI training India, AI leaders',
   icons: {
     icon: '/assets/lexailogo.svg',
     shortcut: '/assets/lexailogo.svg',
     apple: '/assets/lexailogo.svg',
   },
   openGraph: {
-    title: 'Lex AI | Break into AI',
+    title: 'Lex AI | Build Intelligence. Build India.',
     description:
-      "Turning AI complexity into clarity. Join India's premier community for learning, building, and leading with Artificial Intelligence.",
+      "Join India's most ambitious community of engineers, founders & leaders building real AI. Elite training, mentorship, and a network that accelerates your career.",
     type: 'website',
   },
 };
