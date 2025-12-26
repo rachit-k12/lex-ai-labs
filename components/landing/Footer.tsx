@@ -1,27 +1,33 @@
 'use client';
 
-import { Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const menuLinks = [
-  { label: 'Community', href: '#community' },
-  { label: 'The Network', href: '#network' },
-  { label: 'Transformations', href: '#stories' },
-  { label: 'Apply Now', href: '#apply' },
+  { label: 'Individuals', href: '/individuals' },
+  { label: 'Enterprises', href: '/enterprises' },
+  { label: 'Institutions', href: '/institutions' },
+  { label: 'Higher Education', href: '/institutions/higher-ed' },
+  { label: 'Schools (K-12)', href: '/institutions/schools' },
 ];
 
 const policyLinks = [
-  { label: 'Refund Policy', href: '/refund-policy' },
-  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Refund Policy', href: '/refunds' },
+  { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms of Service', href: '/terms' },
 ];
 
 const socialLinks = [
-  { icon: Linkedin, href: 'https://www.linkedin.com/company/lex-ai-labs', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com/lexailabs', label: 'Twitter' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/106448852/', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://x.com/labs_ai80315', label: 'Twitter' },
   { icon: Instagram, href: 'https://www.instagram.com/lexailabs/', label: 'Instagram' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  { icon: Youtube, href: 'https://www.youtube.com/@LexAILabs', label: 'YouTube' },
+  {
+    icon: Facebook,
+    href: 'https://www.facebook.com/people/Lex-AI-Labs/61580454084785/',
+    label: 'Facebook',
+  },
 ];
 
 export default function Footer() {
@@ -57,7 +63,7 @@ export default function Footer() {
               alt="Lex AI Club"
               width={80}
               height={80}
-              className="w-56 h-56 mx-auto lg:mx-0"
+              className="w-56 h-56 p-4 mx-auto lg:mx-0"
             />
           </div>
 
@@ -77,10 +83,10 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="tel:+911169266219"
+                  href="tel:+919996692323"
                   className="text-neutral-600 hover:text-blue-600 transition-colors"
                 >
-                  +91 11-69266219
+                  +91 99966 92323
                 </a>
               </p>
             </div>

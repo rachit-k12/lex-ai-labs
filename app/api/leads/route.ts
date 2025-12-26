@@ -33,9 +33,15 @@ export async function POST(request: NextRequest) {
         role_title = EXCLUDED.role_title
     `;
 
-    return NextResponse.json({ success: true, message: 'Successfully registered for early access!' });
+    return NextResponse.json({
+      success: true,
+      message: 'Successfully registered for early access!',
+    });
   } catch (error) {
     console.error('Error saving lead:', error);
-    return NextResponse.json({ error: 'Failed to save your information. Please try again.' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Failed to save your information. Please try again.' },
+      { status: 500 }
+    );
   }
 }

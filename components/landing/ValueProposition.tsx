@@ -19,7 +19,7 @@ const benefits = [
     icon: Compass,
     title: 'Elite Mentorship Network',
     description:
-      'Get 1:1 guidance from engineers at Google, Microsoft, and Amazon. Code reviews, career advice, and insider knowledge—direct from the source.',
+      'Get 1:1 guidance from engineers at Google, Microsoft, and Amazon. Code reviews, career advice, and insider knowledge delivered directly from the source.',
   },
   {
     icon: Network,
@@ -86,7 +86,7 @@ export default function ValueProposition() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="text-center text-lg text-neutral-600 max-w-2xl mx-auto mb-16"
         >
-          Premium content, world-class mentors, and a private network of AI builders—all in one
+          Premium content, world-class mentors, and a private network of AI builders, all in one
           place. This is how careers accelerate.
         </motion.p>
 

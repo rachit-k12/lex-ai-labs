@@ -105,8 +105,8 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
                       You&apos;re on the list!
                     </h3>
                     <p className="text-neutral-600 mb-6">
-                      We&apos;ll notify you as soon as early access opens. Get ready to join India&apos;s
-                      most exclusive AI network.
+                      We&apos;ll notify you as soon as early access opens. Get ready to join
+                      India&apos;s most exclusive AI network.
                     </p>
                     <button
                       onClick={handleClose}
@@ -183,7 +183,9 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
                           type="text"
                           id="currentRole"
                           value={formData.currentRole}
-                          onChange={(e) => setFormData({ ...formData, currentRole: e.target.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, currentRole: e.target.value })
+                          }
                           placeholder="e.g. ML Engineer at Google"
                           required
                           className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-coral-500/20 focus:border-coral-500 transition-all"

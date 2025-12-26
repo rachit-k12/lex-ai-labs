@@ -69,7 +69,7 @@ const testimonials = [
     image:
       'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face',
     content:
-      "I've had the opportunity to learn from Puru during the Lex AI Fellowship. He breaks down complex concepts—especially the math—into simple, intuitive steps. Even the most abstract ideas feel approachable.",
+      "I've had the opportunity to learn from Puru during the Lex AI Fellowship. He breaks down complex concepts, especially the math, into simple, intuitive steps. Even the most abstract ideas feel approachable.",
     outcome: 'Transformed from theory to practice',
   },
   {

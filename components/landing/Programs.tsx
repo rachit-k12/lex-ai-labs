@@ -11,7 +11,8 @@ const programs = [
     icon: Code,
     title: 'AI Fellowship',
     subtitle: 'For Engineers Building AI Systems',
-    description: 'Master production AI systems with hands-on projects. Build ML models, fine-tune LLMs, and create multi-agent systems.',
+    description:
+      'Master production AI systems with hands-on projects. Build ML models, fine-tune LLMs, and create multi-agent systems.',
     price: '25,500',
     duration: '12 weeks',
     features: [
@@ -25,14 +26,15 @@ const programs = [
     cta: 'Apply Now',
     href: 'https://aiseekhegaindia.com/fellowship/',
     featured: false,
-    iconBg: 'bg-blue-100 text-blue-600',
+    iconBg: 'bg-coral-50 text-coral-600',
   },
   {
     id: 'leaders',
     icon: TrendingUp,
     title: 'AI for Leaders',
     subtitle: 'For Executives Making AI Decisions',
-    description: 'Understand AI deeply enough to lead transformation. Evaluate vendors, build roadmaps, and drive AI adoption.',
+    description:
+      'Understand AI deeply enough to lead transformation. Evaluate vendors, build roadmaps, and drive AI adoption.',
     price: '25,500',
     duration: '8 weeks',
     features: [
@@ -45,7 +47,7 @@ const programs = [
     cta: 'Apply Now',
     href: 'https://aiseekhegaindia.com/fellowship/',
     featured: true,
-    iconBg: 'bg-slate-800 text-brand-400',
+    iconBg: 'bg-neutral-800 text-coral-400',
   },
 ];
 
@@ -56,7 +58,7 @@ export default function Programs() {
   });
 
   return (
-    <section id="programs" ref={ref} className="py-20 md:py-28 bg-white">
+    <section id="programs" ref={ref} className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -65,14 +67,16 @@ export default function Programs() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-slate-100 text-slate-600 text-sm font-medium rounded-full mb-4">
-            Community Programs
+          <span className="text-xs font-medium text-neutral-500 uppercase tracking-[0.2em] mb-6 block">
+            Our Programs
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Learn with the community
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-neutral-900 leading-[1.1] mb-6">
+            Learn With The
+            <span className="block text-blue-500 italic mt-1">Community</span>
           </h2>
-          <p className="text-lg text-slate-500">
-            Structured cohort programs that come with lifetime community access. Learn alongside peers, get mentorship, and build your network.
+          <p className="text-lg text-neutral-600">
+            Structured cohort programs with lifetime community access. Learn alongside peers, get
+            mentorship, and build your network.
           </p>
         </motion.div>
 
@@ -81,10 +85,10 @@ export default function Programs() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex items-center justify-center gap-3 mb-12 px-6 py-4 bg-brand-50 rounded-2xl border border-brand-100 max-w-2xl mx-auto"
+          className="flex items-center justify-center gap-3 mb-12 px-6 py-4 bg-coral-50 rounded-2xl border border-coral-100 max-w-2xl mx-auto"
         >
-          <Users className="w-5 h-5 text-brand-600" />
-          <p className="text-brand-700 font-medium text-sm md:text-base">
+          <Users className="w-5 h-5 text-coral-600" />
+          <p className="text-neutral-700 font-medium text-sm md:text-base">
             Every program includes lifetime access to the AI Professional Community
           </p>
         </motion.div>
@@ -97,48 +101,64 @@ export default function Programs() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className={`relative rounded-3xl overflow-hidden ${
+              className={`relative rounded-2xl overflow-hidden ${
                 program.featured
-                  ? 'bg-slate-900 text-white'
-                  : 'bg-white border border-slate-200'
+                  ? 'bg-neutral-900 text-white'
+                  : 'bg-white border border-neutral-200'
               }`}
             >
               {program.featured && (
-                <div className="absolute top-4 right-4 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                <div className="absolute top-4 right-4 bg-coral-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                   Most Popular
                 </div>
               )}
 
               <div className="p-8">
                 {/* Icon */}
-                <div className={`w-12 h-12 rounded-xl ${program.iconBg} flex items-center justify-center mb-6`}>
+                <div
+                  className={`w-12 h-12 rounded-xl ${program.iconBg} flex items-center justify-center mb-6`}
+                >
                   <program.icon className="w-6 h-6" />
                 </div>
 
                 {/* Title */}
-                <h3 className={`text-2xl font-bold mb-2 ${program.featured ? 'text-white' : 'text-slate-900'}`}>
+                <h3
+                  className={`text-2xl font-serif mb-2 ${program.featured ? 'text-white' : 'text-neutral-900'}`}
+                >
                   {program.title}
                 </h3>
-                <p className={`text-sm font-medium mb-4 ${program.featured ? 'text-slate-400' : 'text-slate-500'}`}>
+                <p
+                  className={`text-sm font-medium mb-4 ${program.featured ? 'text-neutral-400' : 'text-neutral-500'}`}
+                >
                   {program.subtitle}
                 </p>
 
                 {/* Description */}
-                <p className={`text-sm mb-6 leading-relaxed ${program.featured ? 'text-slate-300' : 'text-slate-600'}`}>
+                <p
+                  className={`text-sm mb-6 leading-relaxed ${program.featured ? 'text-neutral-300' : 'text-neutral-600'}`}
+                >
                   {program.description}
                 </p>
 
                 {/* Pricing */}
-                <div className={`pb-6 mb-6 border-b ${program.featured ? 'border-slate-700' : 'border-slate-100'}`}>
+                <div
+                  className={`pb-6 mb-6 border-b ${program.featured ? 'border-neutral-700' : 'border-neutral-100'}`}
+                >
                   <div className="flex items-baseline gap-1">
-                    <span className={`text-3xl font-bold ${program.featured ? 'text-white' : 'text-slate-900'}`}>
+                    <span
+                      className={`text-3xl font-bold ${program.featured ? 'text-coral-400' : 'text-neutral-900'}`}
+                    >
                       ₹{program.price}
                     </span>
-                    <span className={`text-sm ${program.featured ? 'text-slate-400' : 'text-slate-500'}`}>
+                    <span
+                      className={`text-sm ${program.featured ? 'text-neutral-400' : 'text-neutral-500'}`}
+                    >
                       + 18% GST
                     </span>
                   </div>
-                  <p className={`text-sm mt-1 ${program.featured ? 'text-slate-400' : 'text-slate-500'}`}>
+                  <p
+                    className={`text-sm mt-1 ${program.featured ? 'text-neutral-400' : 'text-neutral-500'}`}
+                  >
                     {program.duration} program
                   </p>
                 </div>
@@ -147,8 +167,12 @@ export default function Programs() {
                 <ul className="space-y-3 mb-8">
                   {program.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle className={`w-5 h-5 shrink-0 ${program.featured ? 'text-brand-400' : 'text-brand-600'}`} />
-                      <span className={`text-sm ${program.featured ? 'text-slate-300' : 'text-slate-600'}`}>
+                      <CheckCircle
+                        className={`w-5 h-5 shrink-0 ${program.featured ? 'text-coral-400' : 'text-coral-500'}`}
+                      />
+                      <span
+                        className={`text-sm ${program.featured ? 'text-neutral-300' : 'text-neutral-600'}`}
+                      >
                         {feature}
                       </span>
                     </li>
@@ -158,10 +182,12 @@ export default function Programs() {
                 {/* CTA */}
                 <Link
                   href={program.href}
-                  className={`flex items-center justify-center gap-2 w-full py-4 rounded-xl font-semibold transition-all duration-300 group ${
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center justify-center gap-2 w-full py-4 rounded-full font-semibold transition-all duration-300 group ${
                     program.featured
-                      ? 'bg-brand-500 text-white hover:bg-brand-400'
-                      : 'bg-slate-900 text-white hover:bg-slate-800'
+                      ? 'bg-white text-neutral-900 hover:bg-neutral-100'
+                      : 'bg-neutral-900 text-white hover:bg-neutral-800'
                   }`}
                 >
                   {program.cta}
@@ -179,10 +205,10 @@ export default function Programs() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <p className="text-slate-500 mb-4">Not sure which program is right for you?</p>
+          <p className="text-neutral-500 mb-4">Not sure which program is right for you?</p>
           <Link
-            href="https://www.lexailabs.com/contact"
-            className="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700 transition-colors"
+            href="#contact"
+            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
           >
             Book a free consultation
             <ArrowRight className="w-4 h-4" />

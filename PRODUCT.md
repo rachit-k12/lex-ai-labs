@@ -15,6 +15,7 @@ Members don't consume content; they gain **access to people**. Every interaction
 ## Core Value Proposition
 
 ### The Narrative
+
 - **What We Sell:** Access to people, not just programs
 - **What Members Get:**
   - Real-world AI engineering & leadership training
@@ -23,6 +24,7 @@ Members don't consume content; they gain **access to people**. Every interaction
   - Accelerated transformation for careers & companies
 
 ### Brand Message
+
 > "The membership that gives you people, not just programs. Premium content, world-class mentors, and a private network of AI builders—all in one place."
 
 **The community is the hero. The programs are included, but they are not the main selling point.**
@@ -32,12 +34,14 @@ Members don't consume content; they gain **access to people**. Every interaction
 ## Target Audience
 
 ### Primary
+
 - AI/ML Engineers looking to ship production systems
 - Founders building AI-first products
 - Technical professionals transitioning into AI
 - Engineers who want to stop watching from the sidelines
 
 ### Secondary
+
 - Product managers in AI companies
 - Technical leaders exploring AI strategy
 - Investors seeking AI deal flow and insights
@@ -47,24 +51,30 @@ Members don't consume content; they gain **access to people**. Every interaction
 ## What Members Unlock
 
 ### 1. Real-World AI Engineering
+
 Build production-grade AI systems with hands-on projects. Learn from practitioners who ship code at scale, not just theory.
 
 ### 2. Elite Mentorship Network
+
 Get 1:1 guidance from engineers at Google, Microsoft, and Amazon. Code reviews, career advice, and insider knowledge—direct from the source.
 
 ### 3. Curated Cohort Experience
+
 Join a vetted community of 500+ builders, founders, and leaders. No noise, just high-signal conversations with people who get it.
 
 ### 4. Accelerated Career Growth
+
 Access exclusive AI roles, investor introductions, and partnership opportunities. Your next breakthrough is one connection away.
 
 ### 5. Premium Content & Programs
+
 - **AI Fellowship Program** - For engineers building AI systems
 - **AI for Leaders Program** - For executives making AI decisions
 - Weekly expert deep-dives on LLMs, agents, and production ML
 - Private Slack community with 24/7 access
 
 ### 6. Exclusive Events
+
 - **Investor Roundtables** - Weekly pitch sessions with active AI investors
 - **Expert AMAs** - Unfiltered Q&A with industry leaders
 - **Founder Forums** - Peer circles to share challenges and wins
@@ -97,11 +107,13 @@ Access exclusive AI roles, investor introductions, and partnership opportunities
 ## Community Composition
 
 ### Current Network
+
 - **500+ Members** across 8+ countries
 - **10+ Tier-1 Mentors** from Google, Microsoft, Amazon, Meta
 - Engineers, founders, and leaders from FAANG and top startups
 
 ### Who's Inside
+
 - Applied Scientists & ML Engineers
 - Senior Engineers & Tech Leads
 - Engineering Managers
@@ -112,22 +124,24 @@ Access exclusive AI roles, investor introductions, and partnership opportunities
 
 ## Key Statistics
 
-| Metric | Value |
-|--------|-------|
-| Community Members | 500+ |
-| Countries Represented | 8+ |
-| Expert Sessions Hosted | 50+ |
-| Tier-1 Mentors | 10+ |
-| Member Companies | Google, Amazon, Microsoft, Meta, and more |
+| Metric                 | Value                                     |
+| ---------------------- | ----------------------------------------- |
+| Community Members      | 500+                                      |
+| Countries Represented  | 8+                                        |
+| Expert Sessions Hosted | 50+                                       |
+| Tier-1 Mentors         | 10+                                       |
+| Member Companies       | Google, Amazon, Microsoft, Meta, and more |
 
 ---
 
 ## Pricing
 
 ### Membership Investment
+
 **₹39,999/year** (One-time Annual)
 
 ### What's Included
+
 - Lifetime community access
 - All events and roundtables
 - Mentor network access
@@ -143,20 +157,21 @@ Access exclusive AI roles, investor introductions, and partnership opportunities
 
 ### What Makes Us Different
 
-| Others | Lex AI |
-|--------|--------|
-| Sell courses | Sell access to people |
-| Generic cohorts | Curated, vetted members |
+| Others            | Lex AI                          |
+| ----------------- | ------------------------------- |
+| Sell courses      | Sell access to people           |
+| Generic cohorts   | Curated, vetted members         |
 | One-time learning | Unlimited value through network |
-| Content-first | Community-first |
-| Certificates | Real career outcomes |
-| Theory-heavy | Production-focused |
+| Content-first     | Community-first                 |
+| Certificates      | Real career outcomes            |
+| Theory-heavy      | Production-focused              |
 
 ---
 
 ## Website Section Structure
 
 ### Page Flow
+
 1. **Hero** — Build Intelligence. Build India.
 2. **Trusted By** — Companies where members work
 3. **What You Get** — The membership that gives you people, not just programs
@@ -168,24 +183,30 @@ Access exclusive AI roles, investor introductions, and partnership opportunities
 ### Key Messages Per Section
 
 **Hero:**
+
 > "Build Intelligence. Build India."
 > "Join India's most ambitious community of engineers, founders, and leaders building real AI."
 
 **What You Get:**
+
 > "The Membership That Gives You People, Not Just Programs"
 > "Premium content, world-class mentors, and a private network of AI builders—all in one place."
 
 **The Network:**
+
 > "Connect With Those Building AI's Future"
 
 **Events:**
+
 > "Where Builders Connect"
 > "High-signal gatherings designed for people who ship, not just talk."
 
 **Transformations:**
+
 > "Careers Transformed. Results That Speak."
 
 **Final CTA:**
+
 > "Ready to Build What's Next?"
 > "Join 500+ engineers, founders, and leaders who chose to stop watching from the sidelines."
 
@@ -198,6 +219,7 @@ Access exclusive AI roles, investor introductions, and partnership opportunities
 - **Website:** lexailabs.in
 
 ### Social Media
+
 - LinkedIn: /company/lex-ai-labs
 - Twitter: @lexailabs
 - Instagram: @lexailabs
@@ -207,12 +229,14 @@ Access exclusive AI roles, investor introductions, and partnership opportunities
 ## Brand Guidelines
 
 ### Tone of Voice
+
 - **Ambitious but welcoming** — High standards, not elitist
 - **Direct and specific** — No vague promises, clear outcomes
 - **Action-oriented** — Emphasize building and shipping
 - **Community-centric** — Always about the people, not the platform
 
 ### Key Phrases to Use
+
 - "Build Intelligence. Build India."
 - "Access people, not just content"
 - "The membership that gives you people, not just programs"
@@ -222,6 +246,7 @@ Access exclusive AI roles, investor introductions, and partnership opportunities
 - "Your next breakthrough is one connection away"
 
 ### Phrases to Avoid
+
 - "Best AI course"
 - "Learn AI online"
 - "Certification program"
@@ -233,14 +258,14 @@ Access exclusive AI roles, investor introductions, and partnership opportunities
 
 ## Primary CTAs
 
-| Location | CTA Text |
-|----------|----------|
-| Hero | "Apply Now" |
-| Navigation | "Apply Now" |
+| Location          | CTA Text               |
+| ----------------- | ---------------------- |
+| Hero              | "Apply Now"            |
+| Navigation        | "Apply Now"            |
 | Community Section | "View Full Curriculum" |
-| Final CTA | "Apply Now" |
-| Secondary | "Meet the Network" |
+| Final CTA         | "Apply Now"            |
+| Secondary         | "Meet the Network"     |
 
 ---
 
-*Last Updated: December 2024*
+_Last Updated: December 2024_

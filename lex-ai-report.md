@@ -652,12 +652,14 @@ The fellowship takes participants through a progressive learning path:
 ### Page Structure & Key Messages
 
 **1. Hero Section:**
+
 - Headline: "Build Intelligence. Build India."
 - Subheadline: "Join India's most ambitious community of engineers, founders, and leaders building real AI."
 - Primary CTA: "Apply Now"
 - Secondary CTA: "Meet the Network"
 
 **2. What You Get (Community Benefits):**
+
 - Headline: "The Membership That Gives You People, Not Just Programs"
 - Subheadline: "Premium content, world-class mentors, and a private network of AI builders—all in one place."
 - Four key benefits:
@@ -667,20 +669,24 @@ The fellowship takes participants through a progressive learning path:
   - Accelerated Career Growth
 
 **3. The Network Section:**
+
 - Headline: "Connect With Those Building AI's Future"
 - Showcase mentors from Google, Microsoft, Amazon, Meta
 - LinkedIn profile links for credibility
 
 **4. Exclusive Events Section:**
+
 - Headline: "Where Builders Connect"
 - Subheadline: "High-signal gatherings designed for people who ship, not just talk."
 - Events: Investor Roundtables, Expert AMAs, Founder Forums, Technical Deep-Dives, AI Chai Meetups
 
 **5. Transformation Stories:**
+
 - Headline: "Careers Transformed. Results That Speak."
 - Outcome-focused testimonials with specific results (promotions, role changes, projects shipped)
 
 **6. Final CTA:**
+
 - Headline: "Ready to Build What's Next?"
 - Subheadline: "Join 500+ engineers, founders, and leaders who chose to stop watching from the sidelines."
 - CTA: "Apply Now"
@@ -726,6 +732,7 @@ The fellowship takes participants through a progressive learning path:
 Lex AI Labs is India's most ambitious community of engineers, founders, and leaders building real AI. The company's unique positioning—"the membership that gives you people, not just programs"—differentiates it from traditional course providers by emphasizing community, mentorship, and real connections over content consumption.
 
 **Core Value Proposition:**
+
 > "Build Intelligence. Build India."
 > Premium content, world-class mentors, and a private network of AI builders—all in one place.
 
@@ -740,13 +747,13 @@ Lex AI Labs is India's most ambitious community of engineers, founders, and lead
 
 **Differentiators:**
 
-| Others | Lex AI |
-|--------|--------|
-| Sell courses | Sell access to people |
+| Others          | Lex AI                  |
+| --------------- | ----------------------- |
+| Sell courses    | Sell access to people   |
 | Generic cohorts | Curated, vetted members |
-| Content-first | Community-first |
-| Theory-heavy | Production-focused |
-| Certificates | Real career outcomes |
+| Content-first   | Community-first         |
+| Theory-heavy    | Production-focused      |
+| Certificates    | Real career outcomes    |
 
 **Growth Opportunities:**
 

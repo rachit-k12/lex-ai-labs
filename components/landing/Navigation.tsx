@@ -1,23 +1,50 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import LeadCaptureModal from './LeadCaptureModal';
 
-const navLinks = [
+interface SubLink {
+  label: string;
+  href: string;
+}
+
+interface NavLinkType {
+  label: string;
+  href: string;
+  subLinks?: SubLink[];
+}
+
+const navLinks: NavLinkType[] = [
   { label: 'Home', href: '/' },
-  { label: 'Community', href: '#community' },
-  { label: 'The Network', href: '#network' },
-  { label: 'Transformations', href: '#stories' },
-  { label: 'Contact', href: '#contact' },
+  {
+    label: 'Individuals',
+    href: '/individuals',
+    subLinks: [
+      { label: 'AI Fellowship', href: '/individuals/ai-fellowship' },
+      { label: 'AI for Leaders', href: '/individuals/ai-for-leaders' },
+    ],
+  },
+  { label: 'Enterprises', href: '/enterprises' },
+  {
+    label: 'Institutions',
+    href: '/institutions',
+    subLinks: [
+      { label: 'Higher Education', href: '/institutions/higher-ed' },
+      { label: 'Schools (K-12)', href: '/institutions/schools' },
+    ],
+  },
+  { label: 'About', href: '/about' },
 ];
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
 
   const handleRequestInvite = () => {
     setMobileMenuOpen(false);
@@ -30,15 +57,15 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0 flex items-center gap-2 group">
+            <Link href="/" className="flex-shrink-0 flex items-center group">
               <Image
                 src="/assets/lexailogo.svg"
-                alt="Lex AI Club"
+                alt="Lex AI Labs"
                 width={72}
                 height={72}
-                className="w-8 h-8 sm:w-10 sm:h-10"
+                className="w-10 h-10 sm:w-12 sm:h-12 p-1 mr-2 sm:p-2"
               />
-              <span className="text-2xl md:text-3xl font-serif italic text-neutral-900 tracking-tight">
+              <span className="text-4xl md:text-4xl font-serif italic text-neutral-900 tracking-tight">
                 Lex AI
               </span>
             </Link>
@@ -46,13 +73,54 @@ export default function Navigation() {
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
-                <Link
+                <div
                   key={link.label}
-                  href={link.href}
-                  className="px-4 py-2 text-base font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+                  className="relative"
+                  onMouseEnter={() => link.subLinks && setOpenDropdown(link.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  {link.label}
-                </Link>
+                  {link.subLinks ? (
+                    <>
+                      <Link
+                        href={link.href}
+                        className="inline-flex items-center gap-1 px-4 py-2 text-base font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+                      >
+                        {link.label}
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${openDropdown === link.label ? 'rotate-180' : ''}`}
+                        />
+                      </Link>
+                      <AnimatePresence>
+                        {openDropdown === link.label && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 8 }}
+                            transition={{ duration: 0.15 }}
+                            className="absolute top-full left-0 mt-1 w-56 bg-white rounded-2xl shadow-xl border border-neutral-100 py-2 overflow-hidden"
+                          >
+                            {link.subLinks.map((subLink) => (
+                              <Link
+                                key={subLink.href}
+                                href={subLink.href}
+                                className="block px-4 py-3 text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 transition-colors"
+                              >
+                                {subLink.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="px-4 py-2 text-base font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </div>
               ))}
             </nav>
 
@@ -62,7 +130,7 @@ export default function Navigation() {
                 onClick={() => setIsModalOpen(true)}
                 className="group inline-flex items-center gap-2 px-6 py-3 text-base font-medium text-white bg-neutral-900 rounded-full hover:bg-neutral-800 transition-all"
               >
-                Request Invite
+                Get Started
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </button>
             </div>
@@ -98,7 +166,7 @@ export default function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl"
+                className="lg:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl max-h-[90vh] overflow-y-auto"
               >
                 {/* Header */}
                 <div className="flex items-center justify-between px-4 h-16 border-b border-neutral-100">
@@ -109,7 +177,7 @@ export default function Navigation() {
                   >
                     <Image
                       src="/assets/lexailogo.svg"
-                      alt="Lex AI Club"
+                      alt="Lex AI Labs"
                       width={72}
                       height={72}
                       className="w-8 h-8"
@@ -134,14 +202,55 @@ export default function Navigation() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.05 }}
                       >
-                        <Link
-                          href={link.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="flex items-center justify-between py-4 px-4 text-lg font-medium text-neutral-900 rounded-2xl hover:bg-neutral-50 active:bg-neutral-100 transition-colors"
-                        >
-                          {link.label}
-                          <ArrowRight className="w-5 h-5 text-neutral-400" />
-                        </Link>
+                        {link.subLinks ? (
+                          <div>
+                            <button
+                              onClick={() =>
+                                setMobileDropdown(mobileDropdown === link.label ? null : link.label)
+                              }
+                              className="flex items-center justify-between w-full py-4 px-4 text-lg font-medium text-neutral-900 rounded-2xl hover:bg-neutral-50 active:bg-neutral-100 transition-colors"
+                            >
+                              {link.label}
+                              <ChevronDown
+                                className={`w-5 h-5 text-neutral-400 transition-transform ${mobileDropdown === link.label ? 'rotate-180' : ''}`}
+                              />
+                            </button>
+                            <AnimatePresence>
+                              {mobileDropdown === link.label && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: 'auto', opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="overflow-hidden"
+                                >
+                                  <div className="pl-4 space-y-1 pb-2">
+                                    {link.subLinks.map((subLink) => (
+                                      <Link
+                                        key={subLink.href}
+                                        href={subLink.href}
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="flex items-center justify-between py-3 px-4 text-base font-medium text-neutral-600 rounded-xl hover:bg-neutral-50 active:bg-neutral-100 transition-colors"
+                                      >
+                                        {subLink.label}
+                                        <ArrowRight className="w-4 h-4 text-neutral-400" />
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        ) : (
+                          <Link
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center justify-between py-4 px-4 text-lg font-medium text-neutral-900 rounded-2xl hover:bg-neutral-50 active:bg-neutral-100 transition-colors"
+                          >
+                            {link.label}
+                            <ArrowRight className="w-5 h-5 text-neutral-400" />
+                          </Link>
+                        )}
                       </motion.div>
                     ))}
                   </div>
@@ -157,11 +266,11 @@ export default function Navigation() {
                       onClick={handleRequestInvite}
                       className="flex items-center justify-center gap-3 w-full py-4 text-base font-medium text-white bg-neutral-900 rounded-2xl hover:bg-neutral-800 active:scale-[0.98] transition-all"
                     >
-                      Request an Invite
+                      Get Started
                       <ArrowRight className="w-5 h-5" />
                     </button>
                     <p className="text-center text-sm text-neutral-500 mt-4">
-                      Join India&apos;s most ambitious AI community
+                      Build Real AI Capability
                     </p>
                   </motion.div>
                 </nav>

@@ -44,7 +44,7 @@ See `website-improvements-principles.md` for detailed before/after analysis.
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
 - **Styling**: TailwindCSS with custom design system
-- **UI Components**: 
+- **UI Components**:
   - shadcn/ui (buttons, forms)
   - MagicUI (flickering grid, shimmer effects, text reveal)
   - Aceternity UI (sparkles, sticky scroll, cover effects)
@@ -93,7 +93,7 @@ lexailabs/
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
@@ -150,30 +150,36 @@ npx tsc --noEmit
 ### Landing Page Sections
 
 1. **Hero Section**
+
    - Clear value proposition: "Learn to build production AI systems in 12 weeks"
    - Specific target audience: Working professionals
    - Primary CTA: "Start Your AI Journey"
 
 2. **Trusted By**
+
    - Logo cloud of partner companies
    - Social proof
 
 3. **About & Stats**
+
    - Weekend format emphasis
    - 70/30 practical vs theory ratio
    - Real AI systems description
 
 4. **Programs**
+
    - AI Fellowship (for engineers)
    - AI for Leaders (for executives)
    - 30-minute strategy session CTA
 
 5. **Instructor Spotlight**
+
    - Founder credentials (Google engineer)
    - Specific projects and experience
    - Teaching track record
 
 6. **Testimonials**
+
    - Student reviews
    - Real outcomes and feedback
 

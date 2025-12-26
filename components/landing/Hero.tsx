@@ -1,17 +1,37 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Building2, ChevronRight, GraduationCap, Sparkles, User } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
-import LeadCaptureModal from './LeadCaptureModal';
 import Navigation from './Navigation';
 
-export default function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const personaOptions = [
+  {
+    icon: User,
+    label: 'Individual',
+    title: 'Build AI skills for your career',
+    href: '/individuals',
+    hoverColor: 'coral',
+  },
+  {
+    icon: Building2,
+    label: 'Enterprise',
+    title: 'Build AI capability in your org',
+    href: '/enterprises',
+    hoverColor: 'blue',
+  },
+  {
+    icon: GraduationCap,
+    label: 'Institution',
+    title: 'Transform AI education',
+    href: '/institutions',
+    hoverColor: 'purple',
+  },
+];
 
+export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] sm:min-h-screen flex flex-col items-center justify-between overflow-hidden">
+    <section className="relative min-h-screen flex flex-col overflow-hidden">
       <Navigation />
 
       {/* Gradient Background */}
@@ -33,78 +53,180 @@ export default function Hero() {
       </div>
 
       {/* Decorative gradient blobs */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-coral-500/30 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-20 left-10 w-96 h-96 bg-coral-500/20 rounded-full blur-3xl animate-pulse" />
       <div
-        className="absolute bottom-20 right-10 w-80 h-80 bg-coral-500/30 rounded-full blur-3xl animate-pulse"
+        className="absolute bottom-40 right-10 w-80 h-80 bg-coral-500/20 rounded-full blur-3xl animate-pulse"
         style={{ animationDelay: '1s' }}
       />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-coral-100/30 to-transparent rounded-full blur-2xl" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center ">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 mb-8 shadow-sm"
-        >
-          <Sparkles className="w-4 h-4 text-coral-500" />
-          <span className="text-sm font-medium text-neutral-700">Early Access Opening Soon</span>
-        </motion.div>
+      <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left - Headlines */}
+          <div>
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-8"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 shadow-sm">
+                <Sparkles className="w-4 h-4 text-coral-500" />
+                <span className="text-sm font-medium text-neutral-700">
+                  AI Education & Enterprise Capability
+                </span>
+              </div>
+            </motion.div>
 
-        {/* Main Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-neutral-900 leading-[1.05] mb-8 tracking-tight"
-        >
-          India&apos;s Most Exclusive
-          <br />
-          <span className="italic text-blue-500"> AI Network</span>
-        </motion.h1>
+            {/* Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-serif text-5xl sm:text-6xl lg:text-8xl text-neutral-900 leading-[1.05] mb-6 tracking-tight"
+            >
+              Serious AI.
+              <br />
+              <span className="italic text-coral-500">Built Right.</span>
+            </motion.h1>
 
-        {/* Subheadline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg  text-neutral-600 max-w-4xl mx-auto mb-12 leading-relaxed"
-        >
-          Access Tier-1 engineers, founders, and investors from Google, Amazon, and Microsoft. Your
-          network becomes your strongest career asset.
-        </motion.p>
+            {/* Subheadline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-lg text-neutral-600 max-w-lg leading-relaxed mb-8"
+            >
+              We help individuals and organizations build deep, first-principles AI capability
+              &mdash; not just use tools.
+            </motion.p>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-        >
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="group inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-white bg-neutral-900 rounded-full hover:bg-neutral-800 transition-all shadow-lg hover:shadow-xl"
+            {/* Trust indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap items-center gap-6 text-sm text-neutral-500"
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-coral-500 rounded-full" />
+                <span>500+ Engineers Trained</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-coral-500 rounded-full" />
+                <span>50+ Organizations</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-coral-500 rounded-full" />
+                <span>4.9/5 Rating</span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right - Persona Selection */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="space-y-4"
           >
-            Apply Now
-            <ArrowRight className="w-6 h-5 group-hover:translate-x-1.5 transition-transform duration-500" />
-          </button>
-          <Link
-            href="#network"
-            className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-neutral-700 bg-white/70 backdrop-blur-sm border border-neutral-200 rounded-full hover:bg-white hover:border-neutral-500 transition-all duration-500 ease-in-out"
-          >
-            See Who&apos;s Inside
-          </Link>
-        </motion.div>
+            <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-6">
+              I am from...
+            </p>
+
+            {personaOptions.map((option, index) => (
+              <motion.div
+                key={option.label}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+              >
+                <Link href={option.href} className="block group">
+                  <div
+                    className={`relative flex items-center gap-5 p-5 rounded-2xl border-2 bg-white/60 border-neutral-200 transition-all duration-300 ${
+                      option.hoverColor === 'coral'
+                        ? 'hover:border-coral-300 hover:bg-coral-50/50'
+                        : option.hoverColor === 'blue'
+                          ? 'hover:border-blue-300 hover:bg-blue-50/50'
+                          : option.hoverColor === 'purple'
+                            ? 'hover:border-purple-300 hover:bg-purple-50/50'
+                            : 'hover:border-neutral-400 hover:bg-white'
+                    }`}
+                  >
+                    {/* Icon */}
+                    <div
+                      className={`w-14 h-14 rounded-xl flex items-center justify-center bg-neutral-100 transition-all group-hover:scale-110 ${
+                        option.hoverColor === 'coral'
+                          ? 'group-hover:bg-coral-100'
+                          : option.hoverColor === 'blue'
+                            ? 'group-hover:bg-blue-100'
+                            : option.hoverColor === 'purple'
+                              ? 'group-hover:bg-purple-100'
+                              : 'group-hover:bg-neutral-200'
+                      }`}
+                    >
+                      <option.icon
+                        className={`w-7 h-7 text-neutral-600 transition-colors ${
+                          option.hoverColor === 'coral'
+                            ? 'group-hover:text-coral-500'
+                            : option.hoverColor === 'blue'
+                              ? 'group-hover:text-blue-500'
+                              : option.hoverColor === 'purple'
+                                ? 'group-hover:text-purple-500'
+                                : 'group-hover:text-neutral-800'
+                        }`}
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold text-neutral-900 mb-0.5">
+                        {option.label}
+                      </h3>
+                      <p className="text-sm text-neutral-600">{option.title}</p>
+                    </div>
+
+                    {/* Arrow */}
+                    <div
+                      className={`w-10 h-10 rounded-full flex items-center justify-center bg-neutral-100 text-neutral-500 transition-all group-hover:translate-x-1 ${
+                        option.hoverColor === 'coral'
+                          ? 'group-hover:bg-coral-500 group-hover:text-white'
+                          : option.hoverColor === 'blue'
+                            ? 'group-hover:bg-blue-500 group-hover:text-white'
+                            : option.hoverColor === 'purple'
+                              ? 'group-hover:bg-purple-500 group-hover:text-white'
+                              : 'group-hover:bg-neutral-900 group-hover:text-white'
+                      }`}
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+
+            {/* Or explore all */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.7 }}
+              className="pt-4 text-center"
+            >
+              <Link
+                href="#about"
+                className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-700 transition-colors"
+              >
+                Or scroll to learn more about Lex AI
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
-
-      {/* Lead Capture Modal */}
-      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      <div className="h-1"></div>
     </section>
   );
 }

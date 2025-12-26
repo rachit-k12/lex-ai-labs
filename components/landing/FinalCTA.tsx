@@ -22,12 +22,21 @@ export default function FinalCTA() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section ref={ref} id="apply" className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
+    <section
+      ref={ref}
+      id="apply"
+      className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden"
+    >
       {/* Grainy texture overlay */}
       <div className="absolute inset-0 opacity-40 pointer-events-none">
         <svg className="w-full h-full">
           <filter id="ctaNoise">
-            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.8"
+              numOctaves="4"
+              stitchTiles="stitch"
+            />
           </filter>
           <rect width="100%" height="100%" filter="url(#ctaNoise)" opacity="0.4" />
         </svg>
@@ -58,7 +67,12 @@ export default function FinalCTA() {
             <div className="absolute inset-0 opacity-30 mix-blend-overlay">
               <svg className="w-full h-full">
                 <filter id="imgNoise1">
-                  <feTurbulence type="fractalNoise" baseFrequency="1" numOctaves="4" stitchTiles="stitch" />
+                  <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="1"
+                    numOctaves="4"
+                    stitchTiles="stitch"
+                  />
                 </filter>
                 <rect width="100%" height="100%" filter="url(#imgNoise1)" opacity="0.5" />
               </svg>
@@ -128,7 +142,8 @@ export default function FinalCTA() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg md:text-xl text-white/70 mb-4"
           >
-            Join 500+ engineers, founders, and leaders who chose to stop watching from the sidelines.
+            Join 500+ engineers, founders, and leaders who chose to stop watching from the
+            sidelines.
           </motion.p>
 
           <motion.p

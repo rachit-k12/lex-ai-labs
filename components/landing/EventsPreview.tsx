@@ -9,7 +9,8 @@ const events = [
   {
     id: 'event-1',
     title: 'Investor Roundtable',
-    description: 'Weekly pitch sessions where AI startups meet active investors. Get feedback, make connections, close rounds.',
+    description:
+      'Weekly pitch sessions where AI startups meet active investors. Get feedback, make connections, close rounds.',
     frequency: 'Every Sunday',
     highlight: 'Live Pitches',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
@@ -17,28 +18,32 @@ const events = [
   {
     id: 'event-2',
     title: 'Expert AMAs',
-    description: 'Unfiltered Q&A with engineers and leaders from Google, Amazon, Microsoft, and top AI startups.',
+    description:
+      'Unfiltered Q&A with engineers and leaders from Google, Amazon, Microsoft, and top AI startups.',
     frequency: 'Weekly',
     highlight: 'Industry Leaders',
   },
   {
     id: 'event-3',
     title: 'Founder Forums',
-    description: 'Peer circles for AI founders. Share challenges, celebrate wins, and build together.',
+    description:
+      'Peer circles for AI founders. Share challenges, celebrate wins, and build together.',
     frequency: 'Monthly',
     highlight: 'Peer Support',
   },
   {
     id: 'event-4',
     title: 'Technical Deep-Dives',
-    description: 'Hands-on sessions on LLMs, agents, RAG, and production ML. Build real systems, not toy projects.',
+    description:
+      'Hands-on sessions on LLMs, agents, RAG, and production ML. Build real systems, not toy projects.',
     frequency: 'Weekly',
     highlight: 'Hands-on',
   },
   {
     id: 'event-5',
     title: 'AI Chai Meetups',
-    description: 'In-person gatherings in Bengaluru, Mumbai, and Delhi. Real conversations, real connections.',
+    description:
+      'In-person gatherings in Bengaluru, Mumbai, and Delhi. Real conversations, real connections.',
     frequency: '3 Cities',
     highlight: 'In-Person',
   },
