@@ -763,7 +763,7 @@ export default function SchoolsPage() {
       <Footer />
 
       {/* Lead Capture Modal */}
-      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} source="schools" />
     </div>
   );
 }

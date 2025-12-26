@@ -60,7 +60,21 @@ lexailabs/
 │   ├── layout.tsx              # Root layout with fonts and providers
 │   ├── page.tsx                # Homepage (landing page)
 │   ├── global-error.tsx        # Global error handler
-│   └── globals.css             # Global styles and Tailwind
+│   ├── globals.css             # Global styles and Tailwind
+│   ├── about/page.tsx          # About page
+│   ├── enterprises/page.tsx    # Enterprise solutions page
+│   ├── individuals/
+│   │   ├── page.tsx            # Individuals landing page
+│   │   ├── ai-fellowship/page.tsx    # AI Fellowship program
+│   │   └── ai-for-leaders/page.tsx   # AI for Leaders program
+│   ├── institutions/
+│   │   ├── page.tsx            # Institutions landing page
+│   │   ├── higher-ed/page.tsx  # Higher education solutions
+│   │   └── schools/page.tsx    # K-12 schools solutions
+│   ├── privacy/page.tsx        # Privacy policy
+│   ├── terms/page.tsx          # Terms of service
+│   ├── refunds/page.tsx        # Refund policy
+│   └── api/leads/route.ts      # Lead capture API endpoint
 ├── components/
 │   ├── landing/                # Landing page sections
 │   │   ├── Hero.tsx            # Hero with headline and CTA
@@ -70,10 +84,14 @@ lexailabs/
 │   │   ├── InstructorSpotlight.tsx  # Founder credentials
 │   │   ├── Testimonials.tsx    # Student reviews
 │   │   ├── FinalCTA.tsx        # Bottom conversion section
-│   │   ├── Navigation.tsx      # Header navigation
-│   │   └── Footer.tsx          # Footer with links
+│   │   ├── Navigation.tsx      # Header navigation with dropdowns
+│   │   ├── Footer.tsx          # Footer with links
+│   │   ├── LeadCaptureModal.tsx # Lead capture modal component
+│   │   ├── CommunityFeatures.tsx # Community features section
+│   │   ├── CommunityLeaders.tsx # Community leaders showcase
+│   │   └── EventsPreview.tsx   # Events preview section
 │   ├── magicui/                # Animated UI components
-│   └── ui/                     # Base UI components
+│   └── ui/                     # Base UI components (dialog, etc.)
 ├── lib/
 │   ├── design-system.ts        # Design tokens and theme
 │   ├── constants.tsx           # Site-wide constants
@@ -83,6 +101,9 @@ lexailabs/
 │   └── useIsMobile.tsx         # Mobile detection hook
 ├── public/
 │   ├── assets/                 # Images and logos
+│   │   ├── lexailogo.png       # Lex AI logo (PNG)
+│   │   ├── lexailogo.svg       # Lex AI logo (SVG)
+│   │   └── logos/              # Partner company logos
 │   └── fonts/                  # Custom font files
 └── utils/
     ├── handlers.ts             # Event handlers
@@ -186,6 +207,21 @@ npx tsc --noEmit
 7. **Final CTA**
    - Conversion-focused section
    - Clear next steps
+
+### Additional Pages
+
+- **About** (`/about`) - Company story, mission, and team information
+- **Enterprises** (`/enterprises`) - Enterprise AI training solutions with custom programs
+- **Individuals** (`/individuals`) - Programs for individual learners
+  - AI Fellowship (`/individuals/ai-fellowship`) - 12-week hands-on program
+  - AI for Leaders (`/individuals/ai-for-leaders`) - Executive AI literacy program
+- **Institutions** (`/institutions`) - Educational institution partnerships
+  - Higher Ed (`/institutions/higher-ed`) - University and college programs
+  - Schools (`/institutions/schools`) - K-12 AI curriculum solutions
+- **Legal Pages**
+  - Privacy Policy (`/privacy`)
+  - Terms of Service (`/terms`)
+  - Refund Policy (`/refunds`)
 
 ### Design System
 

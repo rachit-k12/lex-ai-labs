@@ -570,7 +570,7 @@ export default function AIForLeadersPage() {
 
       <Footer />
 
-      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} source="ai-for-leaders" />
     </div>
   );
 }

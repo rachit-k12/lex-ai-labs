@@ -562,7 +562,7 @@ export default function EnterprisesPage() {
       <Footer />
 
       {/* Lead Capture Modal */}
-      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} source="enterprise" />
     </div>
   );
 }

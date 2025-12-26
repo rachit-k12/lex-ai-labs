@@ -627,7 +627,7 @@ export default function AIFellowshipPage() {
 
       <Footer />
 
-      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} source="ai-fellowship" />
     </div>
   );
 }

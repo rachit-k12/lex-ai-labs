@@ -181,7 +181,7 @@ export default function FinalCTA() {
       </div>
 
       {/* Lead Capture Modal */}
-      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} source="footer" />
     </section>
   );
 }
