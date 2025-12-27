@@ -34,7 +34,9 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-gradient-to-b from-neutral-50 to-white text-neutral-900 overflow-hidden border-t border-neutral-200"
+      // className="bg-gradient-to-b from-neutral-50 to-white text-neutral-900 overflow-hidden border-t border-neutral-200"
+      className=" text-neutral-900 overflow-hidden"
+
     >
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 !pb-10">

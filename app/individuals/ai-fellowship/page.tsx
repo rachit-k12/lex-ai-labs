@@ -9,18 +9,17 @@ import {
   CheckCircle2,
   Clock,
   Code2,
-  Download,
   Lightbulb,
   Sigma,
-  Sparkles,
-  Users,
 } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import CurriculumDownloadModal from '@/components/landing/CurriculumDownloadModal';
 import Footer from '@/components/landing/Footer';
 import LeadCaptureModal from '@/components/landing/LeadCaptureModal';
 import Navigation from '@/components/landing/Navigation';
+import Testimonials from '@/components/landing/Testimonials';
 
 const pillars = [
   {
@@ -43,26 +42,48 @@ const pillars = [
   },
 ];
 
-const curriculum = [
+const phases = [
   {
-    module: 'Foundation',
-    weeks: 'Week 1-4',
-    topics: ['Linear Algebra & Matrix Operations', 'Probability & Statistics', 'Optimization Theory', 'Python for ML'],
+    phase: 'Phase 1',
+    title: 'Foundation & Core ML',
+    description: 'Build the mathematical intuition and implement classical ML algorithms from scratch.',
+    topics: [
+      'Linear Algebra & Matrix Operations',
+      'Probability & Statistics',
+      'Optimization Theory',
+      'Supervised Learning from Scratch',
+      'Neural Networks Fundamentals',
+      'Backpropagation Deep Dive',
+    ],
+    color: 'from-violet-500 to-purple-600',
   },
   {
-    module: 'Core ML',
-    weeks: 'Week 5-8',
-    topics: ['Supervised Learning from Scratch', 'Neural Networks Fundamentals', 'Backpropagation Deep Dive', 'CNNs & Computer Vision'],
+    phase: 'Phase 2',
+    title: 'Deep Learning',
+    description: 'Master neural architectures and understand what makes modern AI systems work.',
+    topics: [
+      'CNNs & Computer Vision',
+      'Sequence Models & RNNs',
+      'Attention Mechanisms',
+      'Transformer Architecture',
+      'Training at Scale',
+      'Model Optimization',
+    ],
+    color: 'from-coral-500 to-orange-500',
   },
   {
-    module: 'Advanced AI',
-    weeks: 'Week 9-12',
-    topics: ['Transformers & Attention', 'Large Language Models', 'Generative AI', 'Reinforcement Learning Basics'],
-  },
-  {
-    module: 'Production',
-    weeks: 'Week 13-16',
-    topics: ['MLOps & Deployment', 'System Design for ML', 'Capstone Project', 'Career Preparation'],
+    phase: 'Phase 3',
+    title: 'Modern AI',
+    description: 'Apply cutting-edge techniques and build production-ready AI systems.',
+    topics: [
+      'Large Language Models',
+      'Generative AI & Diffusion',
+      'MLOps & Deployment',
+      'System Design for ML',
+      'Capstone Project',
+      'Career Preparation',
+    ],
+    color: 'from-blue-500 to-cyan-500',
   },
 ];
 
@@ -94,6 +115,7 @@ export default function AIFellowshipPage() {
   const [personasRef, personasInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ctaRef, ctaInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCurriculumModalOpen, setIsCurriculumModalOpen] = useState(false);
 
   return (
     <div className="antialiased overflow-x-hidden">
@@ -174,17 +196,10 @@ export default function AIFellowshipPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Users className="w-5 h-5 text-coral-500" />
-                    <div>
-                      <p className="text-neutral-900 font-medium">25 Students</p>
-                      <p className="text-neutral-500 text-sm">Per Cohort</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
                     <Calendar className="w-5 h-5 text-coral-500" />
                     <div>
-                      <p className="text-neutral-900 font-medium">Jan 2025</p>
-                      <p className="text-neutral-500 text-sm">Next Cohort</p>
+                      <p className="text-neutral-900 font-medium">Rolling Cohorts</p>
+                      <p className="text-neutral-500 text-sm">Ongoing Admissions</p>
                     </div>
                   </div>
                 </div>
@@ -198,9 +213,12 @@ export default function AIFellowshipPage() {
                     Apply Now
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </button>
-                  <button className="inline-flex items-center gap-2 px-6 py-3.5 font-medium text-neutral-600 border border-neutral-200 rounded-full hover:bg-neutral-50 transition-colors">
-                    <Download className="w-4 h-4" />
-                    Download Syllabus
+                  <button
+                    onClick={() => setIsCurriculumModalOpen(true)}
+                    className="inline-flex items-center gap-2 px-6 py-3.5 font-medium text-neutral-600 border border-neutral-200 rounded-full hover:bg-neutral-50 transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    View Curriculum
                   </button>
                 </div>
               </motion.div>
@@ -287,50 +305,80 @@ export default function AIFellowshipPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={curriculumInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="mb-16"
+            className="text-center mb-16"
           >
             <p className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
               The Journey
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-white max-w-xl">
-              16 Weeks of <span className="italic">Transformation</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-white max-w-2xl mx-auto">
+              Three Phases to <span className="italic">Mastery</span>
             </h2>
           </motion.div>
 
-          {/* Timeline */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {curriculum.map((phase, index) => (
+          {/* Phases */}
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
+            {phases.map((phase, index) => (
               <motion.div
-                key={phase.module}
+                key={phase.phase}
                 initial={{ opacity: 0, y: 30 }}
                 animate={curriculumInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
+                transition={{ duration: 0.5, delay: 0.15 * index }}
+                className="group"
               >
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-coral-400 font-serif text-2xl">
+                <div className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 h-full hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300">
+                  {/* Phase indicator */}
+                  <div className="flex items-center justify-between mb-6">
+                    <span className={`text-xs font-medium px-3 py-1.5 rounded-full bg-gradient-to-r ${phase.color} text-white`}>
+                      {phase.phase}
+                    </span>
+                    <span className="text-white/20 font-serif text-3xl">
                       0{index + 1}
                     </span>
-                    <span className="text-white/40 text-sm">{phase.weeks}</span>
                   </div>
-                  <h3 className="font-serif text-white text-xl mb-4">
-                    {phase.module}
+
+                  {/* Title & Description */}
+                  <h3 className="font-serif text-white text-2xl mb-3">
+                    {phase.title}
                   </h3>
-                  <ul className="space-y-2">
+                  <p className="text-white/50 text-sm leading-relaxed mb-6">
+                    {phase.description}
+                  </p>
+
+                  {/* Topics */}
+                  <div className="space-y-2.5">
                     {phase.topics.map((topic) => (
-                      <li
+                      <div
                         key={topic}
-                        className="flex items-start gap-2 text-white/50 text-sm"
+                        className="flex items-center gap-3 text-white/60 text-sm group-hover:text-white/70 transition-colors"
                       >
-                        <span className="w-1 h-1 bg-coral-400 rounded-full mt-2 flex-shrink-0" />
+                        <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${phase.color} flex-shrink-0`} />
                         {topic}
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Progress indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={curriculumInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex items-center justify-center gap-4 mt-12"
+          >
+            <div className="flex items-center gap-2">
+              {phases.map((phase, index) => (
+                <div key={phase.phase} className="flex items-center gap-2">
+                  <div className={`w-8 h-1 rounded-full bg-gradient-to-r ${phase.color}`} />
+                  {index < phases.length - 1 && (
+                    <div className="w-4 h-px bg-white/20" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -435,94 +483,8 @@ export default function AIFellowshipPage() {
         </div>
       </section>
 
-      {/* Transformation Stories - Dark */}
-      <section className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
-        {/* Grainy texture overlay */}
-        <div className="absolute inset-0 opacity-40 pointer-events-none">
-          <svg className="w-full h-full">
-            <filter id="storyNoise">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="0.8"
-                numOctaves="4"
-                stitchTiles="stitch"
-              />
-            </filter>
-            <rect width="100%" height="100%" filter="url(#storyNoise)" opacity="0.4" />
-          </svg>
-        </div>
-
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-coral-500/10 rounded-full blur-3xl" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-16"
-          >
-            <p className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
-              Transformations
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-white">
-              From Fellows to <span className="italic">Applied Scientists</span>
-            </h2>
-          </motion.div>
-
-          {/* Testimonials Grid */}
-          <div className="grid lg:grid-cols-5 gap-8">
-            {/* Large Quote */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="lg:col-span-3"
-            >
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 h-full">
-                <blockquote className="text-2xl md:text-3xl text-white/90 font-serif leading-relaxed mb-8">
-                  &ldquo;The math-first approach changed everything. I finally understand why models
-                  work, not just how to call APIs. That depth is what got me hired.&rdquo;
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-coral-500/20 rounded-full flex items-center justify-center">
-                    <span className="text-coral-400 font-medium">AK</span>
-                  </div>
-                  <div>
-                    <p className="text-white font-medium">Arjun K.</p>
-                    <p className="text-white/50 text-sm">SWE → ML Engineer at Google</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Smaller Quote */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="lg:col-span-2"
-            >
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 h-full flex flex-col justify-between">
-                <blockquote className="text-lg text-white/80 leading-relaxed mb-6">
-                  &ldquo;16 weeks of the most intense learning of my life. Worth every hour.&rdquo;
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-coral-500/20 rounded-full flex items-center justify-center">
-                    <span className="text-coral-400 font-medium text-sm">PS</span>
-                  </div>
-                  <div>
-                    <p className="text-white font-medium text-sm">Priya S.</p>
-                    <p className="text-white/50 text-xs">Data Analyst → Applied Scientist at Amazon</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+ 
+      <Testimonials/>
 
       {/* Investment Section */}
       <section className="py-20 md:py-32 bg-white">
@@ -675,7 +637,7 @@ export default function AIFellowshipPage() {
             </button>
 
             <p className="text-neutral-500 text-sm mt-6">
-              Limited to 25 students per cohort. Next cohort starts January 2025.
+              Rolling admissions. Apply now to secure your spot.
             </p>
           </motion.div>
         </div>
@@ -687,6 +649,13 @@ export default function AIFellowshipPage() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         source="ai-fellowship"
+      />
+
+      <CurriculumDownloadModal
+        isOpen={isCurriculumModalOpen}
+        onClose={() => setIsCurriculumModalOpen(false)}
+        programName="AI Fellowship"
+        redirectUrl="https://lexailabs.com/curriculum"
       />
     </div>
   );

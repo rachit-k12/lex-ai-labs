@@ -9,21 +9,21 @@ const personaOptions = [
   {
     icon: User,
     label: 'Individual',
-    title: 'Build AI skills for your career',
+    title: 'Build AI for your career and leadership',
     href: '/individuals',
     hoverColor: 'coral',
   },
   {
     icon: Building2,
     label: 'Enterprise',
-    title: 'Build AI capability in your org',
+    title: 'Build AI capability across your organization',
     href: '/enterprises',
     hoverColor: 'blue',
   },
   {
     icon: GraduationCap,
     label: 'Institution',
-    title: 'Transform AI education',
+    title: 'Modernize AI education at scale',
     href: '/institutions',
     hoverColor: 'purple',
   },
@@ -74,7 +74,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 shadow-sm">
                 <Sparkles className="w-4 h-4 text-coral-500" />
                 <span className="text-sm font-medium text-neutral-700">
-                  AI Education & Enterprise Capability
+                Enterprise AI Capability
                 </span>
               </div>
             </motion.div>
@@ -86,9 +86,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-serif text-5xl sm:text-6xl lg:text-8xl text-neutral-900 leading-[1.05] mb-6 tracking-tight"
             >
-              Serious AI.
+              Build AI That 
               <br />
-              <span className="italic text-coral-500">Built Right.</span>
+              <span className="italic text-blue-500">Actually Works.</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -96,13 +96,12 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg text-neutral-600 max-w-lg leading-relaxed mb-8"
+              className="text-md text-neutral-600 max-w-lg leading-relaxed mb-8"
             >
-              We help individuals and organizations build deep, first-principles AI capability
-              &mdash; not just use tools.
+              We help organizations design, deploy, and scale AI systems grounded in first principles — beyond tools and point solutions.
             </motion.p>
 
-            {/* Trust indicators */}
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -115,11 +114,11 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-coral-500 rounded-full" />
-                <span>50+ Organizations</span>
+                <span>30+ Production AI Systems</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-coral-500 rounded-full" />
-                <span>4.9/5 Rating</span>
+                <span>Enterprise AI Deployments</span>
               </div>
             </motion.div>
           </div>
@@ -132,7 +131,7 @@ export default function Hero() {
             className="space-y-4"
           >
             <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-6">
-              I am from...
+              Are you an...
             </p>
 
             {personaOptions.map((option, index) => (
@@ -206,21 +205,7 @@ export default function Hero() {
               </motion.div>
             ))}
 
-            {/* Or explore all */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.7 }}
-              className="pt-4 text-center"
-            >
-              <Link
-                href="#about"
-                className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-700 transition-colors"
-              >
-                Or scroll to learn more about Lex AI
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
+            
           </motion.div>
         </div>
       </div>

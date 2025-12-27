@@ -12,12 +12,12 @@ export default function Home() {
     <div className="bg-white text-slate-900 antialiased overflow-x-hidden">
       <main className="overflow-x-hidden">
         <Hero />
-        <TrustedBy />
-        <ValueProposition />
+        {/* <TrustedBy /> */}
+        {/* <ValueProposition />
         <CommunityLeaders />
         <EventsPreview />
         <Testimonials />
-        <FinalCTA />
+        <FinalCTA /> */}
       </main>
       <Footer />
     </div>

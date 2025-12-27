@@ -13,7 +13,6 @@ import {
   Lightbulb,
   MessageSquare,
   Scale,
-  Sparkles,
   Target,
   Users,
 } from 'lucide-react';
@@ -336,7 +335,7 @@ export default function AIForLeadersPage() {
       {/* Curriculum Overview */}
       <section
         ref={curriculumRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
+        className="py-20 md:py-32 bg-neutral-50 relative overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -417,68 +416,6 @@ export default function AIForLeadersPage() {
         </div>
       </section>
 
-      {/* Testimonials - Dark */}
-      <section className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
-        {/* Grainy texture overlay */}
-        <div className="absolute inset-0 opacity-40 pointer-events-none">
-          <svg className="w-full h-full">
-            <filter id="testimonialNoise">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="0.8"
-                numOctaves="4"
-                stitchTiles="stitch"
-              />
-            </filter>
-            <rect width="100%" height="100%" filter="url(#testimonialNoise)" opacity="0.4" />
-          </svg>
-        </div>
-
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-coral-500/10 rounded-full blur-3xl" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-16"
-          >
-            <p className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
-              From Leaders Like You
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-white">
-              Confident Decisions, <span className="italic">Faster</span>
-            </h2>
-          </motion.div>
-
-          {/* Testimonial */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl"
-          >
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
-              <blockquote className="text-2xl md:text-3xl text-white/90 font-serif leading-relaxed mb-8">
-                &ldquo;I used to nod along in AI strategy meetings. Now I lead them.
-                The intuition-first approach is exactly what leaders need.&rdquo;
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-coral-500/20 rounded-full flex items-center justify-center">
-                  <span className="text-coral-400 font-medium">RM</span>
-                </div>
-                <div>
-                  <p className="text-white font-medium">Rahul M.</p>
-                  <p className="text-white/50 text-sm">VP of Product at a Series C Startup</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Program Format */}
       <section className="py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -554,10 +491,10 @@ export default function AIForLeadersPage() {
         ref={ctaRef}
         className="py-20 md:py-32 relative overflow-hidden"
       >
-        {/* Coral gradient background */}
+        {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/50" />
 
-        {/* Grainy texture */}
+        {/* Subtle texture */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <svg className="w-full h-full">
             <filter id="ctaNoise">
