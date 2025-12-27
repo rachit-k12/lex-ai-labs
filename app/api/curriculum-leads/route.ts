@@ -1,4 +1,5 @@
-import { sql } from '@/lib/db';
+import { db, curriculumLeads } from '@/lib/db';
+import { and, eq } from 'drizzle-orm';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
@@ -15,28 +16,41 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
     }
 
-    // Create table if it doesn't exist
-    await sql`
-      CREATE TABLE IF NOT EXISTS curriculum_leads (
-        id SERIAL PRIMARY KEY,
-        email VARCHAR(255) NOT NULL,
-        phone VARCHAR(50),
-        program VARCHAR(100),
-        source VARCHAR(100),
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        UNIQUE(email, program)
-      )
-    `;
+    const programValue = program || 'ai-fellowship';
+    const sourceValue = source || 'curriculum-download';
 
-    // Insert or update lead
-    await sql`
-      INSERT INTO curriculum_leads (email, phone, program, source)
-      VALUES (${email}, ${phone || null}, ${program || 'ai-fellowship'}, ${source || 'curriculum-download'})
-      ON CONFLICT (email, program) DO UPDATE SET
-        phone = COALESCE(EXCLUDED.phone, curriculum_leads.phone),
-        source = EXCLUDED.source,
-        created_at = CURRENT_TIMESTAMP
-    `;
+    // Check if lead exists for this email and program combination
+    const existingLead = await db.query.curriculumLeads.findFirst({
+      where: and(
+        eq(curriculumLeads.email, email),
+        eq(curriculumLeads.program, programValue)
+      ),
+    });
+
+    if (existingLead) {
+      // Update existing lead
+      await db
+        .update(curriculumLeads)
+        .set({
+          phone: phone || existingLead.phone,
+          source: sourceValue,
+          createdAt: new Date(),
+        })
+        .where(
+          and(
+            eq(curriculumLeads.email, email),
+            eq(curriculumLeads.program, programValue)
+          )
+        );
+    } else {
+      // Insert new lead
+      await db.insert(curriculumLeads).values({
+        email,
+        phone,
+        program: programValue,
+        source: sourceValue,
+      });
+    }
 
     return NextResponse.json({
       success: true,

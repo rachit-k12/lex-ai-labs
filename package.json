@@ -8,7 +8,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "get-version": "echo $npm_package_version"
+    "get-version": "echo $npm_package_version",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
@@ -50,6 +54,7 @@
     "cobe": "^0.6.4",
     "date-fns": "^4.1.0",
     "dotted-map": "^2.2.3",
+    "drizzle-orm": "^0.45.1",
     "eslint-plugin-prettier": "^5.4.0",
     "framer": "^2.4.1",
     "framer-motion": "^12.23.12",
@@ -93,6 +98,8 @@
     "@types/react-syntax-highlighter": "^15.5.13",
     "@types/three": "^0.179.0",
     "autoprefixer": "^10.4.20",
+    "dotenv": "^17.2.3",
+    "drizzle-kit": "^0.31.8",
     "eslint": "^8",
     "eslint-config-next": "^15.4.4",
     "eslint-config-prettier": "^10.1.5",

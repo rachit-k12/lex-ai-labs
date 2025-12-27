@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   images: {
-    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: 'https',
@@ -52,7 +50,6 @@ const nextConfig = {
       },
     ],
   },
-  trailingSlash: true, // Better for static hosting
 };
 
 export default nextConfig;
