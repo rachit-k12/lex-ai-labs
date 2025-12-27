@@ -74,7 +74,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 shadow-sm">
                 <Sparkles className="w-4 h-4 text-coral-500" />
                 <span className="text-sm font-medium text-neutral-700">
-                Enterprise AI Capability
+                  Enterprise AI Capability
                 </span>
               </div>
             </motion.div>
@@ -97,9 +97,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-md text-neutral-600 max-w-lg leading-relaxed mb-8"
             >
-              We help organizations design, deploy, and scale AI systems grounded in first principles — beyond tools and point solutions.
+              We help organizations design, deploy, and scale AI systems grounded in first
+              principles — beyond tools and point solutions.
             </motion.p>
-
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -203,8 +203,6 @@ export default function Hero() {
                 </Link>
               </motion.div>
             ))}
-
-            
           </motion.div>
         </div>
       </div>

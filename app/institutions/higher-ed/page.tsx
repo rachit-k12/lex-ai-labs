@@ -23,17 +23,20 @@ const problems = [
   {
     icon: BookOpen,
     title: 'Outdated Curriculum',
-    description: 'Most programs teach 5-year-old techniques. AI moves too fast for traditional syllabus updates.',
+    description:
+      'Most programs teach 5-year-old techniques. AI moves too fast for traditional syllabus updates.',
   },
   {
     icon: Users,
     title: 'Faculty Gap',
-    description: 'Professors lack industry experience with modern AI tools and production ML systems.',
+    description:
+      'Professors lack industry experience with modern AI tools and production ML systems.',
   },
   {
     icon: Briefcase,
     title: 'Industry Disconnect',
-    description: 'Graduates struggle in interviews. Theory without practice doesn\'t build real capability.',
+    description:
+      "Graduates struggle in interviews. Theory without practice doesn't build real capability.",
   },
 ];
 
@@ -41,25 +44,29 @@ const offerings = [
   {
     icon: BookOpen,
     title: 'Academic Excellence Suite',
-    description: 'Plug-and-play instructor guide with curriculum, pedagogy frameworks, and assessments.',
+    description:
+      'Plug-and-play instructor guide with curriculum, pedagogy frameworks, and assessments.',
     features: ['Complete curriculum', 'Mental models', 'Assessment frameworks'],
   },
   {
     icon: GraduationCap,
     title: 'Full AI Curriculum Design',
-    description: 'Custom curriculum: Foundations → Math → Classical ML → Deep Learning → Agentic AI.',
+    description:
+      'Custom curriculum: Foundations → Math → Classical ML → Deep Learning → Agentic AI.',
     features: ['Industry-aligned', 'Project-based', 'Capstone design'],
   },
   {
     icon: Users,
     title: 'Faculty Enablement',
-    description: 'Train-the-Trainers program. Upgrade instructor capability and pedagogical approach.',
+    description:
+      'Train-the-Trainers program. Upgrade instructor capability and pedagogical approach.',
     features: ['Intensive workshops', 'Ongoing mentorship', 'Material support'],
   },
   {
     icon: Award,
     title: 'Co-branded Programs',
-    description: 'Partner to design and deliver co-branded AI/ML programmes with joint certification.',
+    description:
+      'Partner to design and deliver co-branded AI/ML programmes with joint certification.',
     features: ['Joint certification', 'Guest lectures', 'Placement support'],
   },
 ];
@@ -74,10 +81,7 @@ export default function HigherEdPage() {
   return (
     <div className="antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-screen flex flex-col overflow-hidden"
-      >
+      <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">
         <Navigation />
 
         {/* Gradient Background */}
@@ -126,7 +130,9 @@ export default function HigherEdPage() {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 shadow-sm mb-8">
                   <GraduationCap className="w-4 h-4 text-coral-500" />
-                  <span className="text-sm font-medium text-neutral-700">For Colleges & Universities</span>
+                  <span className="text-sm font-medium text-neutral-700">
+                    For Colleges & Universities
+                  </span>
                 </div>
 
                 {/* Headline */}
@@ -136,8 +142,8 @@ export default function HigherEdPage() {
 
                 {/* Subheadline */}
                 <p className="text-lg md:text-xl text-neutral-600 max-w-2xl leading-relaxed mb-12">
-                  From curriculum to faculty enablement to industry readiness.
-                  Build an AI program that produces graduates who can actually deliver.
+                  From curriculum to faculty enablement to industry readiness. Build an AI program
+                  that produces graduates who can actually deliver.
                 </p>
 
                 {/* CTA */}
@@ -159,10 +165,7 @@ export default function HigherEdPage() {
       </section>
 
       {/* The Problem */}
-      <section
-        ref={problemsRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={problemsRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -191,12 +194,8 @@ export default function HigherEdPage() {
                   <div className="w-12 h-12 bg-coral-50 rounded-xl flex items-center justify-center mb-4">
                     <problem.icon className="w-6 h-6 text-coral-500" />
                   </div>
-                  <h3 className="font-serif text-neutral-900 text-lg mb-2">
-                    {problem.title}
-                  </h3>
-                  <p className="text-neutral-600 text-sm leading-relaxed">
-                    {problem.description}
-                  </p>
+                  <h3 className="font-serif text-neutral-900 text-lg mb-2">{problem.title}</h3>
+                  <p className="text-neutral-600 text-sm leading-relaxed">{problem.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -261,12 +260,8 @@ export default function HigherEdPage() {
                       <offering.icon className="w-6 h-6 text-coral-400" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-serif text-white text-xl mb-2">
-                        {offering.title}
-                      </h3>
-                      <p className="text-white/50 leading-relaxed mb-4">
-                        {offering.description}
-                      </p>
+                      <h3 className="font-serif text-white text-xl mb-2">{offering.title}</h3>
+                      <p className="text-white/50 leading-relaxed mb-4">{offering.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {offering.features.map((f) => (
                           <span
@@ -314,9 +309,7 @@ export default function HigherEdPage() {
                 </div>
 
                 <div className="relative z-10">
-                  <h3 className="font-serif text-white text-xl mb-8">
-                    Graduate Outcomes
-                  </h3>
+                  <h3 className="font-serif text-white text-xl mb-8">Graduate Outcomes</h3>
                   <div className="space-y-6">
                     <div className="flex items-end gap-4">
                       <span className="text-5xl font-serif text-coral-400">85%</span>
@@ -354,15 +347,27 @@ export default function HigherEdPage() {
                 Outcomes That <span className="italic">Matter</span>
               </h2>
               <p className="text-neutral-600 text-lg leading-relaxed mb-8">
-                We measure success by what matters: placement rates, interview performance,
-                and real-world capability.
+                We measure success by what matters: placement rates, interview performance, and
+                real-world capability.
               </p>
 
               <div className="space-y-4">
                 {[
-                  { icon: Target, title: 'Industry-Aligned Graduates', desc: 'Students ready for Applied Scientist and MLE roles.' },
-                  { icon: Briefcase, title: 'Placement Readiness', desc: 'Graduates who clear technical interviews and contribute from day one.' },
-                  { icon: Award, title: 'Accreditation Support', desc: 'Curriculum designed to meet accreditation requirements.' },
+                  {
+                    icon: Target,
+                    title: 'Industry-Aligned Graduates',
+                    desc: 'Students ready for Applied Scientist and MLE roles.',
+                  },
+                  {
+                    icon: Briefcase,
+                    title: 'Placement Readiness',
+                    desc: 'Graduates who clear technical interviews and contribute from day one.',
+                  },
+                  {
+                    icon: Award,
+                    title: 'Accreditation Support',
+                    desc: 'Curriculum designed to meet accreditation requirements.',
+                  },
                 ].map((outcome) => (
                   <div key={outcome.title} className="flex gap-4">
                     <div className="w-10 h-10 bg-coral-50 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -381,10 +386,7 @@ export default function HigherEdPage() {
       </section>
 
       {/* CTA Section */}
-      <section
-        ref={ctaRef}
-        className="py-20 md:py-32 relative overflow-hidden"
-      >
+      <section ref={ctaRef} className="py-20 md:py-32 relative overflow-hidden">
         {/* Coral gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/50" />
 
@@ -414,7 +416,8 @@ export default function HigherEdPage() {
               Transform Your <span className="italic">AI Program</span>
             </h2>
             <p className="text-neutral-600 text-lg mb-10">
-              Let&apos;s discuss how we can help your institution produce industry-ready AI graduates.
+              Let&apos;s discuss how we can help your institution produce industry-ready AI
+              graduates.
             </p>
 
             <button

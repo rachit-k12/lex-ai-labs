@@ -27,12 +27,13 @@ const principles = [
   {
     icon: Brain,
     title: 'AI Literacy',
-    description: 'Understanding AI systems, their capabilities, and limitations without fear or hype.',
+    description:
+      'Understanding AI systems, their capabilities, and limitations without fear or hype.',
   },
   {
     icon: Shield,
     title: 'Safety & Ethics',
-    description: 'Responsible AI awareness and critical thinking about AI\'s role in society.',
+    description: "Responsible AI awareness and critical thinking about AI's role in society.",
   },
   {
     icon: Heart,
@@ -65,9 +66,17 @@ const features = [
 ];
 
 const outcomes = [
-  { num: '01', title: 'GitHub Portfolio', desc: 'Published AI/ML projects that showcase real coding skills' },
+  {
+    num: '01',
+    title: 'GitHub Portfolio',
+    desc: 'Published AI/ML projects that showcase real coding skills',
+  },
   { num: '02', title: 'Fellowship Certificate', desc: 'Official recognition from Lex AI Labs' },
-  { num: '03', title: 'Recommendation Letter', desc: 'Personalized letter for university applications' },
+  {
+    num: '03',
+    title: 'Recommendation Letter',
+    desc: 'Personalized letter for university applications',
+  },
   { num: '04', title: 'Published Articles', desc: 'Work published on AI Seekhega India & Medium' },
 ];
 
@@ -82,10 +91,7 @@ export default function SchoolsPage() {
   return (
     <div className="antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[90vh] flex flex-col overflow-hidden"
-      >
+      <section ref={heroRef} className="relative min-h-[90vh] flex flex-col overflow-hidden">
         <Navigation />
 
         {/* Gradient Background */}
@@ -134,7 +140,9 @@ export default function SchoolsPage() {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 shadow-sm mb-8">
                   <School className="w-4 h-4 text-coral-500" />
-                  <span className="text-sm font-medium text-neutral-700">For Future AI Leaders</span>
+                  <span className="text-sm font-medium text-neutral-700">
+                    For Future AI Leaders
+                  </span>
                 </div>
 
                 {/* Headline */}
@@ -144,8 +152,8 @@ export default function SchoolsPage() {
 
                 {/* Subheadline */}
                 <p className="text-lg md:text-xl text-neutral-600 max-w-2xl leading-relaxed mb-10">
-                  Safe, age-appropriate, future-focused AI education.
-                  Building understanding, not fear.
+                  Safe, age-appropriate, future-focused AI education. Building understanding, not
+                  fear.
                 </p>
 
                 {/* Stats Row */}
@@ -191,10 +199,7 @@ export default function SchoolsPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section
-        ref={philosophyRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={philosophyRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -223,12 +228,8 @@ export default function SchoolsPage() {
                   <div className="w-14 h-14 bg-coral-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-coral-100 transition-colors">
                     <principle.icon className="w-7 h-7 text-coral-500" />
                   </div>
-                  <h3 className="font-serif text-xl text-neutral-900 mb-3">
-                    {principle.title}
-                  </h3>
-                  <p className="text-neutral-600 leading-relaxed">
-                    {principle.description}
-                  </p>
+                  <h3 className="font-serif text-xl text-neutral-900 mb-3">{principle.title}</h3>
+                  <p className="text-neutral-600 leading-relaxed">{principle.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -237,10 +238,7 @@ export default function SchoolsPage() {
       </section>
 
       {/* FutureMinds Fellowship - Dark */}
-      <section
-        ref={programRef}
-        className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden"
-      >
+      <section ref={programRef} className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
         {/* Grainy texture overlay */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <svg className="w-full h-full">
@@ -278,8 +276,8 @@ export default function SchoolsPage() {
                 Build a competitive edge for MIT, Stanford, CMU, and the Ivy League.
               </p>
               <p className="text-white/60 leading-relaxed mb-8">
-                Top universities select for initiative, depth, and applied problem-solving.
-                This fellowship provides tangible evidence of all three.
+                Top universities select for initiative, depth, and applied problem-solving. This
+                fellowship provides tangible evidence of all three.
               </p>
 
               <div className="space-y-4">
@@ -313,9 +311,21 @@ export default function SchoolsPage() {
               <h3 className="font-serif text-white text-xl mb-6">Program Modules</h3>
               <div className="space-y-4">
                 {[
-                  { module: 'Module 1', title: 'AI Foundations', topics: 'What is AI & ML? How computers learn.' },
-                  { module: 'Module 2', title: 'Hands-on Building', topics: 'Python basics. Your first ML model.' },
-                  { module: 'Module 3', title: 'Advanced Topics', topics: 'Neural networks. NLP. Capstone project.' },
+                  {
+                    module: 'Module 1',
+                    title: 'AI Foundations',
+                    topics: 'What is AI & ML? How computers learn.',
+                  },
+                  {
+                    module: 'Module 2',
+                    title: 'Hands-on Building',
+                    topics: 'Python basics. Your first ML model.',
+                  },
+                  {
+                    module: 'Module 3',
+                    title: 'Advanced Topics',
+                    topics: 'Neural networks. NLP. Capstone project.',
+                  },
                 ].map((section) => (
                   <div
                     key={section.module}
@@ -354,10 +364,7 @@ export default function SchoolsPage() {
       </section>
 
       {/* Outcomes */}
-      <section
-        ref={outcomesRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={outcomesRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left - Content */}
@@ -445,7 +452,8 @@ export default function SchoolsPage() {
 
                   <div className="mt-6 pt-6 border-t border-white/10">
                     <p className="text-white/50 text-sm italic">
-                      &ldquo;These are not participation trophies — they&apos;re earned through real work.&rdquo;
+                      &ldquo;These are not participation trophies — they&apos;re earned through real
+                      work.&rdquo;
                     </p>
                   </div>
                 </div>
@@ -456,10 +464,7 @@ export default function SchoolsPage() {
       </section>
 
       {/* CTA Section */}
-      <section
-        ref={ctaRef}
-        className="py-20 md:py-32 relative overflow-hidden"
-      >
+      <section ref={ctaRef} className="py-20 md:py-32 relative overflow-hidden">
         {/* Coral gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/50" />
 
@@ -489,8 +494,8 @@ export default function SchoolsPage() {
               Bring AI Education to <span className="italic">Your School</span>
             </h2>
             <p className="text-neutral-600 text-lg mb-10">
-              Partner with us to offer the FutureMinds Fellowship to your students.
-              We make AI education accessible, safe, and future-focused.
+              Partner with us to offer the FutureMinds Fellowship to your students. We make AI
+              education accessible, safe, and future-focused.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

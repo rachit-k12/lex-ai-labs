@@ -26,17 +26,17 @@ import Navigation from '@/components/landing/Navigation';
 const painPoints = [
   {
     icon: HelpCircle,
-    title: 'Can\'t evaluate technical decisions',
-    description: 'You manage AI teams but rely on engineers to explain what\'s feasible.',
+    title: "Can't evaluate technical decisions",
+    description: "You manage AI teams but rely on engineers to explain what's feasible.",
   },
   {
     icon: Scale,
     title: 'Dependent on others for judgment',
-    description: 'You can\'t independently assess AI project risks or ROI.',
+    description: "You can't independently assess AI project risks or ROI.",
   },
   {
     icon: Layers,
-    title: 'Can\'t distinguish hype from substance',
+    title: "Can't distinguish hype from substance",
     description: 'Every vendor claims AI magic. You need frameworks to cut through.',
   },
 ];
@@ -45,7 +45,7 @@ const outcomes = [
   {
     icon: CheckCircle2,
     title: 'Evaluate AI project feasibility',
-    description: 'Understand what\'s possible, what\'s hard, and what\'s impossible.',
+    description: "Understand what's possible, what's hard, and what's impossible.",
   },
   {
     icon: MessageSquare,
@@ -69,19 +69,31 @@ const curriculum = [
     week: '01',
     title: 'AI Foundations',
     subtitle: 'From buzzwords to deep clarity',
-    topics: ['ML → Deep Learning → LLMs landscape', 'How models actually learn', 'What makes AI "work"'],
+    topics: [
+      'ML → Deep Learning → LLMs landscape',
+      'How models actually learn',
+      'What makes AI "work"',
+    ],
   },
   {
     week: '02',
     title: 'Applied AI Productivity',
     subtitle: 'Multiply your effectiveness today',
-    topics: ['AI for decision-making', 'AI for communication & analysis', 'Building AI-augmented workflows'],
+    topics: [
+      'AI for decision-making',
+      'AI for communication & analysis',
+      'Building AI-augmented workflows',
+    ],
   },
   {
     week: '03',
     title: 'AI Agents & Automation',
     subtitle: 'The future of work is agentic',
-    topics: ['What agents can & can\'t do', 'Evaluating AI vendors', 'Building vs. buying decisions'],
+    topics: [
+      "What agents can & can't do",
+      'Evaluating AI vendors',
+      'Building vs. buying decisions',
+    ],
   },
   {
     week: '04',
@@ -102,10 +114,7 @@ export default function AIForLeadersPage() {
   return (
     <div className="antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-screen flex flex-col overflow-hidden"
-      >
+      <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">
         <Navigation />
 
         {/* Gradient Background */}
@@ -164,8 +173,8 @@ export default function AIForLeadersPage() {
 
                 {/* Subheadline */}
                 <p className="text-lg md:text-xl text-neutral-600 max-w-2xl leading-relaxed mb-10">
-                  For EMs, PMs, and senior ICs transitioning to leadership.
-                  Intuition-first approach focused on strategic thinking, not coding.
+                  For EMs, PMs, and senior ICs transitioning to leadership. Intuition-first approach
+                  focused on strategic thinking, not coding.
                 </p>
 
                 {/* Stats Row */}
@@ -220,10 +229,7 @@ export default function AIForLeadersPage() {
       </section>
 
       {/* The Leadership Gap */}
-      <section
-        ref={painRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={painRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -252,12 +258,8 @@ export default function AIForLeadersPage() {
                   <div className="w-12 h-12 bg-coral-50 rounded-xl flex items-center justify-center mb-4">
                     <point.icon className="w-6 h-6 text-coral-500" />
                   </div>
-                  <h3 className="font-serif text-neutral-900 text-lg mb-2">
-                    {point.title}
-                  </h3>
-                  <p className="text-neutral-600 text-sm leading-relaxed">
-                    {point.description}
-                  </p>
+                  <h3 className="font-serif text-neutral-900 text-lg mb-2">{point.title}</h3>
+                  <p className="text-neutral-600 text-sm leading-relaxed">{point.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -266,10 +268,7 @@ export default function AIForLeadersPage() {
       </section>
 
       {/* What You'll Gain - Dark */}
-      <section
-        ref={outcomesRef}
-        className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden"
-      >
+      <section ref={outcomesRef} className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
         {/* Grainy texture overlay */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <svg className="w-full h-full">
@@ -318,12 +317,8 @@ export default function AIForLeadersPage() {
                     <outcome.icon className="w-5 h-5 text-coral-400" />
                   </div>
                   <div>
-                    <h3 className="font-serif text-white text-lg mb-1">
-                      {outcome.title}
-                    </h3>
-                    <p className="text-white/50 text-sm leading-relaxed">
-                      {outcome.description}
-                    </p>
+                    <h3 className="font-serif text-white text-lg mb-1">{outcome.title}</h3>
+                    <p className="text-white/50 text-sm leading-relaxed">{outcome.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -352,8 +347,8 @@ export default function AIForLeadersPage() {
                 4 Weeks of <span className="italic">Strategic Clarity</span>
               </h2>
               <p className="text-neutral-600 text-lg leading-relaxed mb-8">
-                This isn&apos;t about learning to code. It&apos;s about developing the intuition
-                to lead AI teams, evaluate opportunities, and make informed decisions.
+                This isn&apos;t about learning to code. It&apos;s about developing the intuition to
+                lead AI teams, evaluate opportunities, and make informed decisions.
               </p>
 
               <div className="bg-coral-50 border border-coral-100 rounded-2xl p-6">
@@ -386,17 +381,12 @@ export default function AIForLeadersPage() {
               className="space-y-4"
             >
               {curriculum.map((week) => (
-                <div
-                  key={week.week}
-                  className="bg-white rounded-2xl p-5 border border-neutral-200"
-                >
+                <div key={week.week} className="bg-white rounded-2xl p-5 border border-neutral-200">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-xs font-medium px-2 py-1 bg-coral-50 text-coral-600 rounded">
                       Week {week.week}
                     </span>
-                    <h3 className="font-serif text-neutral-900">
-                      {week.title}
-                    </h3>
+                    <h3 className="font-serif text-neutral-900">{week.title}</h3>
                   </div>
                   <p className="text-coral-500 text-sm mb-3">{week.subtitle}</p>
                   <ul className="flex flex-wrap gap-2">
@@ -445,8 +435,8 @@ export default function AIForLeadersPage() {
                   </h3>
                   <ul className="space-y-2 text-neutral-600">
                     <li className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 bg-coral-500 rounded-full mt-2" />
-                      2 live sessions per week (90-120 min)
+                      <span className="w-1.5 h-1.5 bg-coral-500 rounded-full mt-2" />2 live sessions
+                      per week (90-120 min)
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="w-1.5 h-1.5 bg-coral-500 rounded-full mt-2" />
@@ -487,10 +477,7 @@ export default function AIForLeadersPage() {
       </section>
 
       {/* CTA Section */}
-      <section
-        ref={ctaRef}
-        className="py-20 md:py-32 relative overflow-hidden"
-      >
+      <section ref={ctaRef} className="py-20 md:py-32 relative overflow-hidden">
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/50" />
 
@@ -520,8 +507,8 @@ export default function AIForLeadersPage() {
               Lead AI with <span className="italic">Confidence</span>
             </h2>
             <p className="text-neutral-600 text-lg mb-10">
-              Join leaders from product, engineering, and strategy who&apos;ve transformed
-              their ability to navigate AI decisions.
+              Join leaders from product, engineering, and strategy who&apos;ve transformed their
+              ability to navigate AI decisions.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

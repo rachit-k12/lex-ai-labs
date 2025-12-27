@@ -46,7 +46,8 @@ const phases = [
   {
     phase: 'Phase 1',
     title: 'Foundation & Core ML',
-    description: 'Build the mathematical intuition and implement classical ML algorithms from scratch.',
+    description:
+      'Build the mathematical intuition and implement classical ML algorithms from scratch.',
     topics: [
       'Linear Algebra & Matrix Operations',
       'Probability & Statistics',
@@ -120,10 +121,7 @@ export default function AIFellowshipPage() {
   return (
     <div className="antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-screen flex flex-col overflow-hidden"
-      >
+      <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">
         <Navigation />
 
         {/* Gradient Background */}
@@ -172,7 +170,9 @@ export default function AIFellowshipPage() {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 shadow-sm mb-8">
                   <Code2 className="w-4 h-4 text-coral-500" />
-                  <span className="text-sm font-medium text-neutral-700">For Engineers & Builders</span>
+                  <span className="text-sm font-medium text-neutral-700">
+                    For Engineers & Builders
+                  </span>
                 </div>
 
                 {/* Headline */}
@@ -182,8 +182,8 @@ export default function AIFellowshipPage() {
 
                 {/* Subheadline */}
                 <p className="text-lg md:text-xl text-neutral-600 max-w-2xl leading-relaxed mb-10">
-                  A rigorous, math-first program that builds deep understanding of AI systems
-                  from the ground up. No shortcuts. No black boxes.
+                  A rigorous, math-first program that builds deep understanding of AI systems from
+                  the ground up. No shortcuts. No black boxes.
                 </p>
 
                 {/* Stats Row */}
@@ -231,10 +231,7 @@ export default function AIFellowshipPage() {
       </section>
 
       {/* What Makes It Different */}
-      <section
-        ref={pillarsRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={pillarsRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -263,12 +260,8 @@ export default function AIFellowshipPage() {
                   <div className="w-14 h-14 bg-coral-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-coral-100 transition-colors">
                     <pillar.icon className="w-7 h-7 text-coral-500" />
                   </div>
-                  <h3 className="font-serif text-xl text-neutral-900 mb-3">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-neutral-600 leading-relaxed">
-                    {pillar.description}
-                  </p>
+                  <h3 className="font-serif text-xl text-neutral-900 mb-3">{pillar.title}</h3>
+                  <p className="text-neutral-600 leading-relaxed">{pillar.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -328,21 +321,17 @@ export default function AIFellowshipPage() {
                 <div className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 h-full hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300">
                   {/* Phase indicator */}
                   <div className="flex items-center justify-between mb-6">
-                    <span className={`text-xs font-medium px-3 py-1.5 rounded-full bg-gradient-to-r ${phase.color} text-white`}>
+                    <span
+                      className={`text-xs font-medium px-3 py-1.5 rounded-full bg-gradient-to-r ${phase.color} text-white`}
+                    >
                       {phase.phase}
                     </span>
-                    <span className="text-white/20 font-serif text-3xl">
-                      0{index + 1}
-                    </span>
+                    <span className="text-white/20 font-serif text-3xl">0{index + 1}</span>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="font-serif text-white text-2xl mb-3">
-                    {phase.title}
-                  </h3>
-                  <p className="text-white/50 text-sm leading-relaxed mb-6">
-                    {phase.description}
-                  </p>
+                  <h3 className="font-serif text-white text-2xl mb-3">{phase.title}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed mb-6">{phase.description}</p>
 
                   {/* Topics */}
                   <div className="space-y-2.5">
@@ -351,7 +340,9 @@ export default function AIFellowshipPage() {
                         key={topic}
                         className="flex items-center gap-3 text-white/60 text-sm group-hover:text-white/70 transition-colors"
                       >
-                        <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${phase.color} flex-shrink-0`} />
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${phase.color} flex-shrink-0`}
+                        />
                         {topic}
                       </div>
                     ))}
@@ -372,9 +363,7 @@ export default function AIFellowshipPage() {
               {phases.map((phase, index) => (
                 <div key={phase.phase} className="flex items-center gap-2">
                   <div className={`w-8 h-1 rounded-full bg-gradient-to-r ${phase.color}`} />
-                  {index < phases.length - 1 && (
-                    <div className="w-4 h-px bg-white/20" />
-                  )}
+                  {index < phases.length - 1 && <div className="w-4 h-px bg-white/20" />}
                 </div>
               ))}
             </div>
@@ -383,10 +372,7 @@ export default function AIFellowshipPage() {
       </section>
 
       {/* Who It's For */}
-      <section
-        ref={personasRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={personasRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left - Target Personas */}
@@ -415,9 +401,7 @@ export default function AIFellowshipPage() {
                       <CheckCircle2 className="w-5 h-5 text-coral-500" />
                     </div>
                     <div>
-                      <h3 className="font-serif text-neutral-900 mb-1">
-                        {persona.title}
-                      </h3>
+                      <h3 className="font-serif text-neutral-900 mb-1">{persona.title}</h3>
                       <p className="text-neutral-600 text-sm">{persona.description}</p>
                     </div>
                   </motion.div>
@@ -448,9 +432,7 @@ export default function AIFellowshipPage() {
 
               {/* Prerequisites */}
               <div className="bg-white rounded-2xl p-6 border border-neutral-200">
-                <h3 className="font-serif text-neutral-900 mb-4">
-                  Prerequisites
-                </h3>
+                <h3 className="font-serif text-neutral-900 mb-4">Prerequisites</h3>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <span className="text-xs font-medium px-2 py-1 bg-coral-50 text-coral-600 rounded">
@@ -483,8 +465,7 @@ export default function AIFellowshipPage() {
         </div>
       </section>
 
- 
-      <Testimonials/>
+      <Testimonials />
 
       {/* Investment Section */}
       <section className="py-20 md:py-32 bg-white">
@@ -541,8 +522,8 @@ export default function AIFellowshipPage() {
                       1:1 mentorship from FAANG engineers
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-coral-500 mt-0.5 flex-shrink-0" />
-                      3 production-ready projects
+                      <CheckCircle2 className="w-4 h-4 text-coral-500 mt-0.5 flex-shrink-0" />3
+                      production-ready projects
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 text-coral-500 mt-0.5 flex-shrink-0" />
@@ -558,7 +539,8 @@ export default function AIFellowshipPage() {
 
               <div className="mt-8 pt-6 border-t border-neutral-100 text-center">
                 <p className="text-neutral-500 text-sm">
-                  Full refund available within the first 2 weeks if the program isn&apos;t right for you.
+                  Full refund available within the first 2 weeks if the program isn&apos;t right for
+                  you.
                 </p>
               </div>
             </div>
@@ -567,10 +549,7 @@ export default function AIFellowshipPage() {
       </section>
 
       {/* Application CTA */}
-      <section
-        ref={ctaRef}
-        className="py-20 md:py-32 relative overflow-hidden"
-      >
+      <section ref={ctaRef} className="py-20 md:py-32 relative overflow-hidden">
         {/* Coral gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/50" />
 
@@ -600,8 +579,8 @@ export default function AIFellowshipPage() {
               Ready to <span className="italic">Transform?</span>
             </h2>
             <p className="text-neutral-600 text-lg mb-10">
-              The application takes 10 minutes. We review every application personally
-              and respond within 48 hours.
+              The application takes 10 minutes. We review every application personally and respond
+              within 48 hours.
             </p>
 
             {/* Steps */}

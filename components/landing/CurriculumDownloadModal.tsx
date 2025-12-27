@@ -113,9 +113,7 @@ export default function CurriculumDownloadModal({
                 </div>
 
                 {/* Header */}
-                <h2 className="text-xl font-serif text-neutral-900 mb-1">
-                  View the Curriculum
-                </h2>
+                <h2 className="text-xl font-serif text-neutral-900 mb-1">View the Curriculum</h2>
                 <p className="text-neutral-500 text-sm mb-6">
                   Enter your details to access the full {programName} curriculum.
                 </p>

@@ -281,7 +281,11 @@ export default function Navigation() {
       </header>
 
       {/* Lead Capture Modal */}
-      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} source="navigation" />
+      <LeadCaptureModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        source="navigation"
+      />
     </>
   );
 }

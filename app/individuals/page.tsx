@@ -1,7 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Code2, Compass, Lightbulb, Sparkles, TrendingUp } from 'lucide-react';
+import {
+  ArrowRight,
+  BookOpen,
+  Code2,
+  Compass,
+  Lightbulb,
+  Sparkles,
+  TrendingUp,
+} from 'lucide-react';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 import Footer from '@/components/landing/Footer';
@@ -62,10 +70,7 @@ export default function IndividualsPage() {
   return (
     <div className="antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-screen flex flex-col overflow-hidden"
-      >
+      <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">
         <Navigation />
 
         {/* Gradient Background */}
@@ -110,14 +115,13 @@ export default function IndividualsPage() {
 
                 {/* Headline */}
                 <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-neutral-900 leading-[1.05] mb-6 tracking-tight">
-                  Build Real{' '}
-                  <span className="italic text-coral-500">AI Capability</span>
+                  Build Real <span className="italic text-coral-500">AI Capability</span>
                 </h1>
 
                 {/* Subheadline */}
                 <p className="text-lg md:text-xl text-neutral-600 max-w-2xl leading-relaxed mb-10">
-                  For engineers, leaders, and professionals who want depth, not shortcuts.
-                  We build the capability that compounds across your career.
+                  For engineers, leaders, and professionals who want depth, not shortcuts. We build
+                  the capability that compounds across your career.
                 </p>
 
                 {/* Stats Row */}
@@ -145,10 +149,7 @@ export default function IndividualsPage() {
       </section>
 
       {/* Capability Buckets Section */}
-      <section
-        ref={bucketsRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={bucketsRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -180,12 +181,8 @@ export default function IndividualsPage() {
                       <bucket.icon className="w-6 h-6 text-coral-500" />
                     </div>
                     <div>
-                      <h3 className="font-serif text-xl text-neutral-900 mb-2">
-                        {bucket.title}
-                      </h3>
-                      <p className="text-neutral-600 leading-relaxed">
-                        {bucket.description}
-                      </p>
+                      <h3 className="font-serif text-xl text-neutral-900 mb-2">{bucket.title}</h3>
+                      <p className="text-neutral-600 leading-relaxed">{bucket.description}</p>
                     </div>
                   </div>
                 </div>
@@ -196,10 +193,7 @@ export default function IndividualsPage() {
       </section>
 
       {/* Programs Section - Dark */}
-      <section
-        ref={programsRef}
-        className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden"
-      >
+      <section ref={programsRef} className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
         {/* Grainy texture overlay */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <svg className="w-full h-full">
@@ -259,12 +253,8 @@ export default function IndividualsPage() {
                       <h3 className="font-serif text-white text-3xl lg:text-4xl mb-2">
                         {program.title}
                       </h3>
-                      <p className="text-lg mb-4 text-coral-400">
-                        {program.tagline}
-                      </p>
-                      <p className="text-white/50 leading-relaxed">
-                        {program.description}
-                      </p>
+                      <p className="text-lg mb-4 text-coral-400">{program.tagline}</p>
+                      <p className="text-white/50 leading-relaxed">{program.description}</p>
                     </div>
 
                     {/* CTA */}
@@ -286,9 +276,7 @@ export default function IndividualsPage() {
       <section className="py-16 bg-white border-y border-neutral-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <p className="text-neutral-400 text-sm uppercase tracking-wider">
-              Alumni working at
-            </p>
+            <p className="text-neutral-400 text-sm uppercase tracking-wider">Alumni working at</p>
             <div className="flex items-center gap-12 opacity-40">
               <span className="font-serif text-neutral-900 text-lg">Google</span>
               <span className="font-serif text-neutral-900 text-lg">Amazon</span>
@@ -317,9 +305,9 @@ export default function IndividualsPage() {
                 Depth Over <span className="italic">Shortcuts</span>
               </h2>
               <p className="text-xl text-neutral-600 leading-relaxed mb-16">
-                We don&apos;t sell certificates or quick wins. We build capability that compounds
-                — mathematical intuition, production thinking, and strategic clarity that lasts
-                a career.
+                We don&apos;t sell certificates or quick wins. We build capability that compounds —
+                mathematical intuition, production thinking, and strategic clarity that lasts a
+                career.
               </p>
 
               <div className="grid sm:grid-cols-3 gap-8">
@@ -329,9 +317,7 @@ export default function IndividualsPage() {
                   { value: '85%', label: 'Career Growth' },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <p className="font-serif text-5xl text-neutral-900 mb-2">
-                      {stat.value}
-                    </p>
+                    <p className="font-serif text-5xl text-neutral-900 mb-2">{stat.value}</p>
                     <p className="text-neutral-500 text-sm">{stat.label}</p>
                   </div>
                 ))}
@@ -342,10 +328,7 @@ export default function IndividualsPage() {
       </section>
 
       {/* CTA Section */}
-      <section
-        ref={ctaRef}
-        className="py-20 md:py-32 relative overflow-hidden"
-      >
+      <section ref={ctaRef} className="py-20 md:py-32 relative overflow-hidden">
         {/* Coral gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/50" />
 
@@ -375,8 +358,8 @@ export default function IndividualsPage() {
               Find Your <span className="italic">Path</span>
             </h2>
             <p className="text-neutral-600 text-lg max-w-xl mx-auto mb-10">
-              Whether you&apos;re building AI systems or leading AI teams, we have a
-              program designed for your goals.
+              Whether you&apos;re building AI systems or leading AI teams, we have a program
+              designed for your goals.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

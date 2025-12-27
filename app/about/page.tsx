@@ -19,24 +19,27 @@ const beliefs = [
     icon: Target,
     title: 'Depth Over Shortcuts',
     description:
-      'Real AI capability takes time and rigor. We don\'t sell quick wins or certificates.',
+      "Real AI capability takes time and rigor. We don't sell quick wins or certificates.",
   },
   {
     icon: BookOpen,
     title: 'Built by Engineers, Not Influencers',
     description:
-      'Our curriculum comes from practitioners who\'ve built production AI systems at scale.',
+      "Our curriculum comes from practitioners who've built production AI systems at scale.",
   },
   {
     icon: Lightbulb,
     title: 'Capability Over Tool Worship',
     description:
-      'Tools change. Thinking doesn\'t. We focus on building AI intuition that transfers.',
+      "Tools change. Thinking doesn't. We focus on building AI intuition that transfers.",
   },
 ];
 
 const milestones = [
-  { year: '2024', event: 'Founded with a mission to bridge the gap between AI education and industry reality' },
+  {
+    year: '2024',
+    event: 'Founded with a mission to bridge the gap between AI education and industry reality',
+  },
   { year: '2024', event: 'Launched AI Fellowship program for working engineers' },
   { year: '2024', event: 'Partnered with first enterprise clients for team capability building' },
   { year: '2025', event: 'Expanded to institutions—helping universities modernize AI curriculum' },
@@ -53,10 +56,7 @@ export default function AboutPage() {
   return (
     <div className="antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[80vh] flex flex-col overflow-hidden"
-      >
+      <section ref={heroRef} className="relative min-h-[80vh] flex flex-col overflow-hidden">
         <Navigation />
 
         {/* Gradient Background */}
@@ -114,10 +114,7 @@ export default function AboutPage() {
       </section>
 
       {/* The Story Section */}
-      <section
-        ref={storyRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={storyRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <motion.div
@@ -189,10 +186,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy Section - Dark */}
-      <section
-        ref={beliefsRef}
-        className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden"
-      >
+      <section ref={beliefsRef} className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
         {/* Grainy texture overlay */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <svg className="w-full h-full">
@@ -244,12 +238,8 @@ export default function AboutPage() {
                       <belief.icon className="w-5 h-5 text-coral-400" />
                     </div>
                     <div>
-                      <h3 className="font-serif text-white text-lg mb-2">
-                        {belief.title}
-                      </h3>
-                      <p className="text-white/50 leading-relaxed">
-                        {belief.description}
-                      </p>
+                      <h3 className="font-serif text-white text-lg mb-2">{belief.title}</h3>
+                      <p className="text-white/50 leading-relaxed">{belief.description}</p>
                     </div>
                   </div>
                 </div>
@@ -260,10 +250,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder Section */}
-      <section
-        ref={founderRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={founderRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
             {/* Image */}
@@ -323,7 +310,9 @@ export default function AboutPage() {
 
               {/* Credentials */}
               <div className="mt-8 pt-8 border-t border-neutral-200">
-                <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">Background</p>
+                <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+                  Background
+                </p>
                 <div className="flex flex-wrap gap-3">
                   <span className="px-4 py-2 bg-neutral-100 rounded-full text-sm text-neutral-700 font-medium">
                     Ex-Google
@@ -372,10 +361,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section
-        ref={missionRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={missionRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -390,9 +376,9 @@ export default function AboutPage() {
                 Build Intelligence. <span className="italic">Build India.</span>
               </h2>
               <p className="text-neutral-600 text-lg leading-relaxed mb-12">
-                India has the talent. It has the ambition. What it needs is infrastructure
-                for building real AI capability—not more courses, but a fundamentally different
-                approach to how AI is taught and learned. That&apos;s what we&apos;re building.
+                India has the talent. It has the ambition. What it needs is infrastructure for
+                building real AI capability—not more courses, but a fundamentally different approach
+                to how AI is taught and learned. That&apos;s what we&apos;re building.
               </p>
 
               <div className="grid sm:grid-cols-3 gap-8 mb-12">
@@ -402,9 +388,7 @@ export default function AboutPage() {
                   { value: '15+', label: 'Institutions' },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <p className="text-4xl font-serif text-neutral-900 mb-1">
-                      {stat.value}
-                    </p>
+                    <p className="text-4xl font-serif text-neutral-900 mb-1">{stat.value}</p>
                     <p className="text-neutral-500 text-sm">{stat.label}</p>
                   </div>
                 ))}
@@ -445,7 +429,10 @@ export default function AboutPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/individuals" className="group inline-flex items-center gap-2 px-8 py-4 bg-neutral-900 text-white font-medium rounded-full hover:bg-neutral-800 transition-all">
+              <Link
+                href="/individuals"
+                className="group inline-flex items-center gap-2 px-8 py-4 bg-neutral-900 text-white font-medium rounded-full hover:bg-neutral-800 transition-all"
+              >
                 For Individuals
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
@@ -466,12 +453,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <h3 className="font-serif text-white text-xl mb-2">
-                Stay Connected
-              </h3>
-              <p className="text-white/50">
-                Follow our journey and insights on AI education.
-              </p>
+              <h3 className="font-serif text-white text-xl mb-2">Stay Connected</h3>
+              <p className="text-white/50">Follow our journey and insights on AI education.</p>
             </div>
             <div className="flex items-center gap-4">
               <a

@@ -35,10 +35,7 @@ export default function InstitutionsPage() {
   return (
     <div className="antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[85vh] flex flex-col overflow-hidden"
-      >
+      <section ref={heroRef} className="relative min-h-[85vh] flex flex-col overflow-hidden">
         <Navigation />
 
         {/* Gradient Background */}
@@ -78,7 +75,9 @@ export default function InstitutionsPage() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 shadow-sm mb-8">
                 <Sparkles className="w-4 h-4 text-coral-500" />
-                <span className="text-sm font-medium text-neutral-700">For Educational Institutions</span>
+                <span className="text-sm font-medium text-neutral-700">
+                  For Educational Institutions
+                </span>
               </div>
 
               {/* Headline */}
@@ -88,8 +87,8 @@ export default function InstitutionsPage() {
 
               {/* Subheadline */}
               <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                From curriculum design to faculty enablement. We help institutions build
-                AI programs that produce graduates who can actually deliver.
+                From curriculum design to faculty enablement. We help institutions build AI programs
+                that produce graduates who can actually deliver.
               </p>
             </motion.div>
           </div>
@@ -100,10 +99,7 @@ export default function InstitutionsPage() {
       </section>
 
       {/* Two Path Router */}
-      <section
-        ref={routerRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={routerRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -136,17 +132,13 @@ export default function InstitutionsPage() {
                         <route.icon className="w-7 h-7 text-coral-500" />
                       </div>
                       <div>
-                        <h3 className="font-serif text-2xl text-neutral-900 mb-1">
-                          {route.title}
-                        </h3>
+                        <h3 className="font-serif text-2xl text-neutral-900 mb-1">{route.title}</h3>
                         <p className="text-coral-500 text-sm">{route.subtitle}</p>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-neutral-600 leading-relaxed flex-1">
-                      {route.description}
-                    </p>
+                    <p className="text-neutral-600 leading-relaxed flex-1">{route.description}</p>
 
                     {/* Stats Pills */}
                     <div className="flex flex-wrap gap-2 mt-6 mb-6">
@@ -211,9 +203,9 @@ export default function InstitutionsPage() {
                 Not Just Curriculum. <span className="italic">Infrastructure.</span>
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-12">
-                We don&apos;t just design courses. We build complete AI education infrastructure
-                — curriculum, faculty training, assessment frameworks, and industry connections
-                — that produces graduates who can actually contribute from day one.
+                We don&apos;t just design courses. We build complete AI education infrastructure —
+                curriculum, faculty training, assessment frameworks, and industry connections — that
+                produces graduates who can actually contribute from day one.
               </p>
 
               <div className="grid sm:grid-cols-3 gap-8">
@@ -223,9 +215,7 @@ export default function InstitutionsPage() {
                   { value: '4.8/5', label: 'Average Rating' },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <p className="font-serif text-5xl text-coral-400 mb-2">
-                      {stat.value}
-                    </p>
+                    <p className="font-serif text-5xl text-coral-400 mb-2">{stat.value}</p>
                     <p className="text-white/50 text-sm">{stat.label}</p>
                   </div>
                 ))}

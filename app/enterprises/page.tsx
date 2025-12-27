@@ -25,8 +25,9 @@ import Navigation from '@/components/landing/Navigation';
 const problems = [
   {
     icon: Brain,
-    title: 'Teams don\'t understand AI deeply',
-    description: 'Surface-level tool training without foundational understanding leads to poor decisions.',
+    title: "Teams don't understand AI deeply",
+    description:
+      'Surface-level tool training without foundational understanding leads to poor decisions.',
   },
   {
     icon: LinkIcon,
@@ -73,7 +74,8 @@ const engagementModels = [
     duration: 'Long-term',
     timeline: 'Multi-quarter to years',
     title: 'Strategic Partnership',
-    description: 'Deep, ongoing collaboration to build organizational AI capability from the ground up.',
+    description:
+      'Deep, ongoing collaboration to build organizational AI capability from the ground up.',
   },
   {
     duration: 'Medium-term',
@@ -85,7 +87,8 @@ const engagementModels = [
     duration: 'Short-term',
     timeline: 'Weeks to months',
     title: 'Workshops & Assessments',
-    description: 'Focused interventions for specific needs like hiring frameworks or team assessments.',
+    description:
+      'Focused interventions for specific needs like hiring frameworks or team assessments.',
   },
   {
     duration: 'Bespoke',
@@ -106,10 +109,7 @@ export default function EnterprisesPage() {
   return (
     <div className="antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-screen flex flex-col overflow-hidden"
-      >
+      <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">
         <Navigation />
 
         {/* Gradient Background */}
@@ -159,8 +159,8 @@ export default function EnterprisesPage() {
 
                 {/* Subheadline */}
                 <p className="text-lg md:text-xl text-neutral-600 max-w-2xl leading-relaxed mb-10">
-                  We help companies move from AI curiosity to AI leverage.
-                  Not tools — real capability that compounds over time.
+                  We help companies move from AI curiosity to AI leverage. Not tools — real
+                  capability that compounds over time.
                 </p>
 
                 {/* Single CTA */}
@@ -182,10 +182,7 @@ export default function EnterprisesPage() {
       </section>
 
       {/* The Enterprise Problem */}
-      <section
-        ref={problemsRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={problemsRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -216,9 +213,7 @@ export default function EnterprisesPage() {
                       <problem.icon className="w-5 h-5 text-coral-500" />
                     </div>
                     <div>
-                      <h3 className="font-serif text-neutral-900 text-lg mb-2">
-                        {problem.title}
-                      </h3>
+                      <h3 className="font-serif text-neutral-900 text-lg mb-2">{problem.title}</h3>
                       <p className="text-neutral-600 text-sm leading-relaxed">
                         {problem.description}
                       </p>
@@ -232,10 +227,7 @@ export default function EnterprisesPage() {
       </section>
 
       {/* Capability Pillars - Dark */}
-      <section
-        ref={pillarsRef}
-        className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden"
-      >
+      <section ref={pillarsRef} className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
         {/* Grainy texture overlay */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <svg className="w-full h-full">
@@ -269,7 +261,8 @@ export default function EnterprisesPage() {
               Four Capability <span className="italic">Pillars</span>
             </h2>
             <p className="text-white/50 text-lg mt-4 max-w-xl mx-auto">
-              We don&apos;t sell products. We build systemic AI capability across four integrated pillars.
+              We don&apos;t sell products. We build systemic AI capability across four integrated
+              pillars.
             </p>
           </motion.div>
 
@@ -288,12 +281,8 @@ export default function EnterprisesPage() {
                       <pillar.icon className="w-6 h-6 text-coral-400" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-serif text-white text-xl mb-2">
-                        {pillar.title}
-                      </h3>
-                      <p className="text-white/50 leading-relaxed mb-4">
-                        {pillar.description}
-                      </p>
+                      <h3 className="font-serif text-white text-xl mb-2">{pillar.title}</h3>
+                      <p className="text-white/50 leading-relaxed mb-4">{pillar.description}</p>
                       <span className="text-coral-400 text-sm font-medium inline-flex items-center gap-1 cursor-pointer hover:gap-2 transition-all">
                         Learn More <ArrowRight className="w-3 h-3" />
                       </span>
@@ -307,10 +296,7 @@ export default function EnterprisesPage() {
       </section>
 
       {/* Engagement Models */}
-      <section
-        ref={engagementRef}
-        className="py-20 md:py-32 bg-white relative overflow-hidden"
-      >
+      <section ref={engagementRef} className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -340,12 +326,8 @@ export default function EnterprisesPage() {
                     {model.duration}
                   </span>
                   <p className="text-neutral-400 text-xs mb-3">{model.timeline}</p>
-                  <h3 className="font-serif text-neutral-900 text-lg mb-2">
-                    {model.title}
-                  </h3>
-                  <p className="text-neutral-600 text-sm leading-relaxed">
-                    {model.description}
-                  </p>
+                  <h3 className="font-serif text-neutral-900 text-lg mb-2">{model.title}</h3>
+                  <p className="text-neutral-600 text-sm leading-relaxed">{model.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -388,8 +370,8 @@ export default function EnterprisesPage() {
                 We Think Like <span className="italic">Partners</span>
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-8">
-                Our team has built AI systems at Google, Amazon, Microsoft, and MathWorks.
-                We bring production experience, not just theory.
+                Our team has built AI systems at Google, Amazon, Microsoft, and MathWorks. We bring
+                production experience, not just theory.
               </p>
 
               <div className="space-y-3">
@@ -421,10 +403,11 @@ export default function EnterprisesPage() {
                   { value: '15+', label: 'Enterprise Partners' },
                   { value: '4.9/5', label: 'Satisfaction' },
                 ].map((stat) => (
-                  <div key={stat.label} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
-                    <p className="text-4xl font-serif text-coral-400 mb-1">
-                      {stat.value}
-                    </p>
+                  <div
+                    key={stat.label}
+                    className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center"
+                  >
+                    <p className="text-4xl font-serif text-coral-400 mb-1">{stat.value}</p>
                     <p className="text-white/50 text-sm">{stat.label}</p>
                   </div>
                 ))}
@@ -448,10 +431,7 @@ export default function EnterprisesPage() {
       </section>
 
       {/* CTA Section */}
-      <section
-        ref={ctaRef}
-        className="py-20 md:py-32 relative overflow-hidden"
-      >
+      <section ref={ctaRef} className="py-20 md:py-32 relative overflow-hidden">
         {/* Coral gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/50" />
 
@@ -481,8 +461,8 @@ export default function EnterprisesPage() {
               Let&apos;s Build <span className="italic">Together</span>
             </h2>
             <p className="text-neutral-600 text-lg mb-10">
-              No generic sales pitch. We start with understanding your context,
-              challenges, and goals. Then we design a path forward.
+              No generic sales pitch. We start with understanding your context, challenges, and
+              goals. Then we design a path forward.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
