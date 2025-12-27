@@ -12,15 +12,85 @@ const config = {
         md: '1.125rem', // 18px
         lg: '1.25rem', // 20px
         xl: '1.5rem', // 24px
+        '2xl': '1.75rem', // 28px
+        '3xl': '2rem', // 32px
+        '4xl': '2.5rem', // 40px
+        '5xl': '3rem', // 48px
+        '6xl': '3.75rem', // 60px
+        '7xl': '4.5rem', // 72px
       },
       fontFamily: {
-        sans: ['Inter', '"Plus Jakarta Sans"', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
         serif: ['"Instrument Serif"', 'Georgia', 'serif'],
         grotesk: ['FoundersGrotesk', 'Inter', 'system-ui', 'sans-serif'],
         twk: ['TWKEverett', 'Inter', 'system-ui', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
       },
       colors: {
+        // New Premium Design System Colors
+        dark: {
+          DEFAULT: '#0A0F1C',
+          50: '#1A2235',
+          100: '#151B2C',
+          200: '#121826',
+          300: '#0F1420',
+          400: '#0C101A',
+          500: '#0A0F1C',
+          600: '#080C17',
+          700: '#060912',
+          800: '#04060D',
+          900: '#020308',
+        },
+        light: {
+          DEFAULT: '#F5F2ED',
+          50: '#FFFFFF',
+          100: '#FAF9F7',
+          200: '#F5F2ED',
+          300: '#EBE6DE',
+          400: '#E0D9CE',
+          500: '#D5CCBF',
+        },
+        cyan: {
+          DEFAULT: '#00D4AA',
+          50: '#E6FFF9',
+          100: '#B3FFED',
+          200: '#80FFE0',
+          300: '#4DFFD4',
+          400: '#1AFFC7',
+          500: '#00D4AA',
+          600: '#00A886',
+          700: '#007C63',
+          800: '#005040',
+          900: '#00241D',
+        },
+        amber: {
+          DEFAULT: '#C9A962',
+          50: '#FBF8F0',
+          100: '#F5EDD8',
+          200: '#EBD9B0',
+          300: '#E1C588',
+          400: '#D4B270',
+          500: '#C9A962',
+          600: '#B8954A',
+          700: '#96783C',
+          800: '#745C2E',
+          900: '#524120',
+        },
+        violet: {
+          DEFAULT: '#8B5CF6',
+          50: '#F5F3FF',
+          100: '#EDE9FE',
+          200: '#DDD6FE',
+          300: '#C4B5FD',
+          400: '#A78BFA',
+          500: '#8B5CF6',
+          600: '#7C3AED',
+          700: '#6D28D9',
+          800: '#5B21B6',
+          900: '#4C1D95',
+        },
+        // Legacy colors for backward compatibility
         navy: {
           DEFAULT: '#1e3a5f',
           50: '#f0f4f8',

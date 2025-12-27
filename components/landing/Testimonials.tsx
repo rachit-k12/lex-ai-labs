@@ -2,8 +2,27 @@
 
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
-import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
+
+const avatarGradients = [
+  'from-violet-500 to-purple-600',
+  'from-blue-500 to-cyan-500',
+  'from-emerald-500 to-teal-500',
+  'from-orange-500 to-amber-500',
+  'from-pink-500 to-rose-500',
+  'from-indigo-500 to-blue-500',
+  'from-teal-500 to-green-500',
+  'from-fuchsia-500 to-pink-500',
+];
+
+function getInitials(name: string) {
+  return name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
+}
 
 const testimonials = [
   {
@@ -11,8 +30,6 @@ const testimonials = [
     name: 'Nipun Katyal',
     role: 'AI Vector Search Engineer',
     company: 'Oracle',
-    image:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
     content:
       'I had the pleasure of working with Puru at MathWorks. My peers and I always appreciated the depth with which Puru approached engineering problems as well as his philosophy towards designing solutions. He has a commendable grasp on a variety of domains like natural language processing and audio processing.',
     outcome: 'Mastered AI model optimization',
@@ -22,8 +39,6 @@ const testimonials = [
     name: 'Nishchay Anand',
     role: 'Senior Software Engineer',
     company: 'Tech',
-    image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face',
     content:
       'I had the privilege of learning from Puru during the System Design Fellowship. He turns each learning session into an approachable conversation, bridging the gap between theory and real-world intuition. His sessions will always leave you smarter, more confident, and genuinely excited to build.',
     outcome: 'Advanced system design expertise',
@@ -33,8 +48,6 @@ const testimonials = [
     name: 'Shiv Singh',
     role: 'Enterprise Architect',
     company: 'Enterprise',
-    image:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
     content:
       "I've had the chance to interact with Puru and learn valuable insights into Machine Learning through him. He has a natural ability to simplify complex topics and explain them in a way that makes sense, no matter how technical they are.",
     outcome: 'Achieved ML leadership skills',
@@ -44,8 +57,6 @@ const testimonials = [
     name: 'Abhinav Srivastava',
     role: 'Consultant',
     company: 'Deloitte',
-    image:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face',
     content:
       'Puru has a way of making machine learning feel less like rocket science and more like a conversation. During my time at the LexAI Fellowship, he made topics that usually seem intimidating feel surprisingly manageable.',
     outcome: 'Built production ML confidence',
@@ -55,8 +66,6 @@ const testimonials = [
     name: 'Maneet Kaur Bagga',
     role: 'UX Researcher',
     company: 'MathWorks',
-    image:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face',
     content:
       'His mentoring and teaching abilities are truly outstanding, especially his approach of focusing on practical, industry-applicable knowledge. He equipped me with real-world Machine Learning skills and insights needed to thrive.',
     outcome: 'Accelerated career trajectory',
@@ -66,8 +75,6 @@ const testimonials = [
     name: 'Riddhi Menroy',
     role: 'Computer Engineering Student',
     company: 'Thapar Institute',
-    image:
-      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face',
     content:
       "I've had the opportunity to learn from Puru during the Lex AI Fellowship. He breaks down complex concepts, especially the math, into simple, intuitive steps. Even the most abstract ideas feel approachable.",
     outcome: 'Transformed from theory to practice',
@@ -77,8 +84,6 @@ const testimonials = [
     name: 'Deepak Sharma',
     role: 'Software Engineer',
     company: 'Tech',
-    image:
-      'https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=200&h=200&fit=crop&crop=face',
     content:
       'Working with Puru has been one of the most enriching experiences of my journey. His technical depth across system design, AI/ML, and large-scale engineering challenges is truly exceptional. He has a rare ability to simplify complex problems.',
     outcome: 'Leveled up to senior engineer',
@@ -88,8 +93,6 @@ const testimonials = [
     name: 'Karan Bhutani',
     role: 'Consultant',
     company: 'Deloitte',
-    image:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
     content:
       "Puru didn't just shape how I write code, he changed how I think about technology and its purpose. Watching him work is like seeing someone translate philosophy into engineering: grounded in first principles, deeply thoughtful.",
     outcome: 'Developed engineering philosophy',
@@ -97,9 +100,12 @@ const testimonials = [
 ];
 interface TestimonialCardProps {
   testimonial: (typeof testimonials)[0];
+  index: number;
 }
 
-function TestimonialCard({ testimonial }: TestimonialCardProps) {
+function TestimonialCard({ testimonial, index }: TestimonialCardProps) {
+  const gradient = avatarGradients[index % avatarGradients.length];
+
   return (
     <div className="flex-shrink-0 w-[280px] sm:w-[340px] md:w-[400px] mx-2 md:mx-3">
       <div className="flex flex-col gap-4 justify-between bg-white rounded-xl md:rounded-2xl p-4 md:p-6 h-full border border-neutral-100 shadow-sm hover:shadow-lg hover:border-neutral-200 transition-all duration-300">
@@ -124,14 +130,12 @@ function TestimonialCard({ testimonial }: TestimonialCardProps) {
           )}
           {/* Author */}
           <div className="flex items-center gap-2.5 md:gap-3 pt-3 md:pt-4 border-t border-neutral-100">
-            <div className="relative w-9 h-9 md:w-11 md:h-11 rounded-full overflow-hidden bg-neutral-200">
-              <Image
-                src={testimonial.image}
-                alt={testimonial.name}
-                fill
-                className="object-cover"
-                sizes="44px"
-              />
+            <div
+              className={`flex items-center justify-center w-9 h-9 md:w-11 md:h-11 rounded-full bg-gradient-to-br ${gradient} shadow-sm`}
+            >
+              <span className="text-white font-medium text-xs md:text-sm tracking-tight">
+                {getInitials(testimonial.name)}
+              </span>
             </div>
             <div>
               <h4 className="font-medium text-neutral-900 text-xs md:text-sm">
@@ -197,33 +201,15 @@ export default function Testimonials() {
 
           <div className="flex sm:animate-sm-marquee-slow animate-marquee-slow">
             {doubledTestimonials.map((testimonial, index) => (
-              <TestimonialCard key={`row1-${testimonial.id}-${index}`} testimonial={testimonial} />
+              <TestimonialCard
+                key={`row1-${testimonial.id}-${index}`}
+                testimonial={testimonial}
+                index={index % testimonials.length}
+              />
             ))}
           </div>
         </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex items-center justify-center gap-3 md:gap-4 mt-10 md:mt-16 px-4"
-        >
-          <div className="flex -space-x-2">
-            {testimonials.slice(0, 4).map((t) => (
-              <div
-                key={t.id}
-                className="relative w-7 h-7 md:w-8 md:h-8 rounded-full overflow-hidden ring-2 ring-neutral-50"
-              >
-                <Image src={t.image} alt={t.name} fill className="object-cover" sizes="32px" />
-              </div>
-            ))}
-          </div>
-          <p className="text-xs md:text-sm text-neutral-600">
-            Join <span className="font-semibold text-neutral-900">500+ members</span> growing
-            together
-          </p>
-        </motion.div>
       </div>
     </section>
   );

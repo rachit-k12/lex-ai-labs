@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    /* Refined Color Palette */
+    /* Refined Color Palette - Matching Homepage */
     --black: #0a0a0a;
     --gray-900: #171717;
     --gray-800: #262626;
@@ -21,7 +21,7 @@
     --gray-50: #fafafa;
     --white: #ffffff;
 
-    /* Brand colors - used subtly */
+    /* Brand colors */
     --navy: #1e3a5f;
     --navy-light: #2d5a87;
     --coral: #ff7f50;
@@ -73,7 +73,7 @@
 }
 
 @layer utilities {
-  /* Grainy texture overlay */
+  /* Grainy texture overlay - matching homepage */
   .grain {
     position: relative;
   }
@@ -90,7 +90,7 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
-  /* Coral gradient backgrounds */
+  /* Coral gradient backgrounds - matching homepage */
   .bg-gradient-coral {
     background: linear-gradient(135deg, #fff5f2 0%, #ffffff 50%, #fffbfa 100%);
   }

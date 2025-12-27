@@ -1,62 +1,53 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Building, GraduationCap, School, Sparkles } from 'lucide-react';
+import { ArrowRight, GraduationCap, School, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 import Footer from '@/components/landing/Footer';
 import Navigation from '@/components/landing/Navigation';
 
-const institutionTypes = [
+const routes = [
   {
     icon: GraduationCap,
     title: 'Higher Education',
     subtitle: 'Colleges & Universities',
     description:
-      'Upgrade curriculum, faculty capability, and industry readiness for engineering programs.',
+      'AI curriculum design, faculty enablement, and co-branded programs that produce industry-ready graduates.',
     href: '/institutions/higher-ed',
-    features: [
-      'Full AI curriculum design',
-      'Faculty enablement programs',
-      'Co-branded semester programs',
-      'Accreditation support',
-    ],
-    color: 'blue',
+    stats: ['10+ Partners', '85% Placement', 'Full Curriculum'],
   },
   {
     icon: School,
     title: 'Schools (K-12)',
-    subtitle: 'For Future AI Leaders',
+    subtitle: 'Building Future AI Leaders',
     description:
-      'Age-appropriate AI literacy and the FutureMinds Fellowship for students targeting top universities.',
+      'Age-appropriate AI literacy and the FutureMinds Fellowship for students preparing for top universities.',
     href: '/institutions/schools',
-    features: [
-      'FutureMinds AI Fellowship',
-      'Ivy League profile building',
-      'Computational thinking',
-      'Project-based learning',
-    ],
-    color: 'coral',
+    stats: ['Grades 6-12', '100+ Alumni', 'Safe & Engaging'],
   },
 ];
 
 export default function InstitutionsPage() {
   const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [cardsRef, cardsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [routerRef, routerInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="bg-white text-slate-900 antialiased overflow-x-hidden">
+    <div className="antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-[85vh] flex flex-col overflow-hidden">
+      <section
+        ref={heroRef}
+        className="relative min-h-[85vh] flex flex-col overflow-hidden"
+      >
         <Navigation />
 
         {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-white to-coral-50/30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/30" />
 
-        {/* Grainy texture */}
+        {/* Grainy texture overlay */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <svg className="w-full h-full">
-            <filter id="noiseFilterInst">
+            <filter id="noiseFilter">
               <feTurbulence
                 type="fractalNoise"
                 baseFrequency="0.8"
@@ -64,115 +55,43 @@ export default function InstitutionsPage() {
                 stitchTiles="stitch"
               />
             </filter>
-            <rect width="100%" height="100%" filter="url(#noiseFilterInst)" opacity="0.4" />
+            <rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.4" />
           </svg>
         </div>
 
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-coral-500/10 rounded-full blur-3xl" />
+        {/* Decorative gradient blobs */}
+        <div className="absolute top-20 right-10 w-96 h-96 bg-coral-500/20 rounded-full blur-3xl animate-pulse" />
+        <div
+          className="absolute bottom-40 left-10 w-80 h-80 bg-coral-500/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: '1s' }}
+        />
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left - Text */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5 }}
-              >
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 mb-8">
-                  <Building className="w-4 h-4 text-purple-500" />
-                  <span className="text-sm font-medium text-neutral-700">
-                    For Educational Institutions
-                  </span>
-                </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 lg:py-32">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center"
+            >
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 shadow-sm mb-8">
+                <Sparkles className="w-4 h-4 text-coral-500" />
+                <span className="text-sm font-medium text-neutral-700">For Educational Institutions</span>
+              </div>
 
-                {/* Headline */}
-                <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-neutral-900 leading-[1.05] mb-6 tracking-tight">
-                  Modernize <span className="italic text-purple-500">AI Education</span>
-                </h1>
+              {/* Headline */}
+              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-neutral-900 leading-[1.05] mb-6 tracking-tight">
+                Transform How <span className="italic text-coral-500">AI Is Taught</span>
+              </h1>
 
-                {/* Subheadline */}
-                <p className="text-lg md:text-xl text-neutral-600 max-w-xl leading-relaxed mb-8">
-                  Lex AI&apos;s institutional offerings solve capability gaps at the system level
-                  &mdash; by upgrading curriculum, faculty, and outcomes together.
-                </p>
-
-                {/* Quick stats */}
-                <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-500">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full" />
-                    <span>Curriculum design</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full" />
-                    <span>Faculty enablement</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full" />
-                    <span>Student outcomes</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Right - Visual */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={heroInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="hidden lg:block"
-              >
-                <div className="relative">
-                  {/* Main visual card */}
-                  <div className="bg-white/80 backdrop-blur-sm border border-neutral-200 rounded-3xl p-8 shadow-xl">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                        <Building className="w-6 h-6 text-purple-500" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-neutral-900">Two Institution Types</p>
-                        <p className="text-sm text-neutral-500">Tailored for your needs</p>
-                      </div>
-                    </div>
-
-                    {/* Mini preview of options */}
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3 p-3 bg-neutral-50 rounded-xl border border-neutral-200">
-                        <GraduationCap className="w-5 h-5 text-neutral-600" />
-                        <div className="flex-1">
-                          <p className="text-sm font-medium text-neutral-900">Higher Education</p>
-                          <p className="text-xs text-neutral-500">Colleges & Universities</p>
-                        </div>
-                        <ArrowRight className="w-4 h-4 text-neutral-400" />
-                      </div>
-                      <div className="flex items-center gap-3 p-3 bg-coral-50/50 rounded-xl border border-coral-100">
-                        <School className="w-5 h-5 text-coral-500" />
-                        <div className="flex-1">
-                          <p className="text-sm font-medium text-neutral-900">Schools (K-12)</p>
-                          <p className="text-xs text-neutral-500">FutureMinds Fellowship</p>
-                        </div>
-                        <ArrowRight className="w-4 h-4 text-coral-400" />
-                      </div>
-                    </div>
-
-                    {/* Philosophy */}
-                    <div className="mt-6 pt-6 border-t border-neutral-200">
-                      <p className="text-sm text-neutral-600 italic">
-                        &ldquo;We don&apos;t just deliver content. We upgrade the entire
-                        system.&rdquo;
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Floating decorative elements */}
-                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-purple-500/10 rounded-2xl -z-10" />
-                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-coral-500/10 rounded-xl -z-10" />
-                </div>
-              </motion.div>
-            </div>
+              {/* Subheadline */}
+              <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+                From curriculum design to faculty enablement. We help institutions build
+                AI programs that produce graduates who can actually deliver.
+              </p>
+            </motion.div>
           </div>
         </div>
 
@@ -180,73 +99,73 @@ export default function InstitutionsPage() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
       </section>
 
-      {/* Institution Type Cards */}
-      <section ref={cardsRef} className="py-20 md:py-32 bg-white overflow-hidden">
+      {/* Two Path Router */}
+      <section
+        ref={routerRef}
+        className="py-20 md:py-32 bg-white relative overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={cardsInView ? { opacity: 1, y: 0 } : {}}
+            animate={routerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
+            <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
               Choose Your Path
-            </span>
-            <h2 className="text-4xl md:text-5xl font-serif text-neutral-900 mt-4 mb-4">
-              Who Are <span className="italic">You?</span>
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Select your institution type to explore tailored solutions.
             </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-neutral-900">
+              How Can We <span className="italic">Help?</span>
+            </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {institutionTypes.map((type, index) => (
+          {/* Two Cards */}
+          <div className="grid lg:grid-cols-2 gap-8">
+            {routes.map((route, index) => (
               <motion.div
-                key={type.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={cardsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
+                key={route.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={routerInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.15 * index }}
               >
-                <Link href={type.href} className="block group">
-                  <div className="bg-white border border-neutral-200 rounded-3xl p-8 md:p-10 hover:border-neutral-300 hover:shadow-xl transition-all h-full">
-                    <div
-                      className={`w-16 h-16 ${type.color === 'blue' ? 'bg-blue-50' : 'bg-coral-50'} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
-                    >
-                      <type.icon
-                        className={`w-8 h-8 ${type.color === 'blue' ? 'text-blue-500' : 'text-coral-500'}`}
-                      />
+                <Link href={route.href} className="block h-full group">
+                  <div className="bg-white rounded-2xl p-8 border border-neutral-200 hover:border-coral-200 hover:shadow-xl transition-all h-full flex flex-col">
+                    {/* Header */}
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className="w-14 h-14 bg-coral-50 rounded-2xl flex items-center justify-center group-hover:bg-coral-100 transition-colors">
+                        <route.icon className="w-7 h-7 text-coral-500" />
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-2xl text-neutral-900 mb-1">
+                          {route.title}
+                        </h3>
+                        <p className="text-coral-500 text-sm">{route.subtitle}</p>
+                      </div>
                     </div>
 
-                    <span
-                      className={`text-sm font-medium ${type.color === 'blue' ? 'text-blue-500' : 'text-coral-500'}`}
-                    >
-                      {type.subtitle}
-                    </span>
-                    <h3 className="text-2xl md:text-3xl font-serif text-neutral-900 mt-1 mb-4">
-                      {type.title}
-                    </h3>
-                    <p className="text-neutral-600 mb-6">{type.description}</p>
+                    {/* Description */}
+                    <p className="text-neutral-600 leading-relaxed flex-1">
+                      {route.description}
+                    </p>
 
-                    <ul className="space-y-3 mb-8">
-                      {type.features.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-center gap-2 text-sm text-neutral-600"
+                    {/* Stats Pills */}
+                    <div className="flex flex-wrap gap-2 mt-6 mb-6">
+                      {route.stats.map((stat) => (
+                        <span
+                          key={stat}
+                          className="text-xs font-medium px-3 py-1.5 bg-neutral-100 text-neutral-600 rounded-full"
                         >
-                          <Sparkles
-                            className={`w-4 h-4 ${type.color === 'blue' ? 'text-blue-400' : 'text-coral-400'}`}
-                          />
-                          {feature}
-                        </li>
+                          {stat}
+                        </span>
                       ))}
-                    </ul>
+                    </div>
 
-                    <div
-                      className={`inline-flex items-center gap-2 font-medium ${type.color === 'blue' ? 'text-blue-500 group-hover:text-blue-600' : 'text-coral-500 group-hover:text-coral-600'} transition-colors`}
-                    >
-                      Explore Solutions
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    {/* CTA */}
+                    <div className="pt-6 border-t border-neutral-100">
+                      <span className="inline-flex items-center gap-2 font-medium text-coral-500 group-hover:text-coral-600 transition-colors">
+                        Explore Solutions
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </span>
                     </div>
                   </div>
                 </Link>
@@ -256,34 +175,62 @@ export default function InstitutionsPage() {
         </div>
       </section>
 
-      {/* Why Lex AI for Institutions */}
-      <section className="py-20 md:py-32 bg-neutral-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-              Our Philosophy
-            </span>
-            <h2 className="text-4xl md:text-5xl font-serif text-neutral-900 mt-4 mb-6">
-              Education Infrastructure, <span className="italic">Not Courses</span>
-            </h2>
-            <p className="text-lg text-neutral-600 mb-12 leading-relaxed">
-              We don&apos;t just add courses. We upgrade the entire system &mdash; curriculum
-              design, faculty capability, and hiring standards &mdash; so institutions can produce
-              genuinely capable AI practitioners.
-            </p>
+      {/* Why Lex AI - Dark */}
+      <section className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
+        {/* Grainy texture overlay */}
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
+          <svg className="w-full h-full">
+            <filter id="whyNoise">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.8"
+                numOctaves="4"
+                stitchTiles="stitch"
+              />
+            </filter>
+            <rect width="100%" height="100%" filter="url(#whyNoise)" opacity="0.4" />
+          </svg>
+        </div>
 
-            <div className="grid sm:grid-cols-3 gap-8 text-center">
-              {[
-                { value: '15+', label: 'Partner Institutions' },
-                { value: '100+', label: 'Faculty Trained' },
-                { value: '2000+', label: 'Students Impacted' },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-4xl font-serif text-neutral-900 mb-1">{stat.value}</p>
-                  <p className="text-sm text-neutral-500">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+        {/* Gradient blobs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-coral-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-coral-400/10 rounded-full blur-3xl" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <p className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
+                Why Lex AI
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">
+                Not Just Curriculum. <span className="italic">Infrastructure.</span>
+              </h2>
+              <p className="text-white/60 text-lg leading-relaxed mb-12">
+                We don&apos;t just design courses. We build complete AI education infrastructure
+                — curriculum, faculty training, assessment frameworks, and industry connections
+                — that produces graduates who can actually contribute from day one.
+              </p>
+
+              <div className="grid sm:grid-cols-3 gap-8">
+                {[
+                  { value: '15+', label: 'Institutions' },
+                  { value: '85%', label: 'Placement Rate' },
+                  { value: '4.8/5', label: 'Average Rating' },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <p className="font-serif text-5xl text-coral-400 mb-2">
+                      {stat.value}
+                    </p>
+                    <p className="text-white/50 text-sm">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

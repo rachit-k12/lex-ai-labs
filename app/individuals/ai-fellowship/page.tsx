@@ -3,44 +3,136 @@
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  Brain,
+  BookOpen,
+  Braces,
   Calendar,
   CheckCircle2,
   Clock,
   Code2,
-  MessageSquare,
-  Rocket,
-  TrendingUp,
-  Users,
-  Video,
+  Lightbulb,
+  Sigma,
 } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import CurriculumDownloadModal from '@/components/landing/CurriculumDownloadModal';
 import Footer from '@/components/landing/Footer';
 import LeadCaptureModal from '@/components/landing/LeadCaptureModal';
 import Navigation from '@/components/landing/Navigation';
+import Testimonials from '@/components/landing/Testimonials';
+
+const pillars = [
+  {
+    icon: Sigma,
+    title: 'Math-First',
+    description:
+      'Linear algebra, probability, and optimization form the bedrock. You understand why, not just how.',
+  },
+  {
+    icon: Braces,
+    title: 'Code-Backed',
+    description:
+      'Every concept is implemented from scratch. No hiding behind libraries until you understand the internals.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'No Black-Box',
+    description:
+      'We open every layer. Transformers, attention, backprop — you build them, you own them.',
+  },
+];
+
+const phases = [
+  {
+    phase: 'Phase 1',
+    title: 'Foundation & Core ML',
+    description: 'Build the mathematical intuition and implement classical ML algorithms from scratch.',
+    topics: [
+      'Linear Algebra & Matrix Operations',
+      'Probability & Statistics',
+      'Optimization Theory',
+      'Supervised Learning from Scratch',
+      'Neural Networks Fundamentals',
+      'Backpropagation Deep Dive',
+    ],
+    color: 'from-violet-500 to-purple-600',
+  },
+  {
+    phase: 'Phase 2',
+    title: 'Deep Learning',
+    description: 'Master neural architectures and understand what makes modern AI systems work.',
+    topics: [
+      'CNNs & Computer Vision',
+      'Sequence Models & RNNs',
+      'Attention Mechanisms',
+      'Transformer Architecture',
+      'Training at Scale',
+      'Model Optimization',
+    ],
+    color: 'from-coral-500 to-orange-500',
+  },
+  {
+    phase: 'Phase 3',
+    title: 'Modern AI',
+    description: 'Apply cutting-edge techniques and build production-ready AI systems.',
+    topics: [
+      'Large Language Models',
+      'Generative AI & Diffusion',
+      'MLOps & Deployment',
+      'System Design for ML',
+      'Capstone Project',
+      'Career Preparation',
+    ],
+    color: 'from-blue-500 to-cyan-500',
+  },
+];
+
+const personas = [
+  {
+    title: 'Software Engineers',
+    description: 'Backend or full-stack developers who want ML depth beyond API calls.',
+  },
+  {
+    title: 'Data Scientists',
+    description: 'Seeking first-principles understanding of the models you use daily.',
+  },
+  {
+    title: 'MLEs Wanting Research Depth',
+    description: 'Production experience but want to think like researchers.',
+  },
+];
+
+const antiPersonas = [
+  'Those seeking quick certifications',
+  'Looking for no-code AI solutions',
+  'Unable to commit 20+ hours/week',
+];
 
 export default function AIFellowshipPage() {
   const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [programRef, programInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [outcomesRef, outcomesInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [pillarsRef, pillarsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [curriculumRef, curriculumInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [personasRef, personasInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ctaRef, ctaInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCurriculumModalOpen, setIsCurriculumModalOpen] = useState(false);
 
   return (
-    <div className="bg-white text-slate-900 antialiased overflow-x-hidden">
+    <div className="antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-[85vh] flex flex-col overflow-hidden">
+      <section
+        ref={heroRef}
+        className="relative min-h-screen flex flex-col overflow-hidden"
+      >
         <Navigation />
 
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/30" />
 
-        {/* Grainy texture */}
+        {/* Grainy texture overlay */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <svg className="w-full h-full">
-            <filter id="noiseFilterFellowship">
+            <filter id="noiseFilter">
               <feTurbulence
                 type="fractalNoise"
                 baseFrequency="0.8"
@@ -48,506 +140,151 @@ export default function AIFellowshipPage() {
                 stitchTiles="stitch"
               />
             </filter>
-            <rect width="100%" height="100%" filter="url(#noiseFilterFellowship)" opacity="0.4" />
+            <rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.4" />
           </svg>
         </div>
 
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-96 h-96 bg-coral-500/15 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-coral-500/10 rounded-full blur-3xl" />
+        {/* Decorative gradient blobs */}
+        <div className="absolute top-20 right-10 w-96 h-96 bg-coral-500/20 rounded-full blur-3xl animate-pulse" />
+        <div
+          className="absolute bottom-40 left-10 w-80 h-80 bg-coral-500/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: '1s' }}
+        />
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left - Text */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 lg:py-32">
+            <div className="max-w-4xl">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 {/* Breadcrumb */}
-                <div className="flex items-center gap-2 text-sm text-neutral-500 mb-6">
-                  <Link href="/individuals" className="hover:text-neutral-900 transition-colors">
+                <div className="flex items-center gap-2 text-sm text-neutral-400 mb-8">
+                  <Link href="/individuals" className="hover:text-neutral-600 transition-colors">
                     Individuals
                   </Link>
                   <span>/</span>
-                  <span className="text-neutral-900">AI Fellowship</span>
+                  <span className="text-neutral-600">AI Fellowship</span>
                 </div>
 
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-coral-100 rounded-full mb-8">
-                  <Code2 className="w-4 h-4 text-coral-600" />
-                  <span className="text-sm font-medium text-coral-700">
-                    For Engineers & Builders
-                  </span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-neutral-200 shadow-sm mb-8">
+                  <Code2 className="w-4 h-4 text-coral-500" />
+                  <span className="text-sm font-medium text-neutral-700">For Engineers & Builders</span>
                 </div>
 
                 {/* Headline */}
                 <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-neutral-900 leading-[1.05] mb-6 tracking-tight">
-                  Build serious AI skills in <span className="italic text-coral-500">16 weeks</span>
+                  Engineer <span className="italic text-coral-500">→</span> Applied Scientist
                 </h1>
 
                 {/* Subheadline */}
-                <p className="text-lg md:text-xl text-neutral-600 max-w-xl leading-relaxed mb-8">
-                  Transform from coding basics to deploying production-ready AI applications. This
-                  is for YOU if you&apos;re ready to break into the AI engineering career.
+                <p className="text-lg md:text-xl text-neutral-600 max-w-2xl leading-relaxed mb-10">
+                  A rigorous, math-first program that builds deep understanding of AI systems
+                  from the ground up. No shortcuts. No black boxes.
                 </p>
 
-                {/* Quick stats */}
-                <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-600 mb-8">
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-coral-500" />
-                    <span>16 weeks intensive</span>
+                {/* Stats Row */}
+                <div className="flex flex-wrap items-center gap-8 mb-10">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-5 h-5 text-coral-500" />
+                    <div>
+                      <p className="text-neutral-900 font-medium">16 Weeks</p>
+                      <p className="text-neutral-500 text-sm">Duration</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Video className="w-4 h-4 text-coral-500" />
-                    <span>Live weekend sessions</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4 text-coral-500" />
-                    <span>1:1 mentorship</span>
+                  <div className="flex items-center gap-3">
+                    <Calendar className="w-5 h-5 text-coral-500" />
+                    <div>
+                      <p className="text-neutral-900 font-medium">Rolling Cohorts</p>
+                      <p className="text-neutral-500 text-sm">Ongoing Admissions</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* CTA */}
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="group inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-white bg-coral-500 rounded-full hover:bg-coral-600 transition-all shadow-lg"
-                >
-                  Apply for Fellowship
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </motion.div>
-
-              {/* Right - Visual */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={heroInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="hidden lg:block"
-              >
-                <div className="relative">
-                  <div className="bg-white/80 backdrop-blur-sm border border-neutral-200 rounded-3xl p-8 shadow-xl">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 bg-coral-100 rounded-xl flex items-center justify-center">
-                        <Brain className="w-6 h-6 text-coral-500" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-neutral-900">AI Fellowship</p>
-                        <p className="text-sm text-neutral-500">Engineer to Applied Scientist</p>
-                      </div>
-                    </div>
-
-                    {/* Program highlights */}
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3 p-3 bg-coral-50/50 rounded-xl border border-coral-100">
-                        <Code2 className="w-5 h-5 text-coral-500" />
-                        <div className="flex-1">
-                          <p className="text-sm font-medium text-neutral-900">
-                            Math-First Foundation
-                          </p>
-                          <p className="text-xs text-neutral-500">
-                            Linear Algebra, Probability, Optimization
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 bg-neutral-50 rounded-xl border border-neutral-200">
-                        <Rocket className="w-5 h-5 text-neutral-600" />
-                        <div className="flex-1">
-                          <p className="text-sm font-medium text-neutral-900">
-                            Production ML Systems
-                          </p>
-                          <p className="text-xs text-neutral-500">
-                            Deploy 3 working AI applications
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Stats */}
-                    <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-neutral-200">
-                      <div className="text-center">
-                        <p className="text-2xl font-serif text-neutral-900">16</p>
-                        <p className="text-xs text-neutral-500">Weeks</p>
-                      </div>
-                      <div className="text-center">
-                        <p className="text-2xl font-serif text-neutral-900">20+</p>
-                        <p className="text-xs text-neutral-500">Hrs/Week</p>
-                      </div>
-                      <div className="text-center">
-                        <p className="text-2xl font-serif text-neutral-900">500+</p>
-                        <p className="text-xs text-neutral-500">Alumni</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-coral-500/10 rounded-2xl -z-10" />
-                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-coral-500/10 rounded-xl -z-10" />
+                {/* CTAs */}
+                <div className="flex flex-wrap items-center gap-4">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="group inline-flex items-center gap-2 px-8 py-4 bg-neutral-900 text-white font-medium rounded-full hover:bg-neutral-800 transition-all"
+                  >
+                    Apply Now
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </button>
+                  <button
+                    onClick={() => setIsCurriculumModalOpen(true)}
+                    className="inline-flex items-center gap-2 px-6 py-3.5 font-medium text-neutral-600 border border-neutral-200 rounded-full hover:bg-neutral-50 transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    View Curriculum
+                  </button>
                 </div>
               </motion.div>
             </div>
           </div>
         </div>
 
+        {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
       </section>
 
-      {/* Who This Is For - Quote block */}
-      <section className="py-16 bg-coral-50/50 overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm font-medium text-coral-600 uppercase tracking-wider mb-6">
-            For Ambitious Professionals
-          </p>
-          <blockquote className="text-2xl md:text-3xl font-serif text-neutral-800 italic leading-relaxed">
-            &ldquo;We don&apos;t sell certificates. We build capability that compounds &mdash;
-            mathematical intuition, production thinking, and strategic clarity that lasts a
-            career.&rdquo;
-          </blockquote>
-          <div className="mt-6 w-16 h-1 bg-coral-500 mx-auto rounded-full" />
-        </div>
-      </section>
-
-      {/* Who This Is For - Split Layout */}
-      <section ref={programRef} className="py-20 md:py-32 bg-white overflow-hidden">
+      {/* What Makes It Different */}
+      <section
+        ref={pillarsRef}
+        className="py-20 md:py-32 bg-white relative overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left - Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={programInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-                Who This Is For
-              </span>
-              <h2 className="text-4xl md:text-5xl font-serif text-neutral-900 mt-4 mb-6">
-                Targeted for <span className="italic">ambitious professionals</span>
-              </h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={pillarsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+              What Makes It Different
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-neutral-900 max-w-2xl mx-auto">
+              Three Pillars of <span className="italic">Deep Learning</span>
+            </h2>
+          </motion.div>
 
-              <div className="space-y-6">
-                {[
-                  {
-                    icon: Code2,
-                    title: 'Software Engineers',
-                    desc: "Backend developers, QA engineers, or full-stack developers who've solved 100+ coding problems. Ready to move beyond CRUD apps and build intelligent systems.",
-                  },
-                  {
-                    icon: TrendingUp,
-                    title: 'Data Analysts',
-                    desc: 'Tired of just creating dashboards. Want to build predictive models, understand the math behind ML algorithms, and create AI systems.',
-                  },
-                  {
-                    icon: Rocket,
-                    title: 'Career Changers',
-                    desc: 'Solid engineering background and passionate about AI. Ready to invest 16 weeks of intense learning to unlock a future-proof career.',
-                  },
-                ].map((persona, index) => (
-                  <motion.div
-                    key={persona.title}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={programInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.1 * index }}
-                    className="flex gap-4"
-                  >
-                    <div className="w-12 h-12 bg-coral-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <persona.icon className="w-6 h-6 text-coral-500" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-neutral-900 mb-1">{persona.title}</h3>
-                      <p className="text-sm text-neutral-600">{persona.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Right - Dark Visual Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={programInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-3xl p-8 md:p-10 relative overflow-hidden"
-            >
-              <div className="absolute inset-0 opacity-30 pointer-events-none">
-                <svg className="w-full h-full">
-                  <filter id="problemNoise">
-                    <feTurbulence
-                      type="fractalNoise"
-                      baseFrequency="0.8"
-                      numOctaves="4"
-                      stitchTiles="stitch"
-                    />
-                  </filter>
-                  <rect width="100%" height="100%" filter="url(#problemNoise)" opacity="0.4" />
-                </svg>
-              </div>
-
-              <div className="relative z-10">
-                <h3 className="text-xl font-semibold text-white mb-6">Problems We Solve</h3>
-                <div className="space-y-4">
-                  {[
-                    {
-                      problem: 'Lack of Hands-on AI Exposure',
-                      solution:
-                        'Real datasets, actual ML models to build, and production deployment experience. Deploy 3 working AI applications.',
-                    },
-                    {
-                      problem: 'Career Transition Uncertainty',
-                      solution:
-                        'Proven path with 1:1 mentorship, industry connections, and a portfolio that impresses hiring managers at top tech companies.',
-                    },
-                  ].map((item) => (
-                    <div
-                      key={item.problem}
-                      className="bg-white/5 rounded-xl p-4 backdrop-blur-sm border border-white/10"
-                    >
-                      <h4 className="font-medium text-white mb-2">{item.problem}</h4>
-                      <p className="text-sm text-neutral-400">{item.solution}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* What You'll Achieve - Split Layout */}
-      <section ref={outcomesRef} className="py-20 md:py-32 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left - Dark Visual Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={outcomesInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="relative">
-                <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-3xl p-8 relative overflow-hidden">
-                  <div className="absolute inset-0 opacity-30 pointer-events-none">
-                    <svg className="w-full h-full">
-                      <filter id="outcomeNoise">
-                        <feTurbulence
-                          type="fractalNoise"
-                          baseFrequency="0.8"
-                          numOctaves="4"
-                          stitchTiles="stitch"
-                        />
-                      </filter>
-                      <rect width="100%" height="100%" filter="url(#outcomeNoise)" opacity="0.4" />
-                    </svg>
-                  </div>
-
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 bg-coral-500/20 rounded-lg flex items-center justify-center">
-                        <TrendingUp className="w-5 h-5 text-coral-400" />
-                      </div>
-                      <span className="text-white/80 font-medium">Career Transformation</span>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
-                        <p className="text-3xl font-serif text-white">40-60%</p>
-                        <p className="text-xs text-neutral-400 mt-1">Salary Increase</p>
-                      </div>
-                      <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
-                        <p className="text-3xl font-serif text-white">6 mo</p>
-                        <p className="text-xs text-neutral-400 mt-1">Avg. Transition</p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10">
-                        <CheckCircle2 className="w-5 h-5 text-coral-400" />
-                        <span className="text-white text-sm">ML Engineering roles at top tech</span>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10">
-                        <CheckCircle2 className="w-5 h-5 text-coral-400" />
-                        <span className="text-white text-sm">Exclusive AI job opportunities</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-coral-500/10 rounded-2xl -z-10" />
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-coral-500/10 rounded-xl -z-10" />
-              </div>
-            </motion.div>
-
-            {/* Right - Content */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={outcomesInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5 }}
-            >
-              <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-                What You&apos;ll Achieve
-              </span>
-              <h2 className="text-4xl md:text-5xl font-serif text-neutral-900 mt-4 mb-6">
-                Measurable <span className="italic">outcomes</span>
-              </h2>
-              <p className="text-neutral-600 mb-8 leading-relaxed">
-                Not just learning, but tangible results that transform your career and open doors at
-                top tech companies.
-              </p>
-
-              {/* Technical Mastery list */}
-              <div className="space-y-4">
-                <h3 className="font-semibold text-neutral-900">Technical Mastery</h3>
-                {[
-                  'Deploy production-ready AI platforms',
-                  'Build 3 industry-standard ML projects for your portfolio',
-                  'Master modern AI frameworks (TensorFlow, PyTorch, Hugging Face)',
-                ].map((item, index) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={outcomesInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.1 * index }}
-                    className="flex items-start gap-3"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-coral-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-neutral-700">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tools You'll Master */}
-      <section className="py-16 bg-neutral-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-serif text-neutral-900">Master Industry-Standard Tools</h3>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              {
-                category: 'ML & AI',
-                tools: ['TensorFlow', 'PyTorch', 'Hugging Face', 'Scikit-learn'],
-              },
-              { category: 'Cloud', tools: ['AWS', 'GCP', 'Docker', 'Kubernetes'] },
-              { category: 'Languages', tools: ['Python', 'SQL', 'NumPy', 'Pandas'] },
-              { category: 'Dev Tools', tools: ['Git', 'MLflow', 'Weights & Biases', 'FastAPI'] },
-            ].map((group) => (
-              <div
-                key={group.category}
-                className="bg-white rounded-xl p-4 border border-neutral-200"
+          {/* Three Pillars */}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {pillars.map((pillar, index) => (
+              <motion.div
+                key={pillar.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={pillarsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
               >
-                <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
-                  {group.category}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {group.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="text-xs px-2 py-1 bg-neutral-100 text-neutral-700 rounded-full"
-                    >
-                      {tool}
-                    </span>
-                  ))}
+                <div className="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200 hover:border-coral-200 hover:shadow-lg transition-all h-full text-center group">
+                  <div className="w-14 h-14 bg-coral-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-coral-100 transition-colors">
+                    <pillar.icon className="w-7 h-7 text-coral-500" />
+                  </div>
+                  <h3 className="font-serif text-xl text-neutral-900 mb-3">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-neutral-600 leading-relaxed">
+                    {pillar.description}
+                  </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Program Details - Two Column */}
-      <section className="py-20 md:py-32 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* How it works */}
-            <div>
-              <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
-                Program Structure
-              </span>
-              <h2 className="text-3xl md:text-4xl font-serif text-neutral-900 mt-4 mb-6">
-                How It <span className="italic">Works</span>
-              </h2>
-              <p className="text-neutral-600 mb-8">
-                A rigorous, math-first program that builds deep understanding of AI systems from the
-                ground up.
-              </p>
-
-              <ul className="space-y-3">
-                {[
-                  'Live weekend sessions with industry mentors',
-                  'Math-first foundation (Linear Algebra, Probability, Optimization)',
-                  'Build from scratch - no black-box learning',
-                  'Weekly assignments and project reviews',
-                  '1:1 mentorship from Google, Amazon, Microsoft engineers',
-                  '20+ hours/week commitment expected',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-coral-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-neutral-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Prerequisites */}
-            <div className="bg-neutral-50 rounded-3xl p-8">
-              <h3 className="text-xl font-semibold text-neutral-900 mb-6">Prerequisites</h3>
-              <div className="space-y-4">
-                {[
-                  {
-                    req: 'Coding Experience',
-                    desc: 'Comfortable with at least one programming language (Python preferred)',
-                    level: 'Required',
-                  },
-                  {
-                    req: 'Basic Math',
-                    desc: 'High school level algebra and statistics',
-                    level: 'Required',
-                  },
-                  {
-                    req: 'Time Commitment',
-                    desc: '20+ hours per week for 16 weeks',
-                    level: 'Required',
-                  },
-                  {
-                    req: 'ML Background',
-                    desc: 'Prior ML experience not required - we start from fundamentals',
-                    level: 'Not Required',
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.req}
-                    className="flex items-start gap-4 p-4 bg-white rounded-xl border border-neutral-200"
-                  >
-                    <span
-                      className={`text-xs font-medium px-3 py-1 rounded-full flex-shrink-0 ${
-                        item.level === 'Required'
-                          ? 'bg-coral-100 text-coral-600'
-                          : 'bg-neutral-100 text-neutral-600'
-                      }`}
-                    >
-                      {item.level}
-                    </span>
-                    <div>
-                      <p className="font-medium text-neutral-900">{item.req}</p>
-                      <p className="text-sm text-neutral-500">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section ref={ctaRef} className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden">
+      {/* Curriculum Section - Dark */}
+      <section
+        ref={curriculumRef}
+        className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden"
+      >
+        {/* Grainy texture overlay */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <svg className="w-full h-full">
-            <filter id="fellowshipCtaNoise">
+            <filter id="curriculumNoise">
               <feTurbulence
                 type="fractalNoise"
                 baseFrequency="0.8"
@@ -555,79 +292,371 @@ export default function AIFellowshipPage() {
                 stitchTiles="stitch"
               />
             </filter>
-            <rect width="100%" height="100%" filter="url(#fellowshipCtaNoise)" opacity="0.4" />
+            <rect width="100%" height="100%" filter="url(#curriculumNoise)" opacity="0.4" />
           </svg>
         </div>
 
+        {/* Gradient blobs */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-coral-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-coral-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-coral-400/10 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={ctaInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="text-center lg:text-left"
-            >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6">
-                Ready to Build <span className="italic">Serious AI Skills?</span>
-              </h2>
-              <p className="text-lg md:text-xl text-white/70 mb-10 max-w-xl">
-                Join our next cohort and start your AI engineering journey. Limited to 25 students
-                per cohort.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="group inline-flex items-center gap-3 px-10 py-5 bg-coral-500 text-white text-lg font-medium rounded-full hover:bg-coral-600 transition-all shadow-xl"
-                >
-                  Apply Now
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="inline-flex items-center gap-2 px-8 py-4 text-white/80 hover:text-white border border-white/30 rounded-full hover:border-white/50 transition-all"
-                >
-                  <MessageSquare className="w-5 h-5" />
-                  Talk to Us
-                </button>
-              </div>
-              <p className="text-sm text-white/50 mt-6">Next cohort starts in 2 weeks</p>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={curriculumInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <p className="text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
+              The Journey
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-white max-w-2xl mx-auto">
+              Three Phases to <span className="italic">Mastery</span>
+            </h2>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={ctaInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden lg:flex justify-center"
-            >
-              <div className="relative w-72 h-72">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-coral-500/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <Brain className="w-16 h-16 text-white/70" />
+          {/* Phases */}
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
+            {phases.map((phase, index) => (
+              <motion.div
+                key={phase.phase}
+                initial={{ opacity: 0, y: 30 }}
+                animate={curriculumInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.15 * index }}
+                className="group"
+              >
+                <div className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 h-full hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300">
+                  {/* Phase indicator */}
+                  <div className="flex items-center justify-between mb-6">
+                    <span className={`text-xs font-medium px-3 py-1.5 rounded-full bg-gradient-to-r ${phase.color} text-white`}>
+                      {phase.phase}
+                    </span>
+                    <span className="text-white/20 font-serif text-3xl">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  {/* Title & Description */}
+                  <h3 className="font-serif text-white text-2xl mb-3">
+                    {phase.title}
+                  </h3>
+                  <p className="text-white/50 text-sm leading-relaxed mb-6">
+                    {phase.description}
+                  </p>
+
+                  {/* Topics */}
+                  <div className="space-y-2.5">
+                    {phase.topics.map((topic) => (
+                      <div
+                        key={topic}
+                        className="flex items-center gap-3 text-white/60 text-sm group-hover:text-white/70 transition-colors"
+                      >
+                        <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${phase.color} flex-shrink-0`} />
+                        {topic}
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <div className="absolute top-8 left-12 w-4 h-4 bg-coral-400 rounded-full animate-pulse" />
-                <div
-                  className="absolute top-20 right-8 w-3 h-3 bg-white/60 rounded-full animate-pulse"
-                  style={{ animationDelay: '0.3s' }}
-                />
-                <div
-                  className="absolute bottom-16 left-8 w-2 h-2 bg-white/40 rounded-full animate-pulse"
-                  style={{ animationDelay: '0.6s' }}
-                />
-                <div className="absolute inset-0 border border-white/10 rounded-full" />
-                <div className="absolute inset-8 border border-white/5 rounded-full" />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Progress indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={curriculumInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex items-center justify-center gap-4 mt-12"
+          >
+            <div className="flex items-center gap-2">
+              {phases.map((phase, index) => (
+                <div key={phase.phase} className="flex items-center gap-2">
+                  <div className={`w-8 h-1 rounded-full bg-gradient-to-r ${phase.color}`} />
+                  {index < phases.length - 1 && (
+                    <div className="w-4 h-px bg-white/20" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Who It's For */}
+      <section
+        ref={personasRef}
+        className="py-20 md:py-32 bg-white relative overflow-hidden"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left - Target Personas */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={personasInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+                Who This Is For
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl text-neutral-900 mb-8">
+                Built for <span className="italic">Serious Engineers</span>
+              </h2>
+
+              <div className="space-y-4">
+                {personas.map((persona, index) => (
+                  <motion.div
+                    key={persona.title}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={personasInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.4, delay: 0.1 * index }}
+                    className="bg-white rounded-2xl p-5 border border-neutral-200 flex items-start gap-4"
+                  >
+                    <div className="w-10 h-10 bg-coral-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-coral-500" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-neutral-900 mb-1">
+                        {persona.title}
+                      </h3>
+                      <p className="text-neutral-600 text-sm">{persona.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right - Anti-Personas & Prerequisites */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={personasInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {/* Not For */}
+              <div className="bg-neutral-50 rounded-2xl p-6 mb-6">
+                <h3 className="font-medium text-neutral-500 text-sm uppercase tracking-wider mb-4">
+                  Not the right fit if you&apos;re...
+                </h3>
+                <ul className="space-y-2">
+                  {antiPersonas.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-neutral-500 text-sm">
+                      <span className="w-1.5 h-1.5 bg-neutral-300 rounded-full" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Prerequisites */}
+              <div className="bg-white rounded-2xl p-6 border border-neutral-200">
+                <h3 className="font-serif text-neutral-900 mb-4">
+                  Prerequisites
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xs font-medium px-2 py-1 bg-coral-50 text-coral-600 rounded">
+                      Required
+                    </span>
+                    <p className="text-neutral-600 text-sm">
+                      Comfortable with Python or another programming language
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-xs font-medium px-2 py-1 bg-coral-50 text-coral-600 rounded">
+                      Required
+                    </span>
+                    <p className="text-neutral-600 text-sm">
+                      High school level algebra and basic statistics
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-xs font-medium px-2 py-1 bg-neutral-100 text-neutral-500 rounded">
+                      Not Needed
+                    </span>
+                    <p className="text-neutral-600 text-sm">
+                      Prior ML experience — we start from fundamentals
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
+ 
+      <Testimonials/>
+
+      {/* Investment Section */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-12"
+            >
+              <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+                Investment
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl text-neutral-900">
+                Your <span className="italic">Commitment</span>
+              </h2>
+            </motion.div>
+
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Time */}
+                <div>
+                  <h3 className="font-serif text-neutral-900 mb-4 flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-coral-500" />
+                    Time Investment
+                  </h3>
+                  <ul className="space-y-2 text-neutral-600">
+                    <li className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-coral-500 rounded-full mt-2" />
+                      20+ hours per week for 16 weeks
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-coral-500 rounded-full mt-2" />
+                      Live weekend sessions (4-5 hours)
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-coral-500 rounded-full mt-2" />
+                      Weekly assignments and reviews
+                    </li>
+                  </ul>
+                </div>
+
+                {/* What's Included */}
+                <div>
+                  <h3 className="font-serif text-neutral-900 mb-4 flex items-center gap-2">
+                    <BookOpen className="w-5 h-5 text-coral-500" />
+                    What&apos;s Included
+                  </h3>
+                  <ul className="space-y-2 text-neutral-600">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-coral-500 mt-0.5 flex-shrink-0" />
+                      1:1 mentorship from FAANG engineers
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-coral-500 mt-0.5 flex-shrink-0" />
+                      3 production-ready projects
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-coral-500 mt-0.5 flex-shrink-0" />
+                      Career support and interview prep
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-coral-500 mt-0.5 flex-shrink-0" />
+                      Lifetime alumni network access
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-neutral-100 text-center">
+                <p className="text-neutral-500 text-sm">
+                  Full refund available within the first 2 weeks if the program isn&apos;t right for you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Application CTA */}
+      <section
+        ref={ctaRef}
+        className="py-20 md:py-32 relative overflow-hidden"
+      >
+        {/* Coral gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-coral-50 via-white to-coral-100/50" />
+
+        {/* Grainy texture */}
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
+          <svg className="w-full h-full">
+            <filter id="ctaNoise">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.8"
+                numOctaves="4"
+                stitchTiles="stitch"
+              />
+            </filter>
+            <rect width="100%" height="100%" filter="url(#ctaNoise)" opacity="0.4" />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-2xl mx-auto"
+          >
+            <h2 className="font-serif text-4xl md:text-5xl text-neutral-900 mb-6">
+              Ready to <span className="italic">Transform?</span>
+            </h2>
+            <p className="text-neutral-600 text-lg mb-10">
+              The application takes 10 minutes. We review every application personally
+              and respond within 48 hours.
+            </p>
+
+            {/* Steps */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-10">
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-medium">
+                  1
+                </span>
+                <span className="text-neutral-600">Apply online</span>
+              </div>
+              <div className="hidden md:block w-8 h-px bg-neutral-200" />
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-medium">
+                  2
+                </span>
+                <span className="text-neutral-600">Brief interview</span>
+              </div>
+              <div className="hidden md:block w-8 h-px bg-neutral-200" />
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-medium">
+                  3
+                </span>
+                <span className="text-neutral-600">Start building</span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="group inline-flex items-center gap-2 px-10 py-5 bg-neutral-900 text-white text-lg font-medium rounded-full hover:bg-neutral-800 transition-all"
+            >
+              Apply for AI Fellowship
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+
+            <p className="text-neutral-500 text-sm mt-6">
+              Rolling admissions. Apply now to secure your spot.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
 
-      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} source="ai-fellowship" />
+      <LeadCaptureModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        source="ai-fellowship"
+      />
+
+      <CurriculumDownloadModal
+        isOpen={isCurriculumModalOpen}
+        onClose={() => setIsCurriculumModalOpen(false)}
+        programName="AI Fellowship"
+        redirectUrl="https://lexailabs.com/curriculum"
+      />
     </div>
   );
 }
