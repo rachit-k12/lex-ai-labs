@@ -84,11 +84,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-serif text-5xl sm:text-6xl lg:text-8xl text-neutral-900 leading-[1.05] mb-6 tracking-tight"
+              className="font-serif text-5xl sm:text-6xl lg:text-7xl text-neutral-900 leading-[1.05] mb-6 tracking-tight"
             >
-              Build AI That 
-              <br />
-              <span className="italic text-blue-500">Actually Works.</span>
+              Building Real-World
+              <br/>
+              <span className="italic text-blue-500">AI Capability </span>
             </motion.h1>
 
             {/* Subheadline */}
