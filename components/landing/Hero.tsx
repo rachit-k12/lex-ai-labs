@@ -86,9 +86,8 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-serif text-5xl sm:text-6xl lg:text-7xl text-neutral-900 leading-[1.05] mb-6 tracking-tight"
             >
-              Building Real-World
-              <br/>
-              <span className="italic text-blue-500">AI Capability </span>
+              Building &nbsp;
+              <span className="italic text-blue-500">AI Capability </span>for the world
             </motion.h1>
 
             {/* Subheadline */}
